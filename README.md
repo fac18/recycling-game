@@ -66,3 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### continuous integration 
+[![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
