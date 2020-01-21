@@ -5,6 +5,9 @@
 
 
 ### codecov
+[![codecov](https://codecov.io/gh/fac18/recycling-game/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/recycling-game)
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
