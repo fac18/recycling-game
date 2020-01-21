@@ -1,5 +1,10 @@
-[![Build Status](https://travis-ci.com/fac18/recycling-game.svg?branch=master)](https://travis-ci.com/fac18/recycling-game)
 
+
+### continuous integration 
+[![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
+
+
+### codecov
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -69,7 +74,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
-### continuous integration 
-[![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
