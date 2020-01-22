@@ -1,9 +1,10 @@
 import React from "react";
+import ProgressScore from "./ProgressScore";
 
 const GameScreen = () => {
   return (
     <div>
-      <h2>This is the Game in action</h2>
+      <ProgressScore />
     </div>
   );
 };
