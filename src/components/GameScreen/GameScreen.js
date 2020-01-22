@@ -1,4 +1,5 @@
 import React from "react";
+
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
 import { ReactComponent as RecyclingBin } from "../../assets/recycle-bin.svg";
