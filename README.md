@@ -2,6 +2,8 @@
 
 We're building a recycling game for children aged 4-6yrs old
 
+![](https://media.giphy.com/media/KhlVSyjsbx18A/giphy.gif)
+
 Please take a look around. 
 
 ### continuous integration 
@@ -15,6 +17,16 @@ Please take a look around.
 ### [Design Week presentation](https://hackmd.io/@XI0fc2MpTIuI1L-y-LwoxA/SJyRokLxL#/)
 
 ### [Usability Testing Notes](https://github.com/fac18/recycling-game/issues/2)
+
+
+
+
+
+
+
+
+
+
 
 
 
