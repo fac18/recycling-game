@@ -13,7 +13,7 @@ const GameScreen = () => {
   const [count, setCount] = React.useState(0);
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
-    src: "images/wine-bottle.png",
+    src: "images/wine-bottle.svg",
     bin: "recycling"
 });
 
