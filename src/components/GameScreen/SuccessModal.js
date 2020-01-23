@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
 
-const FailBox = styled.div`
+const SuccessBox = styled.div`
   display: none;
 `;
 
-const Fail = props => {
+const Success = props => {
+  // const newItem = () => {
+    
+  // };
+
   const hideModal = () => {
     const box = document.getElementById("success");
     box.style.display = "none";
@@ -14,12 +18,13 @@ const Fail = props => {
       return 0.5 - Math.random();
     });
     props.setCurrentItem(shuffle[0]);
+    //newItem();
     let item = document.querySelector(".ddcontainer");
     item.style.visibility = "visible";
   };
 
   return (
-    <FailBox id="success" onClick={hideModal}>
+    <SuccessBox id="success" onClick={hideModal}>
       <h2>Well Done!</h2>
       <h2>
         {props.item.name} goes in the {props.item.bin} bin.
@@ -27,8 +32,8 @@ const Fail = props => {
       <img alt={props.item.name} src={props.item.src} />
       <p>Fun fact about {props.item.name}</p>
       <button>OK</button>
-    </FailBox>
+    </SuccessBox>
   );
 };
 
-export default Fail;
+export default Success;
