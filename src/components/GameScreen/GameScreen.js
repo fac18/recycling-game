@@ -10,6 +10,8 @@ import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 
+import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+
 const GameScreen = () => {
   const [itemVisibility, setItemVisibility] = React.useState(null);
   const [count, setCount] = React.useState(0);
@@ -19,29 +21,68 @@ const GameScreen = () => {
     bin: "recycling"
 });
 
-  const dropReaction = (e) => {
+  const dropReactionRecycling = (e) => {
     e.containerElem.style.visibility = "hidden";
-    setItemVisibility(e.containerElem);
+    setItemVisibility(e.containerElem.style.visibility);
+    console.log(itemVisibility);
     const success = document.getElementById("success");
-    //const fail = document.getElementById("fail");
-
+    const fail = document.getElementById("fail");
+    console.log(currentItem.bin);
+    if (currentItem.bin === "recycling") {
     success.style.display = "block";
     setCount(count + 1);
+    } else {
+      fail.style.display = "block";
+    }
+  };
+
+  const dropReactionBlack = (e) => {
+    e.containerElem.style.visibility = "hidden";
+    setItemVisibility(e.containerElem.style.visibility);
+    console.log(itemVisibility);
+    const success = document.getElementById("success");
+    const fail = document.getElementById("fail");
+    console.log(currentItem.bin);
+    if (currentItem.bin === "general waste") {
+    success.style.display = "block";
+    setCount(count + 1);
+    } else {
+      fail.style.display = "block";
+    }
+  };
+
+  const dropReactionCompost = (e) => {
+    e.containerElem.style.visibility = "hidden";
+    setItemVisibility(e.containerElem.style.visibility);
+    console.log(itemVisibility);
+    const success = document.getElementById("success");
+    const fail = document.getElementById("fail");
+    console.log(currentItem.bin);
+    if (currentItem.bin === "food composting") {
+    success.style.display = "block";
+    setCount(count + 1);
+    } else {
+      fail.style.display = "block";
+    }
   };
 
   return (
     <div>
       <ProgressScore count={count} />
-      <DragDropContainer targetKey="middle">
+      <DragDropContainer targetKey="bins">
         <Item item={currentItem} />
       </DragDropContainer>
 
-      <DropTarget targetKey="middle" onHit={dropReaction}>
-        <BlackBin />
+      <DropTarget targetKey="bins" onHit={dropReactionBlack}>
+        <BlackBin title="blackbin" />
       </DropTarget>
 
-      <DropTarget targetKey="middle" onHit={dropReaction}>
+      <DropTarget targetKey="bins" onHit={dropReactionRecycling}>
         <RecycleBin title="recyclebin" />
+      </DropTarget>
+
+      <DropTarget targetKey="bins" onHit={dropReactionCompost}>
+        <CompostBin title="compostbin" />
       </DropTarget>
 
       <Success 

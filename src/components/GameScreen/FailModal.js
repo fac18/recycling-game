@@ -13,7 +13,7 @@ const FailBox = styled.div`
 
 const Fail = props => {
   const hideModal = () => {
-    const box = document.getElementById("success");
+    const box = document.getElementById("fail");
     box.style.display = "none";
     let shuffle = items.sort((a, b) => {
       return 0.5 - Math.random();
@@ -24,8 +24,8 @@ const Fail = props => {
   };
 
   return (
-    <FailBox id="success" onClick={hideModal}>
-      <h2>Well Done!</h2>
+    <FailBox id="fail" onClick={hideModal}>
+      <h2>Uh oh!</h2>
       <h2>
         {props.item.name} go in the {props.item.bin} bin.
       </h2>
