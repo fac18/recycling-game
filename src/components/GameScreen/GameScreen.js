@@ -3,7 +3,9 @@ import ProgressScore from "./ProgressScore";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
-import { ReactComponent as RecyclingBin } from "../../assets/recycle-bin.svg";
+import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
+
+import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 
 import { ReactComponent as GlassBottle } from "../../assets/glass-bottle.svg";
 
@@ -22,7 +24,11 @@ const GameScreen = () => {
       </DragDropContainer>
 
       <DropTarget targetKey="middle" onHit={dropReaction}>
-        <RecyclingBin />
+        <BlackBin />
+      </DropTarget>
+
+      <DropTarget targetKey="middle" onHit={dropReaction}>
+        <RecycleBin title="recyclebin" />
       </DropTarget>
     </div>
   );
