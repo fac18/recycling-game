@@ -1,12 +1,13 @@
-import React from 'react';
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+import React from "react";
+import styled from "styled-components";
 
-const Item = (DragDropContainer)  => { 
-    return (
-        <DragDropContainer
-            targetKey={DragDropContainer.targetKey}
-        />
-    )
-}
+const Image = styled.img`
+  width: 100px;
+  height: 100px;
+`;
+
+const Item = currentItem => {
+  return <Image src={currentItem.item.src} alt="Drag me to the right bin!" />;
+};
 
 export default Item;

@@ -1,5 +1,8 @@
 import React from "react";
 import ProgressScore from "./ProgressScore";
+import Success from "./SuccessModal";
+import Fail from "./FailModal";
+import Item from "./Item";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
@@ -7,12 +10,22 @@ import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 
-import { ReactComponent as GlassBottle } from "../../assets/glass-bottle.svg";
-
 const GameScreen = () => {
+  const [itemVisibility, setItemVisibility] = React.useState(null);
   const [count, setCount] = React.useState(0);
-  const dropReaction = e => {
+  const [currentItem, setCurrentItem] = React.useState({
+    name: "Glass Bottles",
+    src: "images/wine-bottle.svg",
+    bin: "recycling"
+});
+
+  const dropReaction = (e) => {
     e.containerElem.style.visibility = "hidden";
+    setItemVisibility(e.containerElem);
+    const success = document.getElementById("success");
+    //const fail = document.getElementById("fail");
+
+    success.style.display = "block";
     setCount(count + 1);
   };
 
@@ -20,7 +33,7 @@ const GameScreen = () => {
     <div>
       <ProgressScore count={count} />
       <DragDropContainer targetKey="middle">
-        <GlassBottle />
+        <Item item={currentItem} />
       </DragDropContainer>
 
       <DropTarget targetKey="middle" onHit={dropReaction}>
@@ -30,6 +43,17 @@ const GameScreen = () => {
       <DropTarget targetKey="middle" onHit={dropReaction}>
         <RecycleBin title="recyclebin" />
       </DropTarget>
+
+      <Success 
+      item={currentItem} 
+      setCurrentItem={setCurrentItem}
+      itemVisibility={itemVisibility}
+      />
+      <Fail 
+      item={currentItem} 
+      setCurrentItem={setCurrentItem}
+      itemVisibility={itemVisibility}
+      />
     </div>
   );
 };
