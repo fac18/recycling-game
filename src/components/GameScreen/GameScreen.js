@@ -6,7 +6,9 @@ import Item from "./Item";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
-import { ReactComponent as RecyclingBin } from "../../assets/recycle-bin.svg";
+import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
+
+import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 
 const GameScreen = () => {
   const [itemVisibility, setItemVisibility] = React.useState(null);
@@ -35,7 +37,11 @@ const GameScreen = () => {
       </DragDropContainer>
 
       <DropTarget targetKey="middle" onHit={dropReaction}>
-        <RecyclingBin />
+        <BlackBin />
+      </DropTarget>
+
+      <DropTarget targetKey="middle" onHit={dropReaction}>
+        <RecycleBin title="recyclebin" />
       </DropTarget>
 
       <Success 
