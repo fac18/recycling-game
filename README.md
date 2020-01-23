@@ -7,6 +7,10 @@
 ### codecov
 [![codecov](https://codecov.io/gh/fac18/recycling-game/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/recycling-game)
 
+### [playable figma prototype](https://www.figma.com/proto/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=177%3A235&scaling=scale-down)
+
+### [Usability Testing](https://github.com/fac18/recycling-game/issues/2)
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
