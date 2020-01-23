@@ -8,12 +8,11 @@ import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
 import { ReactComponent as RecyclingBin } from "../../assets/recycle-bin.svg";
 
-
 const GameScreen = () => {
   const [itemVisibility, setItemVisibility] = React.useState(null);
   const [count, setCount] = React.useState(0);
   const [currentItem, setCurrentItem] = React.useState({
-    name: "Glass Bottle",
+    name: "Glass Bottles",
     src: "images/wine-bottle.png",
     bin: "recycling"
 });
