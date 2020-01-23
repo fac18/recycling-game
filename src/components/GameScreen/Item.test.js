@@ -1,11 +1,12 @@
 import React from "react";
 import Item from "./Item";
 import { render } from "@testing-library/react";
+import items from "../../../src/utils/itemData";
 
-test("Testing Item renders", () => {
+test("Test Item renders", () => {
     
-    //const { getByText } = 
-    //render(<Item />);
-    //const buttonNode = getByText("OK");
-    //fireEvent.click(buttonNode);
+    const { getByTitle, debug } = render(<Item item={items[0]}/>);
+    const item = getByTitle("item");
+    debug(item);
+    expect(item).toBeInTheDocument();
 });
