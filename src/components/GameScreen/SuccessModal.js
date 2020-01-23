@@ -11,7 +11,7 @@ const SuccessBox = styled.div`
   display: none;
 `;
 
-const Success = props => {
+const SuccessModal = props => {
   const hideModal = () => {
     const box = document.getElementById("success");
     box.style.display = "none";
@@ -21,6 +21,9 @@ const Success = props => {
     props.setCurrentItem(shuffle[0]);
     let item = document.querySelector(".ddcontainer");
     item.style.visibility = "visible";
+
+    props.setItemVisibility(true);
+    
   };
 
   return (
@@ -36,4 +39,4 @@ const Success = props => {
   );
 };
 
-export default Success;
+export default SuccessModal;

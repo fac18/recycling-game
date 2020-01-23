@@ -11,7 +11,7 @@ const FailBox = styled.div`
   display: none;
 `;
 
-const Fail = props => {
+const FailModal = props => {
   const hideModal = () => {
     const box = document.getElementById("fail");
     box.style.display = "none";
@@ -21,6 +21,9 @@ const Fail = props => {
     props.setCurrentItem(shuffle[0]);
     let item = document.querySelector(".ddcontainer");
     item.style.visibility = "visible";
+
+    props.setItemVisibility(true);
+    console.log("modal hid", props.itemVisibility);
   };
 
   return (
@@ -36,4 +39,4 @@ const Fail = props => {
   );
 };
 
-export default Fail;
+export default FailModal;
