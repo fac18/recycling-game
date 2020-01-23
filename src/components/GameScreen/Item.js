@@ -6,8 +6,8 @@ const Image = styled.img`
   height: 100px;
 `;
 
-const Item = currentItem => {
-  return <Image src={currentItem.item.src} alt="Drag me to the right bin!" />;
+const Item = props => {
+  return <Image src={props.item.src} alt="Drag me to the right bin!" title="item" />;
 };
 
 export default Item;
