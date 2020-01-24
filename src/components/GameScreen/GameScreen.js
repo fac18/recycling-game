@@ -6,11 +6,22 @@ import Item from "./Item";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
+import { ReactComponent as Wave2 } from "../../assets/sea-wave-2.svg";
+import { ReactComponent as Wave3 } from "../../assets/sea-wave-3.svg";
+import { ReactComponent as Wave4 } from "../../assets/sea-wave-4.svg";
 import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
-
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
-
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+import { ReactComponent as Wave5 } from "../../assets/sea-wave-5.svg";
+import { ReactComponent as Scallop } from "../../assets/scallop.svg";
+import { ReactComponent as Algae1 } from "../../assets/algae-1.svg";
+import { ReactComponent as Algae2 } from "../../assets/algae-2.svg";
+import { ReactComponent as Algae3 } from "../../assets/algae-3.svg";
+import { ReactComponent as Crab } from "../../assets/crab.svg";
+import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
+import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
+import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
+
 
 const GameScreen = () => {
   const [itemVisibility, setItemVisibility] = React.useState(true);
@@ -81,7 +92,21 @@ React.useEffect(() => {
 
   return (
     <div>
+      <Scallop/>
+      <Algae1/>
+      <Algae2/>
+      <Algae3/>
+      <Crab/>
+      <Seahorse/>
+      <RedFish/>
+      <Bubbles/>
+      <Wave2/>
+      <Wave3/>
+      <Wave4/>
+      <Wave5/> 
+
       <ProgressScore count={count} />
+      
       <DragDropContainer targetKey="bins">
         <Item 
         item={currentItem} 

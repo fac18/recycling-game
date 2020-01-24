@@ -11,6 +11,7 @@ const FailBox = styled.div`
   display: none;
 `;
 
+
 const FailModal = props => {
   const hideModal = () => {
     const box = document.getElementById("fail");
@@ -25,7 +26,7 @@ const FailModal = props => {
     props.setItemVisibility(true);
     console.log("modal hid", props.itemVisibility);
   };
-
+ 
   return (
     <FailBox id="fail" onClick={hideModal}>
       <h2>Uh oh!</h2>
