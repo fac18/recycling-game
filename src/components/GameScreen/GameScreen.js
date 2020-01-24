@@ -12,18 +12,11 @@ import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
-import { ReactComponent as Heart1 } from "../../assets/heart-lives.svg";
-import { ReactComponent as Heart2 } from "../../assets/heart-lives.svg";
-import { ReactComponent as Heart3 } from "../../assets/heart-lives.svg";
 
 const GameScreen = () => {
-  const heartArray = [Heart1, Heart2, Heart3];
-  const removeHeart = () => {
-    const x = document.querySelector(".heart");
-    heartArray.shift();
-    x.style.display = "none";
-    console.log("second");
-  };
+  const [heartCount, setHeartCount] = React.useState(3);
+  const [badCount, setBadCount] = React.useState(0);
+
   const [itemVisibility, setItemVisibility] = React.useState(null);
   const [count, setCount] = React.useState(0);
   const [currentItem, setCurrentItem] = React.useState({
@@ -42,9 +35,12 @@ const GameScreen = () => {
     if (currentItem.bin === "recycling") {
       success.style.display = "block";
       setCount(count + 1);
+      console.log("this is the count", count);
     } else {
-      removeHeart();
       fail.style.display = "block";
+      setBadCount(badCount + 1);
+      console.log("This is bad count", badCount);
+      // setHeartCount(heartCount - 1);
     }
   };
 
@@ -59,8 +55,10 @@ const GameScreen = () => {
       success.style.display = "block";
       setCount(count + 1);
     } else {
-      removeHeart();
       fail.style.display = "block";
+      setBadCount(badCount + 1);
+      console.log("This is bad count", badCount);
+      // setHeartCount(heartCount - 1);
     }
   };
 
@@ -75,15 +73,17 @@ const GameScreen = () => {
       success.style.display = "block";
       setCount(count + 1);
     } else {
-      removeHeart();
       fail.style.display = "block";
+      setBadCount(badCount + 1);
+      console.log("This is bad count", badCount);
+      // setHeartCount(heartCount - 1);
     }
   };
 
   return (
     <div>
       <ProgressScore count={count} />
-      <LivesScore />
+      <LivesScore heartCount={heartCount} badCount={badCount} />
       <DragDropContainer targetKey="bins">
         <Item item={currentItem} />
       </DragDropContainer>
