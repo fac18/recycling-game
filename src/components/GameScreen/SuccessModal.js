@@ -8,22 +8,20 @@ const Image = styled.img`
 `;
 
 const SuccessBox = styled.div`
-  display: none;
+  background-color: green;
 `;
 
 const SuccessModal = props => {
+
   const hideModal = () => {
-    const box = document.getElementById("success");
-    box.style.display = "none";
+
+    props.setSuccessModal(!props.successModal);
+
     let shuffle = items.sort((a, b) => {
       return 0.5 - Math.random();
     });
     props.setCurrentItem(shuffle[0]);
-    let item = document.querySelector(".ddcontainer");
-    item.style.visibility = "visible";
-
-    props.setItemVisibility(true);
-    
+    props.setItemVisibility(!props.itemVisibility);
   };
 
   return (
