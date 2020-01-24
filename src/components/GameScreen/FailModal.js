@@ -8,25 +8,23 @@ const Image = styled.img`
 `;
 
 const FailBox = styled.div`
-  display: none;
+  background-color: red;
 `;
+
 
 
 const FailModal = props => {
   const hideModal = () => {
-    const box = document.getElementById("fail");
-    box.style.display = "none";
+
+    props.setFailModal(!props.failModal);
+
     let shuffle = items.sort((a, b) => {
       return 0.5 - Math.random();
     });
     props.setCurrentItem(shuffle[0]);
-    let item = document.querySelector(".ddcontainer");
-    item.style.visibility = "visible";
-
-    props.setItemVisibility(true);
-    console.log("modal hid", props.itemVisibility);
+    props.setItemVisibility(!props.itemVisibility)
   };
- 
+
   return (
     <FailBox id="fail" onClick={hideModal}>
       <h2>Uh oh!</h2>

@@ -24,70 +24,54 @@ import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 
 
 const GameScreen = () => {
-  const [itemVisibility, setItemVisibility] = React.useState(true);
-  const [count, setCount] = React.useState(0);
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
     bin: "recycling"
 });
 
-React.useEffect(() => {
-  console.log("updated itemvis", itemVisibility)
-}, [itemVisibility])
+const [itemVisibility, setItemVisibility] = React.useState(true);
+const [successModal, setSuccessModal] = React.useState(false);
+const [failModal, setFailModal] = React.useState(false);
+const [count, setCount] = React.useState(0);
 
-  const dropReactionRecycling = (e) => {
+  const dropReactionRecycling = () => {
     
-    setItemVisibility(false)   
+    setItemVisibility(!itemVisibility)   
 
-    e.containerElem.style.visibility = "hidden";
-    const success = document.getElementById("success");
-    const fail = document.getElementById("fail");
-    if (currentItem.bin === "recycling") {
-
-    success.style.display = "block";
-    setCount(count + 1);
-    } else {
-      fail.style.display = "block";
+    if(currentItem.bin === "recycling") {
+     setSuccessModal(!successModal)
+     setCount(count + 1);
     }
-
+    else {
+     setFailModal(!failModal);
+    } 
   };
 
-  const dropReactionBlack = (e) => {
-    setItemVisibility(false);
-  
-    console.log("after drop", itemVisibility);
+  const dropReactionBlack = () => {
 
-    e.containerElem.style.visibility = "hidden";
-    const success = document.getElementById("success");
-    const fail = document.getElementById("fail");
-    if (currentItem.bin === "general waste") {
-    success.style.display = "block";
-    setCount(count + 1);
-    } else {
-      fail.style.display = "block";
-    }
+    setItemVisibility(!itemVisibility);
 
+    if(currentItem.bin === "general waste") {
+      setSuccessModal(!successModal)
+      setCount(count + 1);
+     }
+     else {
+      setFailModal(!failModal);
+     } 
   };
 
-  const dropReactionCompost = (e) => {
-    setItemVisibility(false);
+  const dropReactionCompost = () => {
 
-    console.log("after drop", itemVisibility);
+    setItemVisibility(!itemVisibility);
 
-    e.containerElem.style.visibility = "hidden";
-    const success = document.getElementById("success");
-    const fail = document.getElementById("fail");
-    if (currentItem.bin === "food composting") {
-    success.style.display = "block";
-    setCount(count + 1);
-
-    } else {
-      fail.style.display = "block";
-
-    }
-    
-
+    if(currentItem.bin === "food composting") {
+      setSuccessModal(!successModal)
+      setCount(count + 1);
+     }
+     else {
+      setFailModal(!failModal);
+     } 
   };
 
   return (
@@ -97,7 +81,7 @@ React.useEffect(() => {
       <Algae2/>
       <Algae3/>
       <Crab/>
-      <Seahorse/>
+      {<Seahorse/>}
       <RedFish/>
       <Bubbles/>
       <Wave2/>
@@ -108,11 +92,11 @@ React.useEffect(() => {
       <ProgressScore count={count} />
       
       <DragDropContainer targetKey="bins">
-        <Item 
+        {itemVisibility && <Item 
         item={currentItem} 
         itemVisibility={itemVisibility}
         setItemVisibility={setItemVisibility}
-        />
+        />}
       </DragDropContainer>
 
       <DropTarget targetKey="bins" onHit={dropReactionBlack}>
@@ -127,18 +111,23 @@ React.useEffect(() => {
         <CompostBin title="compostbin" />
       </DropTarget>
 
-      <SuccessModal
+      {successModal && <SuccessModal
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
       setItemVisibility={setItemVisibility}
-      />
-      <FailModal 
+      successModal={successModal}
+      setSuccessModal={setSuccessModal}
+
+      />}
+      {failModal && <FailModal 
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
       setItemVisibility={setItemVisibility}
-      />
+      failModal={failModal}
+      setFailModal={setFailModal}
+      />}
     </div>
   );
 };
