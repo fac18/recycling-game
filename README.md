@@ -1,11 +1,32 @@
 
 
+We're building a recycling game for children aged 4-6yrs old
+
+![](https://media.giphy.com/media/KhlVSyjsbx18A/giphy.gif)
+
+Please take a look around. We're currently working on refactoring our DOM-manipulation to using States and being more Reacty!
+
 ### continuous integration 
 [![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
 
-
 ### codecov
 [![codecov](https://codecov.io/gh/fac18/recycling-game/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/recycling-game)
+
+### Here's our [playable figma prototype](https://www.figma.com/proto/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=177%3A235&scaling=scale-down)
+
+### [Design Week presentation](https://hackmd.io/@XI0fc2MpTIuI1L-y-LwoxA/SJyRokLxL#/)
+
+### [Usability Testing Notes](https://github.com/fac18/recycling-game/issues/2)
+
+
+
+
+
+
+
+
+
+
 
 
 
