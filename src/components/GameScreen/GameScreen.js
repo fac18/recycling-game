@@ -31,6 +31,11 @@ const GameScreen = () => {
     src: "images/wine-bottle.svg",
     bin: "recycling"
 });
+const [successModal, setSuccessModal] = React.useState(false);
+const [failModal, setFailModal] = React.useState(false);
+
+const [seahorse, setSeahorse] = React.useState(true)
+
 
 React.useEffect(() => {
   console.log("updated itemvis", itemVisibility)
@@ -40,16 +45,21 @@ React.useEffect(() => {
     
     setItemVisibility(false)   
 
-    e.containerElem.style.visibility = "hidden";
-    const success = document.getElementById("success");
-    const fail = document.getElementById("fail");
-    if (currentItem.bin === "recycling") {
 
-    success.style.display = "block";
-    setCount(count + 1);
-    } else {
-      fail.style.display = "block";
-    }
+    if(currentItem.bin === "recycling") {
+     setSeahorse(!seahorse);
+    } 
+
+    // e.containerElem.style.visibility = "hidden";
+    // const success = document.getElementById("success");
+    // const fail = document.getElementById("fail");
+    // if (currentItem.bin === "recycling") {
+
+    // success.style.display = "block";
+    // setCount(count + 1);
+    // } else {
+    //   fail.style.display = "block";
+    // }
 
   };
 
@@ -97,13 +107,13 @@ React.useEffect(() => {
       <Algae2/>
       <Algae3/>
       <Crab/>
-      <Seahorse/>
-      <RedFish/>
+      {seahorse && <Seahorse/>}
+      {/* <RedFish/>
       <Bubbles/>
       <Wave2/>
       <Wave3/>
       <Wave4/>
-      <Wave5/> 
+      <Wave5/>  */}
 
       <ProgressScore count={count} />
       
@@ -127,18 +137,18 @@ React.useEffect(() => {
         <CompostBin title="compostbin" />
       </DropTarget>
 
-      <SuccessModal
+      {successModal && <SuccessModal
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
       setItemVisibility={setItemVisibility}
-      />
-      <FailModal 
+      />}
+      {failModal && <FailModal 
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
       setItemVisibility={setItemVisibility}
-      />
+      />}
     </div>
   );
 };
