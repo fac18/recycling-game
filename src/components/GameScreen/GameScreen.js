@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressScore from "./ProgressScore";
-import Success from "./SuccessModal";
-import Fail from "./FailModal";
+import SuccessModal from "./SuccessModal";
+import FailModal from "./FailModal";
 import Item from "./Item";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
@@ -13,7 +13,7 @@ import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 
 const GameScreen = () => {
-  const [itemVisibility, setItemVisibility] = React.useState(null);
+  const [itemVisibility, setItemVisibility] = React.useState(true);
   const [count, setCount] = React.useState(0);
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
@@ -21,56 +21,73 @@ const GameScreen = () => {
     bin: "recycling"
 });
 
+React.useEffect(() => {
+  console.log("updated itemvis", itemVisibility)
+}, [itemVisibility])
+
   const dropReactionRecycling = (e) => {
+    
+    setItemVisibility(false)   
+
     e.containerElem.style.visibility = "hidden";
-    setItemVisibility(e.containerElem.style.visibility);
-    console.log(itemVisibility);
     const success = document.getElementById("success");
     const fail = document.getElementById("fail");
-    console.log(currentItem.bin);
     if (currentItem.bin === "recycling") {
+
     success.style.display = "block";
     setCount(count + 1);
     } else {
       fail.style.display = "block";
     }
+
   };
 
   const dropReactionBlack = (e) => {
+    setItemVisibility(false);
+  
+    console.log("after drop", itemVisibility);
+
     e.containerElem.style.visibility = "hidden";
-    setItemVisibility(e.containerElem.style.visibility);
-    console.log(itemVisibility);
     const success = document.getElementById("success");
     const fail = document.getElementById("fail");
-    console.log(currentItem.bin);
     if (currentItem.bin === "general waste") {
     success.style.display = "block";
     setCount(count + 1);
     } else {
       fail.style.display = "block";
     }
+
   };
 
   const dropReactionCompost = (e) => {
+    setItemVisibility(false);
+
+    console.log("after drop", itemVisibility);
+
     e.containerElem.style.visibility = "hidden";
-    setItemVisibility(e.containerElem.style.visibility);
-    console.log(itemVisibility);
     const success = document.getElementById("success");
     const fail = document.getElementById("fail");
-    console.log(currentItem.bin);
     if (currentItem.bin === "food composting") {
     success.style.display = "block";
     setCount(count + 1);
+
     } else {
       fail.style.display = "block";
+
     }
+    
+
   };
 
   return (
     <div>
       <ProgressScore count={count} />
       <DragDropContainer targetKey="bins">
-        <Item item={currentItem} />
+        <Item 
+        item={currentItem} 
+        itemVisibility={itemVisibility}
+        setItemVisibility={setItemVisibility}
+        />
       </DragDropContainer>
 
       <DropTarget targetKey="bins" onHit={dropReactionBlack}>
@@ -85,15 +102,17 @@ const GameScreen = () => {
         <CompostBin title="compostbin" />
       </DropTarget>
 
-      <Success 
+      <SuccessModal
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
+      setItemVisibility={setItemVisibility}
       />
-      <Fail 
+      <FailModal 
       item={currentItem} 
       setCurrentItem={setCurrentItem}
       itemVisibility={itemVisibility}
+      setItemVisibility={setItemVisibility}
       />
     </div>
   );
