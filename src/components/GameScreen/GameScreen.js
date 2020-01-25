@@ -36,11 +36,29 @@ const GameScreen = () => {
   const [count, setCount] = React.useState(0);
   const [heartCount, setHeartCount] = React.useState(3);
   const [badCount, setBadCount] = React.useState(0);
+  // const [bin, setBin] = React.useState(null);
 
-  const dropReactionRecycling = () => {
+  // const dropReaction = (currentBin, bin, setBin) => {
+  //   setItemVisibility(!itemVisibility)
+  //   setBin(bin = currentBin)
+
+  //   if (currentItem.bin === currentBin) {
+  //     setSuccessModal(!successModal);
+  //     setCount(count + 1);
+  //   } else {
+  //     setFailModal(!failModal);
+  //     setBadCount(badCount + 1);
+  //   }
+  //   console.log("I am here at the end of the if statement")
+  // };
+
+
+
+
+  const dropReactionBlack = () => {
     setItemVisibility(!itemVisibility);
 
-    if (currentItem.bin === "recycling") {
+    if (currentItem.bin === "general waste") {
       setSuccessModal(!successModal);
       setCount(count + 1);
     } else {
@@ -49,10 +67,10 @@ const GameScreen = () => {
     }
   };
 
-  const dropReactionBlack = () => {
+  const dropReactionRecycling = () => {
     setItemVisibility(!itemVisibility);
 
-    if (currentItem.bin === "general waste") {
+    if (currentItem.bin === "recycling") {
       setSuccessModal(!successModal);
       setCount(count + 1);
     } else {
