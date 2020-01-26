@@ -8,7 +8,8 @@ const Image = styled.img`
 `;
 
 const SuccessBox = styled.div`
-  background-color: green;
+  background-color: rgba(23, 235, 16, 0.479);
+  padding: 3em;
 `;
 
 const SuccessModal = props => {
