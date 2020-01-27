@@ -77,18 +77,6 @@ const GameScreen = () => {
         )}
       </DragDropContainer>
 
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("general waste")}}>
-        <BlackBin title="blackbin" />
-      </DropTarget>
-
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("recycling")}}>
-        <RecycleBin title="recyclebin" />
-      </DropTarget>
-
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("food composting")}}>
-        <CompostBin title="compostbin" />
-      </DropTarget>
-
       {successModal && (
         <SuccessModal
           item={currentItem}
@@ -109,6 +97,21 @@ const GameScreen = () => {
           setFailModal={setFailModal}
         />
       )}
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("general waste")}}>
+        <BlackBin title="blackbin" />
+      </DropTarget>
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("recycling")}}>
+        <RecycleBin title="recyclebin" />
+      </DropTarget>
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("food composting")}}>
+        <CompostBin title="compostbin" />
+      </DropTarget>
+
+      <div className="sharethis-inline-share-buttons"></div>
+      
     </div>
   );
 };
