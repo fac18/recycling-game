@@ -19,9 +19,7 @@ const LivesScore = props => {
 
   return livesArr.map(() => {
     return [
-      <div>
         <Heart />
-      </div>
     ];
   });
 };

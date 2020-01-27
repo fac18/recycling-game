@@ -5,6 +5,7 @@ import FailModal from "./FailModal";
 import Item from "./Item";
 import LivesScore from "./LivesScore";
 import { withRouter } from "react-router-dom";
+import styled from "styled-components";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
@@ -24,6 +25,13 @@ import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
 import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 
+const LivesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+`;
 
 const GameScreen = props => {
 
@@ -64,8 +72,11 @@ const GameScreen = props => {
       <Wave4 />
       <Wave5 />
 
+
       <ProgressScore count={props.count} />
+      <LivesContainer>
       <LivesScore badCount={badCount} />
+      </LivesContainer>
 
       <DragDropContainer targetKey="bins">
         {itemVisibility && (
