@@ -1,6 +1,6 @@
 import React from "react";
 import Success from "./SuccessModal";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, GetByText, findByText } from "@testing-library/react";
 
 
 test("Testing SuccessModal renders", () => {
