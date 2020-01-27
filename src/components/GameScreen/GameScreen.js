@@ -23,6 +23,8 @@ import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
 import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 
+
+
 const GameScreen = () => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
@@ -50,7 +52,7 @@ const GameScreen = () => {
   };
 
   return (
-    <div>
+    <div key="rendering">
       <Scallop />
       <Algae1 />
       <Algae2 />
