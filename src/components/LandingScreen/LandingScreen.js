@@ -70,10 +70,14 @@ const LandingScreen = () => {
       {funFactsModal && (
         <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
       )}
-      <Button type="button" handleClick={showHowToPlayModal}>
+      <Button
+        type="button"
+        handleClick={showHowToPlayModal}
+        label="How To Play"
+      >
         CLICK
       </Button>
-      <Button type="button" handleClick={showFunFactsModal}>
+      <Button type="button" handleClick={showFunFactsModal} label="Fun Facts">
         CLICK
       </Button>
     </div>
