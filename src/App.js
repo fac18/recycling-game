@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Error from "./components/Error/Error";
 import GameScreen from "./components/GameScreen/GameScreen";
 import ResultScreen from "./components/ResultScreen/ResultScreen";
+import LandingScreen from "./components/LandingScreen/LandingScreen";
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -12,11 +13,10 @@ function App() {
     <main className="App">
       <Switch>
         {/* setting game screen as home for code review */}
-        {/* <Route path="/" component={LandingScreen} exact /> */}
+        <Route path="/" render={() => <LandingScreen />} exact />
         <Route
-          path="/"
+          path="/game"
           render={() => <GameScreen count={count} setCount={setCount} />}
-          exact
         />
         {/* <Route path="/game" component={GameScreen} /> */}
         <Route

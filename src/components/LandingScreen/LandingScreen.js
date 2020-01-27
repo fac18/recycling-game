@@ -51,7 +51,7 @@ const LandingScreen = () => {
   const history = useHistory();
 
   const startGame = () => {
-    history.push("/");
+    history.push("/game");
   };
 
   return (
