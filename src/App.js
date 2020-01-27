@@ -10,14 +10,14 @@ function App() {
     <main className="App">
       <Switch>
         {/* setting game screen as home for code review */}
-        {/* <Route path="/" component={LandingScreen} exact /> */}
+        <Route path="/home" component={LandingScreen} />
         <Route path="/" component={GameScreen} exact />
         {/* <Route path="/game" component={GameScreen} /> */}
         <Route path="/results" component={ResultScreen} />
         <Route component={Error} />
       </Switch>
     </main>
-  ); 
+  );
 }
 
 export default App;
