@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
+import UIfx from "uifx"
+import clickMp3 from "./sounds/finger-snap.mp3"
+
+const click = new UIfx(clickMp3);
+
+// click.play();
 
 const Image = styled.img`
   width: 100px;
@@ -33,7 +39,7 @@ const SuccessModal = props => {
       </h2>
       <Image alt={props.item.name} src={props.item.src} />
       <p>Fun fact about {props.item.name}</p>
-      <button>OK</button>
+      <button onClick={() => {click.play()}}>OK</button>
     </SuccessBox>
   );
 };
