@@ -4,6 +4,7 @@ import SuccessModal from "./SuccessModal";
 import FailModal from "./FailModal";
 import Item from "./Item";
 import LivesScore from "./LivesScore";
+import { withRouter } from "react-router-dom";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
@@ -23,26 +24,23 @@ import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
 import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 
-const GameScreen = () => {
+const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
     bin: "recycling"
   });
-
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
   const [failModal, setFailModal] = React.useState(false);
-  const [count, setCount] = React.useState(0);
-  const [heartCount, setHeartCount] = React.useState(3);
   const [badCount, setBadCount] = React.useState(0);
 
-  const dropReaction = (currentBin) => {
-    setItemVisibility(!itemVisibility)
+  const dropReaction = currentBin => {
+    setItemVisibility(!itemVisibility);
 
     if (currentItem.bin === currentBin) {
       setSuccessModal(!successModal);
-      setCount(count + 1);
+      props.setCount(props.count + 1);
     } else {
       setFailModal(!failModal);
       setBadCount(badCount + 1);
@@ -64,8 +62,8 @@ const GameScreen = () => {
       <Wave4 />
       <Wave5 />
 
-      <ProgressScore count={count} />
-      <LivesScore heartCount={heartCount} badCount={badCount} />
+      <ProgressScore count={props.count} />
+      <LivesScore badCount={badCount} />
 
       <DragDropContainer targetKey="bins">
         {itemVisibility && (
@@ -98,22 +96,36 @@ const GameScreen = () => {
         />
       )}
 
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("general waste")}}>
+      <DropTarget
+        targetKey="bins"
+        onHit={() => {
+          dropReaction("general waste");
+        }}
+      >
         <BlackBin title="blackbin" />
       </DropTarget>
 
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("recycling")}}>
+      <DropTarget
+        targetKey="bins"
+        onHit={() => {
+          dropReaction("recycling");
+        }}
+      >
         <RecycleBin title="recyclebin" />
       </DropTarget>
 
-      <DropTarget targetKey="bins" onHit={() => {dropReaction("food composting")}}>
+      <DropTarget
+        targetKey="bins"
+        onHit={() => {
+          dropReaction("food composting");
+        }}
+      >
         <CompostBin title="compostbin" />
       </DropTarget>
 
       <div className="sharethis-inline-share-buttons"></div>
-      
     </div>
   );
 };
 
-export default GameScreen;
+export default withRouter(GameScreen);
