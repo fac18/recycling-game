@@ -111,8 +111,6 @@ const GameScreen = () => {
       <DropTarget targetKey="bins" onHit={() => {dropReaction("food composting")}}>
         <CompostBin title="compostbin" />
       </DropTarget>
-
-      <div className="sharethis-inline-share-buttons"></div>
       
     </div>
   );
