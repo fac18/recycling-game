@@ -9,7 +9,6 @@ const LivesScore = props => {
     const newLivesArr = livesArr.slice(0, -1);
     // pop mutates original array, slice returns a new one
     setLivesArr(newLivesArr);
-    console.log("This is livesArr", livesArr);
   }, [props.badCount]);
 
   React.useEffect(() => {
@@ -20,10 +19,9 @@ const LivesScore = props => {
 
   return livesArr.map(() => {
     return [
-      <div>
         <Heart />
-      </div>
     ];
   });
 };
+
 export default withRouter(LivesScore);
