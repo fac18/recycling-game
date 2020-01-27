@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+// import Button from "../Button";
 
-const HowToPlayBox = styled.div`
+const FunFactsBox = styled.div`
   background-color: rgba(23, 235, 16, 0.479);
   padding: 3em;
   position: fixed;
@@ -13,13 +14,13 @@ const HowToPlayBox = styled.div`
   overflow: scroll;
 `;
 
-const HowToPlayModal = ({ handleClose, show }) => {
+const FunFactsModal = ({ handleClose, show }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
-    <HowToPlayBox className={showHideClassName}>
+    <FunFactsBox className={showHideClassName}>
       <section className="modal-main">
-        <h2>How to play?</h2>
-        <h2>This is how to play the game</h2>
+        <h2>About recycling?</h2>
+        <h2>These are some facts about recycling</h2>
         <p>
           "At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
@@ -68,8 +69,8 @@ const HowToPlayModal = ({ handleClose, show }) => {
         {/* {children} */}
         <button onClick={handleClose}>close</button>
       </section>
-    </HowToPlayBox>
+    </FunFactsBox>
   );
 };
 
-export default HowToPlayModal;
+export default FunFactsModal;
