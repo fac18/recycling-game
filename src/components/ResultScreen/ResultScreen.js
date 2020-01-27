@@ -4,52 +4,79 @@ import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
 
-//import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
-
 const Container = styled.div`
-background-image: linear-gradient(#21B2D3, #7ABEFD);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-items: space-around;
-height: 100vh;
-width: 100vw;
+  background-image: linear-gradient(#21b2d3, #7abefd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: space-around;
+  height: 100vh;
+  width: 100vw;
 `;
 
 const PageHeader = styled.h1`
-color:orange;
+  font-family: Freckle Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  text-align: center;
+  color: #ff8a00;
+  -webkit-text-stroke: 2px black;
 `;
 
 const MessageBox = styled.div`
   width: 50vw;
   height: 20vh;
   border-radius: 10px;
-  background-color: #08345C;
+  background-color: #08345c;
   color: white;
   padding: 20px;
 `;
 
 const BadgeBox = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
+const BadgeMessage = styled.p`
+  font-family: Signika;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 50px;
+  align-items: center;
+  color: #ffffff;
+`;
 
-const ResultScreen = (props) => {
- const [badgeGiven, setBadgeGiven] = React.useState(0);
+const ResultScreen = props => {
+  const [badgeGiven, setBadgeGiven] = React.useState(0);
 
- React.useEffect (() => {
-  if (props.count >= 5 && props.count < 11) {setBadgeGiven(1)}
-  else if (props.count >= 10 && props.count < 16) {setBadgeGiven(2)}
-  else if (props.count >= 15) {setBadgeGiven(3)}
- }, [props.count, badgeGiven])
+  React.useEffect(() => {
+    if (props.count >= 5 && props.count < 11) {
+      setBadgeGiven(1);
+    } else if (props.count >= 10 && props.count < 16) {
+      setBadgeGiven(2);
+    } else if (props.count >= 15) {
+      setBadgeGiven(3);
+    }
+  }, [props.count, badgeGiven]);
 
   return (
     <Container>
       <PageHeader>NICE ONE!</PageHeader>
       <ProgressScore count={props.count} />
-      <BadgeBox> <img src={badges[badgeGiven].src} alt="An animal badge to say well done!" /><MessageBox><p>{badges[badgeGiven].message}</p></MessageBox></BadgeBox>
+      <BadgeBox>
+        {" "}
+        <img
+          src={badges[badgeGiven].src}
+          alt="An animal badge to say well done!"
+        />
+        <MessageBox>
+          <BadgeMessage>{badges[badgeGiven].message}</BadgeMessage>
+        </MessageBox>
+      </BadgeBox>
       <div>
         <Button label="Play again">{props.label}</Button>
         <Button label="learn more">{props.label}</Button>
