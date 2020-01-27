@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
+import Button from "../Button";
 
 //import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
 
@@ -50,8 +51,8 @@ const ResultScreen = (props) => {
       <ProgressScore count={props.count} />
       <BadgeBox> <img src={badges[badgeGiven].src} alt="An animal badge to say well done!" /><MessageBox><p>{badges[badgeGiven].message}</p></MessageBox></BadgeBox>
       <div>
-        <button>Play Again</button>
-        <button>more info</button>
+        <Button label="Play again">{props.label}</Button>
+        <Button label="learn more">{props.label}</Button>
       </div>
     </Container>
   );
