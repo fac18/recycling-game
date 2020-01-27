@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
-import UIfx from "uifx"
-import clickMp3 from "./sounds/finger-snap.mp3"
+import Button from "../Button"
 
-const click = new UIfx(clickMp3);
-
-// click.play();
 
 const Image = styled.img`
   width: 100px;
@@ -31,6 +27,10 @@ const SuccessModal = props => {
     props.setItemVisibility(!props.itemVisibility);
   };
 
+  const handleModal = (e) => {
+    hideModal()
+  }
+
   return (
     <SuccessBox id="success" onClick={hideModal}>
       <h2>Well Done!</h2>
@@ -39,7 +39,7 @@ const SuccessModal = props => {
       </h2>
       <Image alt={props.item.name} src={props.item.src} />
       <p>Fun fact about {props.item.name}</p>
-      <button onClick={() => {click.play()}}>OK</button>
+      <Button handleClick={handleModal} label="Okay"/>
     </SuccessBox>
   );
 };
