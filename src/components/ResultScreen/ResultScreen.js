@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-items: space-around;
+  justify-content: space-around;
   height: 100vh;
   width: 100vw;
 `;
@@ -23,6 +23,7 @@ const PageHeader = styled.h1`
   text-align: center;
   color: #ff8a00;
   -webkit-text-stroke: 2px black;
+  text-transform: uppercase;
 `;
 
 const MessageBox = styled.div`
@@ -50,6 +51,16 @@ const BadgeMessage = styled.p`
   color: #ffffff;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+`;
+
 const ResultScreen = props => {
   const [badgeGiven, setBadgeGiven] = React.useState(0);
 
@@ -65,7 +76,7 @@ const ResultScreen = props => {
 
   return (
     <Container>
-      <PageHeader>NICE ONE!</PageHeader>
+      <PageHeader>nice one!</PageHeader>
       <ProgressScore count={props.count} />
       <BadgeBox>
         {" "}
@@ -77,10 +88,10 @@ const ResultScreen = props => {
           <BadgeMessage>{badges[badgeGiven].message}</BadgeMessage>
         </MessageBox>
       </BadgeBox>
-      <div>
+      <ButtonContainer>
         <Button label="Play again">{props.label}</Button>
         <Button label="learn more">{props.label}</Button>
-      </div>
+      </ButtonContainer>
     </Container>
   );
 };
