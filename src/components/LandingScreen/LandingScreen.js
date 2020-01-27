@@ -9,7 +9,7 @@ import { ReactComponent as NightBackground } from "../../assets/night-background
 import { ReactComponent as Earth } from "../../assets/earth.svg";
 import { ReactComponent as Stars } from "../../assets/stars.svg";
 
-const LandingScreen = props => {
+const LandingScreen = () => {
   const [howToPlayModal, setHowToPlayModal] = React.useState(false);
   const [funFactsModal, setFunFactsModal] = React.useState(false);
 
@@ -45,16 +45,10 @@ const LandingScreen = props => {
       <Earth />
       <Button handleClick={startGame} label="Let's Play" />
       {howToPlayModal && (
-        <HowToPlayModal
-          show={props.show}
-          handleClose={hideHowToPlayModal}
-        ></HowToPlayModal>
+        <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
       )}
       {funFactsModal && (
-        <FunFactsModal
-          show={props.show}
-          handleClose={hideFunFactsModal}
-        ></FunFactsModal>
+        <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
       )}
       <Button type="button" handleClick={showHowToPlayModal}>
         CLICK

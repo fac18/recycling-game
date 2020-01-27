@@ -13,10 +13,9 @@ const HowToPlayBox = styled.div`
   overflow: scroll;
 `;
 
-const HowToPlayModal = ({ handleClose, show }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+const HowToPlayModal = ({ handleClose }) => {
   return (
-    <HowToPlayBox className={showHideClassName}>
+    <HowToPlayBox>
       <section className="modal-main">
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>

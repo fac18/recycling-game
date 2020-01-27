@@ -12,12 +12,12 @@ const FunFactsBox = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
+  display: block;
 `;
 
-const FunFactsModal = ({ handleClose, show }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+const FunFactsModal = ({ handleClose }) => {
   return (
-    <FunFactsBox className={showHideClassName}>
+    <FunFactsBox>
       <section className="modal-main">
         <h2>About recycling?</h2>
         <h2>These are some facts about recycling</h2>
