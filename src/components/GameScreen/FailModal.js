@@ -8,7 +8,8 @@ const Image = styled.img`
 `;
 
 const FailBox = styled.div`
-  background-color: red;
+  background-color: rgba(235, 16, 16, 0.479);
+  padding: 3em;
 `;
 
 

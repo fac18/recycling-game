@@ -37,34 +37,10 @@ const GameScreen = () => {
   const [heartCount, setHeartCount] = React.useState(3);
   const [badCount, setBadCount] = React.useState(0);
 
-  const dropReactionRecycling = () => {
-    setItemVisibility(!itemVisibility);
+  const dropReaction = (currentBin) => {
+    setItemVisibility(!itemVisibility)
 
-    if (currentItem.bin === "recycling") {
-      setSuccessModal(!successModal);
-      setCount(count + 1);
-    } else {
-      setFailModal(!failModal);
-      setBadCount(badCount + 1);
-    }
-  };
-
-  const dropReactionBlack = () => {
-    setItemVisibility(!itemVisibility);
-
-    if (currentItem.bin === "general waste") {
-      setSuccessModal(!successModal);
-      setCount(count + 1);
-    } else {
-      setFailModal(!failModal);
-      setBadCount(badCount + 1);
-    }
-  };
-
-  const dropReactionCompost = () => {
-    setItemVisibility(!itemVisibility);
-
-    if (currentItem.bin === "food composting") {
+    if (currentItem.bin === currentBin) {
       setSuccessModal(!successModal);
       setCount(count + 1);
     } else {
@@ -80,7 +56,7 @@ const GameScreen = () => {
       <Algae2 />
       <Algae3 />
       <Crab />
-      {<Seahorse />}
+      <Seahorse />
       <RedFish />
       <Bubbles />
       <Wave2 />
@@ -100,18 +76,6 @@ const GameScreen = () => {
           />
         )}
       </DragDropContainer>
-
-      <DropTarget targetKey="bins" onHit={dropReactionBlack}>
-        <BlackBin title="blackbin" />
-      </DropTarget>
-
-      <DropTarget targetKey="bins" onHit={dropReactionRecycling}>
-        <RecycleBin title="recyclebin" />
-      </DropTarget>
-
-      <DropTarget targetKey="bins" onHit={dropReactionCompost}>
-        <CompostBin title="compostbin" />
-      </DropTarget>
 
       {successModal && (
         <SuccessModal
@@ -133,6 +97,21 @@ const GameScreen = () => {
           setFailModal={setFailModal}
         />
       )}
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("general waste")}}>
+        <BlackBin title="blackbin" />
+      </DropTarget>
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("recycling")}}>
+        <RecycleBin title="recyclebin" />
+      </DropTarget>
+
+      <DropTarget targetKey="bins" onHit={() => {dropReaction("food composting")}}>
+        <CompostBin title="compostbin" />
+      </DropTarget>
+
+      <div className="sharethis-inline-share-buttons"></div>
+      
     </div>
   );
 };
