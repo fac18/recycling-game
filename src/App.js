@@ -8,6 +8,7 @@ import LandingScreen from "./components/LandingScreen/LandingScreen";
 
 function App() {
   const [count, setCount] = React.useState(0);
+  const [badCount, setBadCount] = React.useState(0);
 
   return (
     <main className="App">
@@ -16,12 +17,25 @@ function App() {
         <Route path="/" render={() => <LandingScreen />} exact />
         <Route
           path="/game"
-          render={() => <GameScreen count={count} setCount={setCount} />}
+          render={() => (
+            <GameScreen
+              count={count}
+              setCount={setCount}
+              badCount={badCount}
+              setBadCount={setBadCount}
+            />
+          )}
         />
-        {/* <Route path="/game" component={GameScreen} /> */}
         <Route
           path="/results"
-          render={() => <ResultScreen count={count} setCount={setCount} />}
+          render={() => (
+            <ResultScreen
+              count={count}
+              setCount={setCount}
+              badCount={badCount}
+              setBadCount={setBadCount}
+            />
+          )}
         />
         <Route component={Error} />
       </Switch>
