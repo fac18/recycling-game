@@ -4,6 +4,7 @@ import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
 import { Container } from "../MasterCss";
+import FunFactsModal from "../LandingScreen/FunFacts";
 
 const PageHeader = styled.h1`
   font-family: Freckle Face;
@@ -80,8 +81,13 @@ const ResultScreen = props => {
         </MessageBox>
       </BadgeBox>
       <ButtonContainer>
+        {props.funFactsModal && (
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
+        )}
         <Button label="Play again">{props.label}</Button>
-        <Button label="learn more">{props.label}</Button>
+        <Button label="learn more" handleClick={props.showFunFactsModal}>
+          {props.label}
+        </Button>
       </ButtonContainer>
     </Container>
   );

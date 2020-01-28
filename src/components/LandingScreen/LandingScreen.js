@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-
+// import { showFunFactsModal, hideFunFactsModal } from "../../utils/functions";
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -70,17 +70,8 @@ const LandingScreen = props => {
     console.log("This is inside show modal function ");
   };
 
-  const showFunFactsModal = () => {
-    props.setFunFactsModal(!props.funFactsModal);
-    console.log("This is inside show modal function ");
-  };
-
   const hideHowToPlayModal = () => {
     setHowToPlayModal(!howToPlayModal);
-  };
-
-  const hideFunFactsModal = () => {
-    props.setFunFactsModal(!props.funFactsModal);
   };
 
   const history = useHistory();
@@ -109,7 +100,7 @@ const LandingScreen = props => {
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
         )}
         {props.funFactsModal && (
-          <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
@@ -118,7 +109,7 @@ const LandingScreen = props => {
         ></Button>
         <Button
           type="button"
-          handleClick={showFunFactsModal}
+          handleClick={props.showFunFactsModal}
           label="Fun Facts"
         ></Button>
       </ButtonContainer>
