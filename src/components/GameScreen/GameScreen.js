@@ -43,14 +43,13 @@ const LivesContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 300px;
-
 `;
 
 const Wave5Div = styled.div`
   width: 100%;
   height: auto;
   position: fixed;
-  bottom: -10px;
+  bottom: -40px;
   left: 0;
 `;
 
@@ -153,8 +152,7 @@ const SeahorseBox = styled.div`
   position: fixed;
   left: 16.86%;
   right: 76.57%;
-  top: 83.69%;
-  bottom: 3.27%;
+  bottom: -3%;
   z-index: 900;
 `;
 
@@ -190,8 +188,6 @@ const ItemText = styled.h2`
   margin: 0;
 `;
 
-
-
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
@@ -201,7 +197,6 @@ const GameScreen = props => {
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
   const [failModal, setFailModal] = React.useState(false);
-  const [badCount, setBadCount] = React.useState(0);
 
   const dropReaction = currentBin => {
     setItemVisibility(!itemVisibility);
@@ -211,7 +206,7 @@ const GameScreen = props => {
       props.setCount(props.count + 1);
     } else {
       setFailModal(!failModal);
-      setBadCount(badCount + 1);
+      props.setBadCount(props.badCount + 1);
     }
   };
 
@@ -240,7 +235,7 @@ const GameScreen = props => {
 
       <Header>
         <LivesContainer>
-          <LivesScore badCount={badCount} />
+          <LivesScore badCount={props.badCount} />
         </LivesContainer>
         <ProgressScore gameScreen count={props.count} />
       </Header>

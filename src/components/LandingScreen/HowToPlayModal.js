@@ -5,11 +5,19 @@ import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 
 
+import { ReactComponent as Cross } from "../../assets/x-button.svg";
+
 const HowToPlayBox = styled.div`
+<<<<<<< HEAD
 background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);  padding: 3em;
+=======
+  background-image: linear-gradient(#21b2d3, #7abefd);
+  padding: 3em;
+>>>>>>> master
   position: fixed;
   width: 80%;
-  height: 50%;
+  height: 80%;
+  opacity: 0.9;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,6 +50,7 @@ const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       <section className="modal-main">
+        <Cross onClick={handleClose} />
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>
         <div className="howToBox"><RecycleBin width="30%"/><Box> Drag and drop all items that CAN BE RECYCLED into this bin.</Box></div>
@@ -50,7 +59,6 @@ const HowToPlayModal = ({ handleClose }) => {
         <div className="howToBox"><Box>This is your LIFE. If you put the item in the worng bin you lose a life</Box></div>
         <div className="howToBox"><Box>If you put the item in the right bin you get POINTS</Box></div>
         {/* {children} */}
-        <button onClick={handleClose}>close</button>
       </section>
     </HowToPlayBox>
   );

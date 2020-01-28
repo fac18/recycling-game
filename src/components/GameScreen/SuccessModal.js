@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
-import Button from "../Button"
-
-
-const Image = styled.img`
-  width: 100px;
-  height: 100px;
-`;
+import Button from "../Button";
+import {
+  MessageBox,
+  BadgeBox,
+  BoxMessage,
+  ResponseModalHeader,
+  MessageImage
+} from "../MasterCss";
 
 const SuccessBox = styled.div`
   background-color: rgba(23, 235, 16, 0.479);
@@ -17,15 +18,14 @@ const SuccessBox = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   z-index: 1500;
+  padding: 0px;
 `;
 
 const SuccessModal = props => {
-
   const hideModal = () => {
-
     props.setSuccessModal(!props.successModal);
 
     let shuffle = items.sort((a, b) => {
@@ -36,18 +36,22 @@ const SuccessModal = props => {
   };
 
   const handleModal = () => {
-    hideModal()
-  }
+    hideModal();
+  };
 
   return (
     <SuccessBox id="success" onClick={hideModal}>
-      <h2>Well Done!</h2>
-      <h2>
+      <ResponseModalHeader>Well Done!</ResponseModalHeader>
+      <ResponseModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
-      </h2>
-      <Image alt={props.item.name} src={props.item.src} />
-      <p>Fun fact about {props.item.name}</p>
-      <Button handleClick={handleModal} label="Okay"/>
+      </ResponseModalHeader>
+      <BadgeBox>
+        <MessageImage alt={props.item.name} src={props.item.src} />
+        <MessageBox>
+          <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
+        </MessageBox>
+      </BadgeBox>
+      <Button handleClick={handleModal} label="Okay" />
     </SuccessBox>
   );
 };
