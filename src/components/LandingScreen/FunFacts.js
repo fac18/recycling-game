@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// import Button from "../Button";
+
+import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 const FunFactsBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -15,25 +16,11 @@ const FunFactsBox = styled.div`
   display: block;
 `;
 
-const Cross = styled.div`
-  background-color: #a10094;
-  display: flex;
-  align-content: flex-end;
-  justify-content: center;
-  width: fit-content;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 25px;
-  color: white;
-  font-weight: bold;
-`;
-
 const FunFactsModal = ({ handleClose }) => {
   return (
     <FunFactsBox>
       <section className="modal-main">
-        <Cross onClick={handleClose}>X</Cross>
+        <Cross onClick={handleClose} />
         <h2>About recycling?</h2>
         <h2>These are some facts about recycling</h2>
         <p>

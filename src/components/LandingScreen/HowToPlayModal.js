@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { ReactComponent as Cross } from "../../assets/x-button.svg";
+
 const HowToPlayBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
   padding: 3em;
@@ -14,24 +16,11 @@ const HowToPlayBox = styled.div`
   overflow: scroll;
 `;
 
-const Cross = styled.div`
-  background-color: #a10094;
-  display: flex;
-  align-content: flex-end;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 25px;
-  color: white;
-  font-weight: bold;
-`;
-
 const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       <section className="modal-main">
-        <Cross onClick={handleClose}>X</Cross>
+        <Cross onClick={handleClose} />
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>
         <p>
