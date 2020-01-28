@@ -17,6 +17,7 @@ const MessageBox = styled.div`
   background-color: #08345c;
   color: white;
   padding: 20px;
+  z-index: 2000;
 `;
 
 const BadgeBox = styled.div`
@@ -60,4 +61,3 @@ export {
   ResponseModalHeader,
   MessageImage
 };
-

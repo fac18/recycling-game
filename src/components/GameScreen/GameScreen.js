@@ -2,6 +2,7 @@ import React from "react";
 import ProgressScore from "./ProgressScore";
 import SuccessModal from "./SuccessModal";
 import FailModal from "./FailModal";
+import OptionsModal from "./OptionsModal";
 import Item from "./Item";
 import LivesScore from "./LivesScore";
 import styled from "styled-components";
@@ -9,6 +10,7 @@ import { Container } from "../MasterCss";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
+import { ReactComponent as PauseIcon } from "../../assets/pause-icon.svg";
 import { ReactComponent as Wave2 } from "../../assets/sea-wave-2.svg";
 import { ReactComponent as Wave3 } from "../../assets/sea-wave-3.svg";
 import { ReactComponent as Wave4 } from "../../assets/sea-wave-4.svg";
@@ -33,8 +35,10 @@ const Header = styled.div`
   height: 15vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
+  padding-left: 5px;
 `;
 
 const LivesContainer = styled.div`
@@ -42,7 +46,6 @@ const LivesContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 300px;
 `;
 
 const Wave5Div = styled.div`
@@ -188,6 +191,10 @@ const ItemText = styled.h2`
   margin: 0;
 `;
 
+const PauseBox = styled.div`
+  justify-self: flex-start;
+`;
+
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
@@ -197,6 +204,7 @@ const GameScreen = props => {
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
   const [failModal, setFailModal] = React.useState(false);
+  const [optionsModal, setOptionsModal] = React.useState(false);
 
   const dropReaction = currentBin => {
     setItemVisibility(!itemVisibility);
@@ -208,6 +216,10 @@ const GameScreen = props => {
       setFailModal(!failModal);
       props.setBadCount(props.badCount + 1);
     }
+  };
+
+  const showOptionsModal = () => {
+    setOptionsModal(!optionsModal);
   };
 
   return (
@@ -232,8 +244,19 @@ const GameScreen = props => {
           setFailModal={setFailModal}
         />
       )}
+      {optionsModal && (
+        <OptionsModal
+          optionsModal={optionsModal}
+          setOptionsModal={setOptionsModal}
+          setCount={props.setCount}
+          setBadCount={props.setBadCount}
+        />
+      )}
 
       <Header>
+        <PauseBox>
+          <PauseIcon onClick={showOptionsModal} />
+        </PauseBox>
         <LivesContainer>
           <LivesScore badCount={props.badCount} />
         </LivesContainer>
