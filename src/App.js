@@ -17,6 +17,7 @@ function App() {
 
   const [count, setCount] = React.useState(0);
   const [funFactsModal, setFunFactsModal] = React.useState(false);
+  const [badCount, setBadCount] = React.useState(0);
 
   return (
     <main className="App">
@@ -36,9 +37,15 @@ function App() {
         />
         <Route
           path="/game"
-          render={() => <GameScreen count={count} setCount={setCount} />}
+          render={() => (
+            <GameScreen
+              count={count}
+              setCount={setCount}
+              badCount={badCount}
+              setBadCount={setBadCount}
+            />
+          )}
         />
-        {/* <Route path="/game" component={GameScreen} /> */}
         <Route
           path="/results"
           render={() => (
@@ -49,6 +56,8 @@ function App() {
               setFunFactsModal={setFunFactsModal}
               showFunFactsModal={showFunFactsModal}
               hideFunFactsModal={hideFunFactsModal}
+              badCount={badCount}
+              setBadCount={setBadCount}
             />
           )}
         />
