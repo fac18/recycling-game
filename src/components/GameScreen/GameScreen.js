@@ -50,7 +50,7 @@ const Wave5Div = styled.div`
   width: 100%;
   height: auto;
   position: fixed;
-  bottom: -10px;
+  bottom: -40px;
   left: 0;
 `;
 
@@ -153,8 +153,7 @@ const SeahorseBox = styled.div`
   position: fixed;
   left: 16.86%;
   right: 76.57%;
-  top: 83.69%;
-  bottom: 3.27%;
+  bottom: -3%;
   z-index: 900;
 `;
 
