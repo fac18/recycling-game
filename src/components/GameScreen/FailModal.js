@@ -10,6 +10,12 @@ const Image = styled.img`
 const FailBox = styled.div`
   background-color: rgba(235, 16, 16, 0.479);
   padding: 3em;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
 `;
 
 

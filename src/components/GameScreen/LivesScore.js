@@ -9,18 +9,18 @@ const LivesScore = props => {
     const newLivesArr = livesArr.slice(0, -1);
     // pop mutates original array, slice returns a new one
     setLivesArr(newLivesArr);
+    // eslint-disable-next-line
   }, [props.badCount]);
 
   React.useEffect(() => {
     if (props.badCount === 3) {
       setTimeout(() => props.history.push("/results"), 1000);
     }
+    // eslint-disable-next-line
   }, [props.badCount]);
 
   return livesArr.map(() => {
-    return [
-        <Heart />
-    ];
+    return [<Heart />];
   });
 };
 

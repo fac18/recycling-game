@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
 
@@ -9,6 +9,10 @@ const ScoreContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 20vw;
+
+    ${props => props.resultsScore && css`
+      
+    `};
 `;
 
 const Score = styled.p`
@@ -34,3 +38,7 @@ const ProgressScore = props => {
 };
 
 export default ProgressScore;
+
+  // position: fixed;
+  // top: 25px;
+  // right: 25px;
