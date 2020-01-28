@@ -62,4 +62,3 @@ export {
   ResponseModalHeader,
   MessageImage
 };
-

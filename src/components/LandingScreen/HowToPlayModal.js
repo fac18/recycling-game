@@ -17,16 +17,16 @@ const HowToPlayBox = styled.div`
 background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);  padding: 3em;
   padding: 2em;
   position: absolute;
-  width: 80vw;
-  height: 90vh;
+  width: 90vw;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1500;
-  top: -18.5em;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
+  z-index: 3000;
 `;
 
 const TextH2 = styled.h2`
