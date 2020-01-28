@@ -12,6 +12,14 @@ const Image = styled.img`
 const SuccessBox = styled.div`
   background-color: rgba(23, 235, 16, 0.479);
   padding: 3em;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
 `;
 
 const SuccessModal = props => {
@@ -27,7 +35,7 @@ const SuccessModal = props => {
     props.setItemVisibility(!props.itemVisibility);
   };
 
-  const handleModal = (e) => {
+  const handleModal = () => {
     hideModal()
   }
 
