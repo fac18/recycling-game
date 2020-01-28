@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-
+// import { showFunFactsModal, hideFunFactsModal } from "../../utils/functions";
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -55,16 +55,6 @@ const ButtonContainer = styled.div`
   align-content: flex-start;
 `;
 
-// const Stars = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 100vh;
-//   width: 100vw;
-//   z-index: 1;
-// `;
-
 const Stars = styled.div`
   position: absolute;
   display: flex;
@@ -72,26 +62,16 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 `;
-const LandingScreen = () => {
+const LandingScreen = props => {
   const [howToPlayModal, setHowToPlayModal] = React.useState(false);
-  const [funFactsModal, setFunFactsModal] = React.useState(false);
 
   const showHowToPlayModal = () => {
     setHowToPlayModal(!howToPlayModal);
     console.log("This is inside show modal function ");
   };
 
-  const showFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
-    console.log("This is inside show modal function ");
-  };
-
   const hideHowToPlayModal = () => {
     setHowToPlayModal(!howToPlayModal);
-  };
-
-  const hideFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
   };
 
   const history = useHistory();
@@ -119,8 +99,8 @@ const LandingScreen = () => {
         {howToPlayModal && (
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
         )}
-        {funFactsModal && (
-          <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
+        {props.funFactsModal && (
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
@@ -129,7 +109,7 @@ const LandingScreen = () => {
         ></Button>
         <Button
           type="button"
-          handleClick={showFunFactsModal}
+          handleClick={props.showFunFactsModal}
           label="Fun Facts"
         ></Button>
       </ButtonContainer>

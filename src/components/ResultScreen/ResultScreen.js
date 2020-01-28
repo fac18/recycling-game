@@ -5,6 +5,9 @@ import { useHistory } from "react-router-dom";
 import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
+
+import FunFactsModal from "../LandingScreen/FunFacts";
+
 import {
   Container,
   MessageBox,
@@ -71,10 +74,16 @@ const ResultScreen = props => {
         </MessageBox>
       </BadgeBox>
       <ButtonContainer>
+        {props.funFactsModal && (
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
+        )}
+        <Button label="learn more" handleClick={props.showFunFactsModal}>
+          {props.label}
+        </Button>
+
         <Button label="Play again" handleClick={restartGame}>
           {props.label}
         </Button>
-        <Button label="learn more">{props.label}</Button>
       </ButtonContainer>
     </Container>
   );
