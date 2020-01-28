@@ -17,7 +17,9 @@ const MessageBox = styled.div`
   background-color: #08345c;
   color: white;
   padding: 20px;
-  margin: 2em;
+  margin: 1em;
+  display:flex;
+  flex-direction: row;
 `;
 
 const BadgeBox = styled.div`
@@ -47,6 +49,8 @@ const ResponseModalHeader = styled.h2`
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
+  width: 60vw;
+  padding-top: 0.5em;
 `;
 
 const MessageImage = styled.img`

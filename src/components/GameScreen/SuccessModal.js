@@ -11,7 +11,7 @@ import {
 } from "../MasterCss";
 
 const SuccessBox = styled.div`
-  background-color: rgba(23, 235, 16, 0.479);
+  background-color: rgba(23, 235, 16, 0.7);
   padding: 3em;
   width: 100vw;
   height: 100vh;
@@ -46,9 +46,10 @@ const SuccessModal = props => {
         {props.item.name} go in the {props.item.bin} bin.
       </ResponseModalHeader>
       <BadgeBox>
-        <MessageImage alt={props.item.name} src={props.item.src} />
+        
         <MessageBox>
-          <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
+        <MessageImage alt={props.item.name} src={props.item.src} />
+        <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
         </MessageBox>
       </BadgeBox>
       <Button handleClick={handleModal} label="Okay" />
