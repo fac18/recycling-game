@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-
+// import { showFunFactsModal, hideFunFactsModal } from "../../utils/functions";
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -20,19 +20,32 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #ff8a00;
+  background-color: #ff8a00;
   font-family: "Freckle Face", cursive;
-  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
   text-align: center;
-  line-height: 50px;
+  line-height: 130px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 `;
 
 const TitleBig = styled.h1`
-  color: #ff8a00;
+  background-color: #ff8a00;
   font-family: "Freckle Face", cursive;
   text-align: center;
-  font-size: 70px;
+  font-size: 110px;
   font-weight: bold;
+  // -webkit-text-stroke: 1px black;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 `;
 
 const Octopus = styled.div`
@@ -43,27 +56,18 @@ const Octopus = styled.div`
 
 const Earth = styled.div`
   position: absolute;
-  top: 290px;
+  bottom: 0px;
   left: -150px;
+  overflow: hidden;
 `;
 
 const ButtonContainer = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-content: flex-start;
+  flex-direction: row;
+  width: 100vh;
+  justify-content: space-between;
 `;
-
-// const Stars = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 100vh;
-//   width: 100vw;
-//   z-index: 1;
-// `;
 
 const Stars = styled.div`
   position: absolute;
@@ -72,28 +76,7 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 `;
-const LandingScreen = () => {
-  const [howToPlayModal, setHowToPlayModal] = React.useState(false);
-  const [funFactsModal, setFunFactsModal] = React.useState(false);
-
-  const showHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-    console.log("This is inside show modal function ");
-  };
-
-  const showFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
-    console.log("This is inside show modal function ");
-  };
-
-  const hideHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-  };
-
-  const hideFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
-  };
-
+const LandingScreen = props => {
   const history = useHistory();
 
   const startGame = () => {
@@ -114,22 +97,24 @@ const LandingScreen = () => {
       <Earth>
         <EarthSvg />
       </Earth>
+      <Button handleClick={startGame} label="Let's Play"></Button>
       <ButtonContainer>
-        <Button handleClick={startGame} label="Let's Play" />
-        {howToPlayModal && (
-          <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
+        {props.howToPlayModal && (
+          <HowToPlayModal
+            handleClose={props.hideHowToPlayModal}
+          ></HowToPlayModal>
         )}
-        {funFactsModal && (
-          <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
+        {props.funFactsModal && (
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
-          handleClick={showHowToPlayModal}
+          handleClick={props.showHowToPlayModal}
           label="How To Play"
         ></Button>
         <Button
           type="button"
-          handleClick={showFunFactsModal}
+          handleClick={props.showFunFactsModal}
           label="Fun Facts"
         ></Button>
       </ButtonContainer>

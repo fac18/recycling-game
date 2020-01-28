@@ -1,75 +1,51 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
+import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
+import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
+import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
+import Button from "../Button";
+import {
+  MessageBox,
+  BoxMessage,
+  BadgeBox
+} from "../MasterCss";
 
-import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 const HowToPlayBox = styled.div`
-  background-image: linear-gradient(#21b2d3, #7abefd);
-  padding: 3em;
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  opacity: 0.9;
-  top: 50%;
+background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);  padding: 3em;
+  padding: 2em;
+  position: absolute;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1500;
+  top: -18.5em;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
 `;
 
+
+
+
 const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
-      <section className="modal-main">
-        <Cross onClick={handleClose} />
+      {/* <section className="modal-main"> */}
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>
-        <p>
-          "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat."
-        </p>
-        <p>
-          "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat."
-        </p>
-        <p>
-          "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat."
-        </p>
+        <MessageBox><BadgeBox><RecycleBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><BlackBin width="20%" height="20%"/><BoxMessage>Drag and drop all the items that CANNOT BE RECYCLED into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><CompostBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><Heart width="20%" height="20%"/><BoxMessage>This is your LIFE. If you put the item in the worng bin you lose a life</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><StarFish width="20%" height="20%" /><BoxMessage>If you put the item in the right bin you get POINTS</BoxMessage></BadgeBox></MessageBox>
         {/* {children} */}
-      </section>
+        <Button handleClick={handleClose} label="Close"></Button>
+      {/* </section> */}
     </HowToPlayBox>
   );
 };
