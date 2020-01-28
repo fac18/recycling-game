@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-// import { showFunFactsModal, hideFunFactsModal } from "../../utils/functions";
+
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -17,6 +17,7 @@ const Container = styled.div`
   justify-content: space-around;
   height: 100vh;
   width: 100vw;
+  z-index: -10;
 `;
 
 const Title = styled.h1`
@@ -32,6 +33,7 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+
 `;
 
 const TitleBig = styled.h1`
@@ -46,6 +48,12 @@ const TitleBig = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+
+
+
+
 `;
 
 const Octopus = styled.div`
@@ -58,7 +66,7 @@ const Earth = styled.div`
   position: absolute;
   bottom: 0px;
   left: -150px;
-  overflow: hidden;
+  overFlow: hidden;
 `;
 
 const ButtonContainer = styled.div`
@@ -67,7 +75,18 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   width: 100vh;
   justify-content: space-between;
+  margin-bottom: 0.5em;
 `;
+
+// const Stars = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   height: 100vh;
+//   width: 100vw;
+//   z-index: 1;
+// `;
 
 const Stars = styled.div`
   position: absolute;
@@ -76,7 +95,28 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 `;
-const LandingScreen = props => {
+const LandingScreen = () => {
+  const [howToPlayModal, setHowToPlayModal] = React.useState(false);
+  const [funFactsModal, setFunFactsModal] = React.useState(false);
+
+  const showHowToPlayModal = () => {
+    setHowToPlayModal(!howToPlayModal);
+    console.log("This is inside show modal function ");
+  };
+
+  const showFunFactsModal = () => {
+    setFunFactsModal(!funFactsModal);
+    console.log("This is inside show modal function ");
+  };
+
+  const hideHowToPlayModal = () => {
+    setHowToPlayModal(!howToPlayModal);
+  };
+
+  const hideFunFactsModal = () => {
+    setFunFactsModal(!funFactsModal);
+  };
+
   const history = useHistory();
 
   const startGame = () => {
@@ -97,24 +137,22 @@ const LandingScreen = props => {
       <Earth>
         <EarthSvg />
       </Earth>
-      <Button handleClick={startGame} label="Let's Play"></Button>
+      <Button type="button" handleClick={startGame} label="Let's Play!"></Button>
       <ButtonContainer>
-        {props.howToPlayModal && (
-          <HowToPlayModal
-            handleClose={props.hideHowToPlayModal}
-          ></HowToPlayModal>
+        {howToPlayModal && (
+          <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
         )}
-        {props.funFactsModal && (
-          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
+        {funFactsModal && (
+          <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
-          handleClick={props.showHowToPlayModal}
+          handleClick={showHowToPlayModal}
           label="How To Play"
         ></Button>
         <Button
           type="button"
-          handleClick={props.showFunFactsModal}
+          handleClick={showFunFactsModal}
           label="Fun Facts"
         ></Button>
       </ButtonContainer>
