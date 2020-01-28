@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+
 import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
@@ -46,6 +48,14 @@ const ResultScreen = props => {
     }
   }, [props.count, badgeGiven]);
 
+  const history = useHistory();
+
+  const restartGame = () => {
+    props.setCount(0);
+    props.setBadCount(0);
+    history.push("/game");
+  };
+
   return (
     <Container>
       <PageHeader>nice one!</PageHeader>
@@ -61,7 +71,9 @@ const ResultScreen = props => {
         </MessageBox>
       </BadgeBox>
       <ButtonContainer>
-        <Button label="Play again">{props.label}</Button>
+        <Button label="Play again" handleClick={restartGame}>
+          {props.label}
+        </Button>
         <Button label="learn more">{props.label}</Button>
       </ButtonContainer>
     </Container>
