@@ -6,7 +6,7 @@ import {
   MessageBox,
   BadgeBox,
   BoxMessage,
-  ResponseModalHeader,
+  ModalHeader,
   MessageImage
 } from "../MasterCss";
 
@@ -41,17 +41,17 @@ const FailModal = props => {
 
   return (
     <FailBox id="fail" onClick={hideModal}>
-      <ResponseModalHeader>Uh Oh!</ResponseModalHeader>
-      <ResponseModalHeader>
+      <ModalHeader>Uh Oh!</ModalHeader>
+      <ModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
-      </ResponseModalHeader>
+      </ModalHeader>
       <BadgeBox>
         <MessageImage alt={props.item.name} src={props.item.src} />
         <MessageBox>
           <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
         </MessageBox>
       </BadgeBox>
-      <Button handleClick={handleModal} label="Okay" />
+      <Button primary handleClick={handleModal} label="Okay" />
     </FailBox>
   );
 };

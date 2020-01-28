@@ -137,7 +137,7 @@ const LandingScreen = () => {
       <Earth>
         <EarthSvg />
       </Earth>
-      <Button type="button" handleClick={startGame} label="Let's Play!"></Button>
+      <Button primary type="button" handleClick={startGame} label="Let's Play!" />
       <ButtonContainer>
         {howToPlayModal && (
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
