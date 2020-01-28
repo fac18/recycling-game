@@ -29,6 +29,12 @@ background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(1
   z-index: 3000;
 `;
 
+const TextH2 = styled.h2`
+  font-family: bungee;
+  font-size: 64px;
+  color: white;
+  
+`;
 
 
 
@@ -36,8 +42,8 @@ const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       {/* <section className="modal-main"> */}
-        <h2>How to play?</h2>
-        <h2>This is how to play the game</h2>
+        <TextH2>How to play?</TextH2>
+        <TextH2>This is how to play the game</TextH2>
         <MessageBox><BadgeBox><RecycleBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><BlackBin width="20%" height="20%"/><BoxMessage>Drag and drop all the items that CANNOT BE RECYCLED into this bin</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><CompostBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
