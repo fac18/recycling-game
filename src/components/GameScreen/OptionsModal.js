@@ -58,8 +58,8 @@ const OptionsModal = props => {
     <OptionsBox>
       <PlayIcon onClick={hideOptionsModal} />
       <OptionsList>
-        <OptionsListItem>How to play</OptionsListItem>
-        <OptionsListItem>Recycling Information</OptionsListItem>
+        <OptionsListItem onClick={props.showHowToPlayModal}>How to play</OptionsListItem>
+        <OptionsListItem onClick={props.showFunFactsModal}>Recycling Information</OptionsListItem>
         <OptionsListItem onClick={quitGame}>Quit</OptionsListItem>
       </OptionsList>
     </OptionsBox>

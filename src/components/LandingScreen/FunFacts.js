@@ -5,15 +5,16 @@ import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 const FunFactsBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
-  padding: 3em;
-  position: fixed;
-  width: 80%;
-  height: 50%;
+  padding: 2em;
+  position: absolute;
+  width: 90vw;
+  height: 85vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
   display: block;
+  z-index: 3000;
 `;
 
 const FunFactsModal = ({ handleClose }) => {

@@ -7,6 +7,8 @@ import Item from "./Item";
 import LivesScore from "./LivesScore";
 import styled from "styled-components";
 import { Container } from "../MasterCss";
+import HowToPlayModal from "../LandingScreen/HowToPlayModal";
+import FunFactsModal from "../LandingScreen/FunFacts";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
@@ -250,7 +252,26 @@ const GameScreen = props => {
           setOptionsModal={setOptionsModal}
           setCount={props.setCount}
           setBadCount={props.setBadCount}
+          funFactsModal={props.funFactsModal}
+          setFunFactsModal={props.setFunFactsModal}
+          howToPlayModal={props.howToPlayModal}
+          setHowToPlayModal={props.setHowToPlayModal}
+          showFunFactsModal={props.showFunFactsModal}
+          hideFunFactsModal={props.hideFunFactsModal}
+          hideHowToPlayModal={props.hideHowToPlayModal}
+          showHowToPlayModal={props.showHowToPlayModal}
         />
+      )}
+
+      {props.howToPlayModal && (
+        <HowToPlayModal
+          handleClose={props.hideHowToPlayModal}
+        ></HowToPlayModal>
+      )}
+      {props.funFactsModal && (
+        <FunFactsModal
+          handleClose={props.hideFunFactsModal}
+        ></FunFactsModal>
       )}
 
       <Header>
