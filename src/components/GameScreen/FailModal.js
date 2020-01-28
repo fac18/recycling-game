@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
+import Button from "../Button";
 
 const Image = styled.img`
   width: 100px;
@@ -13,8 +14,10 @@ const FailBox = styled.div`
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 1500;
 `;
 
@@ -32,6 +35,10 @@ const FailModal = props => {
     props.setItemVisibility(!props.itemVisibility)
   };
 
+  const handleModal = () => {
+    hideModal()
+  }
+
   return (
     <FailBox id="fail" onClick={hideModal}>
       <h2>Uh oh!</h2>
@@ -40,7 +47,7 @@ const FailModal = props => {
       </h2>
       <Image alt={props.item.name} src={props.item.src} />
       <p>Fun fact about {props.item.name}</p>
-      <button>OK</button>
+      <Button handleClick={handleModal} label="Okay"/>
     </FailBox>
   );
 };
