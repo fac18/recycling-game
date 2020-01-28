@@ -4,6 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
+import PlayButton from "../playButton"
 
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
@@ -22,16 +23,17 @@ const Container = styled.div`
 const Title = styled.h1`
   color: #ff8a00;
   font-family: "Freckle Face", cursive;
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
   line-height: 50px;
+  
 `;
 
 const TitleBig = styled.h1`
   color: #ff8a00;
   font-family: "Freckle Face", cursive;
   text-align: center;
-  font-size: 70px;
+  font-size: 110px;
   font-weight: bold;
 `;
 
@@ -48,11 +50,11 @@ const Earth = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-content: flex-start;
+  flex-direction: row;
+  width: 100vh;
+  justify-content: space-between;
 `;
 
 // const Stars = styled.div`
@@ -114,8 +116,8 @@ const LandingScreen = () => {
       <Earth>
         <EarthSvg />
       </Earth>
+      <PlayButton handleClick={startGame} label="Let's Play" />
       <ButtonContainer>
-        <Button handleClick={startGame} label="Let's Play" />
         {howToPlayModal && (
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
         )}
