@@ -3,16 +3,17 @@ import styled from "styled-components";
 import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
+import { Container } from "../MasterCss";
 
-const Container = styled.div`
-  background-image: linear-gradient(#21b2d3, #7abefd);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 100vh;
-  width: 100vw;
-`;
+// const Container = styled.div`
+//   background-image: linear-gradient(#21b2d3, #7abefd);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   height: 100vh;
+//   width: 100vw;
+// `;
 
 const PageHeader = styled.h1`
   font-family: Freckle Face;

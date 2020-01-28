@@ -4,8 +4,8 @@ import SuccessModal from "./SuccessModal";
 import FailModal from "./FailModal";
 import Item from "./Item";
 import LivesScore from "./LivesScore";
-import { withRouter } from "react-router-dom";
 import styled from "styled-components";
+import { Container } from "../MasterCss";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
@@ -31,7 +31,44 @@ const LivesContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 300px;
+  position: fixed;
+  top: 25px;
+  right: 200px;
 `;
+
+const Wave5Div = styled.div`
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: -10px;
+  left: 0;
+`;
+
+const Wave4Div = styled.div`
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+`;
+
+const Wave3Div = styled.div`
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+`;
+
+const Wave2Div = styled.div`
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+`;
+
+
 
 const GameScreen = props => {
 
@@ -58,7 +95,7 @@ const GameScreen = props => {
   };
 
   return (
-    <div key="rendering">
+    <Container key="rendering">
       <Scallop />
       <Algae1 />
       <Algae2 />
@@ -67,13 +104,12 @@ const GameScreen = props => {
       <Seahorse />
       <RedFish />
       <Bubbles />
-      <Wave2 />
-      <Wave3 />
-      <Wave4 />
-      <Wave5 />
+      <Wave2Div><Wave2 /></Wave2Div>
+      <Wave3Div><Wave3 /></Wave3Div>
+      <Wave4Div><Wave4 /></Wave4Div>
+      <Wave5Div><Wave5 /></Wave5Div>
 
-
-      <ProgressScore count={props.count} />
+      <ProgressScore gameScreen count={props.count} />
       <LivesContainer>
       <LivesScore badCount={badCount} />
       </LivesContainer>
@@ -138,8 +174,8 @@ const GameScreen = props => {
 
       <div className="sharethis-inline-share-buttons"></div>
 
-    </div>
+    </Container>
   );
 };
 
-export default withRouter(GameScreen);
+export default GameScreen;
