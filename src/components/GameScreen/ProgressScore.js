@@ -9,10 +9,9 @@ const ScoreContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 20vw;
-    ${props => props.gameScore && css`
-      position: fixed;
-      top: 25px;
-      right: 25px;
+
+    ${props => props.resultsScore && css`
+      
     `};
 `;
 
@@ -39,3 +38,7 @@ const ProgressScore = props => {
 };
 
 export default ProgressScore;
+
+  // position: fixed;
+  // top: 25px;
+  // right: 25px;

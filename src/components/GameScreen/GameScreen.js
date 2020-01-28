@@ -25,15 +25,25 @@ import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
 import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 
+const Header = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 const LivesContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: 300px;
-  position: fixed;
-  top: 25px;
-  right: 200px;
+
 `;
 
 const Wave5Div = styled.div`
@@ -68,10 +78,121 @@ const Wave2Div = styled.div`
   left: 0;
 `;
 
+const BlackBinBox = styled.div`
+  position: fixed;
+  bottom: 50px;
+  left: 8%;
+`;
+
+const RecycleBinBox = styled.div`
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -107px;
+`;
+
+const CompostBinBox = styled.div`
+  position: fixed;
+  bottom: 50px;
+  right: 8%;
+`;
+
+const GameItem = styled.div`
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  margin-left: -50px;
+`;
+
+const Algae1Box = styled.div`
+  position: fixed;
+  left: 81.66%;
+  right: 15.33%;
+  top: 86.21%;
+  bottom: 0;
+  z-index: 900;
+`;
+
+const Algae2Box = styled.div`
+  position: fixed;
+  left: 8.79%;
+  right: 83.42%;
+  top: 85.37%;
+  bottom: -0.36%;
+  z-index: 900;
+`;
+
+const Algae3Box = styled.div`
+  position: fixed;
+  left: 43.3%;
+  right: 40.37%;
+  top: 91.13%;
+  bottom: -12.71%;
+  z-index: 900;
+`;
+
+const ScallopBox = styled.div`
+  position: fixed;
+  width: 83.6px;
+  height: 70.56px;
+  right: 20px;
+  bottom: 40px;
+  z-index: 900;
+`;
+
+const CrabBox = styled.div`
+  position: fixed;
+  width: 98.54px;
+  height: 87.07px;
+  left: 22px;
+  bottom: 30px;
+  z-index: 900;
+`;
+
+const SeahorseBox = styled.div`
+  position: fixed;
+  left: 16.86%;
+  right: 76.57%;
+  top: 83.69%;
+  bottom: 3.27%;
+  z-index: 900;
+`;
+
+const BubblesBox = styled.div`
+  position: fixed;
+  width: 51.27px;
+  height: 75.69px;
+  right: 15%;
+  bottom: 40px;
+  z-index: 901;
+`;
+
+const RedFishBox = styled.div`
+  position: fixed;
+  left: 72.53%;
+  right: 21.87%;
+  bottom: 0.79%;
+  z-index: 900;
+`;
+
+const ItemText = styled.h2`
+  text-align: center;
+  font-family: Bungee;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 77px;
+  color: #ffffff;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  position: fixed;
+  bottom: 2%;
+  margin: 0;
+`;
+
 
 
 const GameScreen = props => {
-
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
@@ -96,34 +217,6 @@ const GameScreen = props => {
 
   return (
     <Container key="rendering">
-      <Scallop />
-      <Algae1 />
-      <Algae2 />
-      <Algae3 />
-      <Crab />
-      <Seahorse />
-      <RedFish />
-      <Bubbles />
-      <Wave2Div><Wave2 /></Wave2Div>
-      <Wave3Div><Wave3 /></Wave3Div>
-      <Wave4Div><Wave4 /></Wave4Div>
-      <Wave5Div><Wave5 /></Wave5Div>
-
-      <ProgressScore gameScreen count={props.count} />
-      <LivesContainer>
-      <LivesScore badCount={badCount} />
-      </LivesContainer>
-
-      <DragDropContainer targetKey="bins">
-        {itemVisibility && (
-          <Item
-            item={currentItem}
-            itemVisibility={itemVisibility}
-            setItemVisibility={setItemVisibility}
-          />
-        )}
-      </DragDropContainer>
-
       {successModal && (
         <SuccessModal
           item={currentItem}
@@ -145,35 +238,97 @@ const GameScreen = props => {
         />
       )}
 
-      <DropTarget
-        targetKey="bins"
-        onHit={() => {
-          dropReaction("general waste");
-        }}
-      >
-        <BlackBin title="blackbin" />
-      </DropTarget>
+      <Header>
+        <LivesContainer>
+          <LivesScore badCount={badCount} />
+        </LivesContainer>
+        <ProgressScore gameScreen count={props.count} />
+      </Header>
 
-      <DropTarget
-        targetKey="bins"
-        onHit={() => {
-          dropReaction("recycling");
-        }}
-      >
-        <RecycleBin title="recyclebin" />
-      </DropTarget>
+      <ScallopBox>
+        <Scallop />
+      </ScallopBox>
+      <Algae1Box>
+        <Algae1 />
+      </Algae1Box>
+      <Algae2Box>
+        <Algae2 />
+      </Algae2Box>
+      <Algae3Box>
+        <Algae3 />
+      </Algae3Box>
+      <CrabBox>
+        <Crab />
+      </CrabBox>
+      <SeahorseBox>
+        <Seahorse />
+      </SeahorseBox>
+      <RedFishBox>
+        <RedFish />
+      </RedFishBox>
+      <BubblesBox>
+        <Bubbles />
+      </BubblesBox>
+      <Wave2Div>
+        <Wave2 />
+      </Wave2Div>
+      <Wave3Div>
+        <Wave3 />
+      </Wave3Div>
+      <Wave4Div>
+        <Wave4 />
+      </Wave4Div>
 
-      <DropTarget
-        targetKey="bins"
-        onHit={() => {
-          dropReaction("food composting");
-        }}
-      >
-        <CompostBin title="compostbin" />
-      </DropTarget>
+      <GameItem>
+        <DragDropContainer targetKey="bins">
+          {itemVisibility && (
+            <Item
+              item={currentItem}
+              itemVisibility={itemVisibility}
+              setItemVisibility={setItemVisibility}
+            />
+          )}
+        </DragDropContainer>
+      </GameItem>
 
-      <div className="sharethis-inline-share-buttons"></div>
+      <BlackBinBox>
+        <DropTarget
+          targetKey="bins"
+          onHit={() => {
+            dropReaction("general waste");
+          }}
+        >
+          <BlackBin title="blackbin" />
+        </DropTarget>
+      </BlackBinBox>
 
+      <RecycleBinBox>
+        <DropTarget
+          targetKey="bins"
+          onHit={() => {
+            dropReaction("recycling");
+          }}
+        >
+          <RecycleBin title="recyclebin" />
+        </DropTarget>
+      </RecycleBinBox>
+
+      <CompostBinBox>
+        <DropTarget
+          targetKey="bins"
+          onHit={() => {
+            dropReaction("food composting");
+          }}
+        >
+          <CompostBin title="compostbin" />
+        </DropTarget>
+      </CompostBinBox>
+
+      <Wave5Div>
+        <Wave5 />
+      </Wave5Div>
+
+      <ItemText>{currentItem.name}</ItemText>
     </Container>
   );
 };

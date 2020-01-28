@@ -12,6 +12,12 @@ const Image = styled.img`
 const SuccessBox = styled.div`
   background-color: rgba(23, 235, 16, 0.479);
   padding: 3em;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
 `;
 
 const SuccessModal = props => {
