@@ -15,8 +15,18 @@ function App() {
     setFunFactsModal(!funFactsModal);
   };
 
+  const showHowToPlayModal = () => {
+    setHowToPlayModal(!howToPlayModal);
+    console.log("This is inside show modal function ");
+  };
+
+  const hideHowToPlayModal = () => {
+    setHowToPlayModal(!howToPlayModal);
+  };
+
   const [count, setCount] = React.useState(0);
   const [funFactsModal, setFunFactsModal] = React.useState(false);
+  const [howToPlayModal, setHowToPlayModal] = React.useState(false);
   const [badCount, setBadCount] = React.useState(0);
 
   return (
@@ -31,6 +41,10 @@ function App() {
               setFunFactsModal={setFunFactsModal}
               showFunFactsModal={showFunFactsModal}
               hideFunFactsModal={hideFunFactsModal}
+              hideHowToPlayModal={hideHowToPlayModal}
+              showHowToPlayModal={showHowToPlayModal}
+              howToPlayModal={howToPlayModal}
+              setHowToPlayModal={setHowToPlayModal}
             />
           )}
           exact
@@ -43,6 +57,14 @@ function App() {
               setCount={setCount}
               badCount={badCount}
               setBadCount={setBadCount}
+              hideHowToPlayModal={hideHowToPlayModal}
+              showHowToPlayModal={showHowToPlayModal}
+              howToPlayModal={howToPlayModal}
+              setHowToPlayModal={setHowToPlayModal}
+              funFactsModal={funFactsModal}
+              setFunFactsModal={setFunFactsModal}
+              showFunFactsModal={showFunFactsModal}
+              hideFunFactsModal={hideFunFactsModal}
             />
           )}
         />
