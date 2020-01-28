@@ -21,20 +21,36 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #ff8a00;
+  background-color: #ff8a00;
   font-family: "Freckle Face", cursive;
-  font-size: 50px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
   text-align: center;
-  line-height: 50px;
-  
+  line-height: 130px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
 `;
 
 const TitleBig = styled.h1`
-  color: #ff8a00;
+  background-color: #ff8a00;
   font-family: "Freckle Face", cursive;
   text-align: center;
   font-size: 110px;
   font-weight: bold;
+  // -webkit-text-stroke: 1px black;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
+
+
 `;
 
 const Octopus = styled.div`
@@ -45,8 +61,9 @@ const Octopus = styled.div`
 
 const Earth = styled.div`
   position: absolute;
-  top: 290px;
+  bottom: 0px;
   left: -150px;
+  overFlow: hidden;
 `;
 
 const ButtonContainer = styled.div`
