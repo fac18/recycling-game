@@ -32,7 +32,6 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-
 `;
 
 const TitleBig = styled.h1`
@@ -47,9 +46,6 @@ const TitleBig = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-
-
-
 `;
 
 const Octopus = styled.div`
@@ -62,7 +58,7 @@ const Earth = styled.div`
   position: absolute;
   bottom: 0px;
   left: -150px;
-  overFlow: hidden;
+  overflow: hidden;
 `;
 
 const ButtonContainer = styled.div`
@@ -81,17 +77,6 @@ const Stars = styled.div`
   justify-content: space-around;
 `;
 const LandingScreen = props => {
-  const [howToPlayModal, setHowToPlayModal] = React.useState(false);
-
-  const showHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-    console.log("This is inside show modal function ");
-  };
-
-  const hideHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-  };
-
   const history = useHistory();
 
   const startGame = () => {
@@ -114,15 +99,17 @@ const LandingScreen = props => {
       </Earth>
       <Button handleClick={startGame} label="Let's Play"></Button>
       <ButtonContainer>
-        {howToPlayModal && (
-          <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
+        {props.howToPlayModal && (
+          <HowToPlayModal
+            handleClose={props.hideHowToPlayModal}
+          ></HowToPlayModal>
         )}
         {props.funFactsModal && (
           <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
-          handleClick={showHowToPlayModal}
+          handleClick={props.showHowToPlayModal}
           label="How To Play"
         ></Button>
         <Button
