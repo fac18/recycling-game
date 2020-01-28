@@ -3,7 +3,13 @@ import styled from "styled-components";
 import badges from "../../utils/badgeData";
 import ProgressScore from "../GameScreen/ProgressScore";
 import Button from "../Button";
-import { Container } from "../MasterCss";
+import {
+  Container,
+  MessageBox,
+  BadgeBox,
+  BoxMessage,
+  MessageImage
+} from "../MasterCss";
 
 const PageHeader = styled.h1`
   font-family: Freckle Face;
@@ -15,31 +21,6 @@ const PageHeader = styled.h1`
   color: #ff8a00;
   -webkit-text-stroke: 2px black;
   text-transform: uppercase;
-`;
-
-const MessageBox = styled.div`
-  width: 50vw;
-  height: 20vh;
-  border-radius: 10px;
-  background-color: #08345c;
-  color: white;
-  padding: 20px;
-`;
-
-const BadgeBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const BadgeMessage = styled.p`
-  font-family: Signika;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 50px;
-  align-items: center;
-  color: #ffffff;
 `;
 
 const ButtonContainer = styled.div`
@@ -71,12 +52,12 @@ const ResultScreen = props => {
       <ProgressScore count={props.count} />
       <BadgeBox>
         {" "}
-        <img
+        <MessageImage
           src={badges[badgeGiven].src}
           alt="An animal badge to say well done!"
         />
         <MessageBox>
-          <BadgeMessage>{badges[badgeGiven].message}</BadgeMessage>
+          <BoxMessage>{badges[badgeGiven].message}</BoxMessage>
         </MessageBox>
       </BadgeBox>
       <ButtonContainer>
