@@ -4,7 +4,6 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-import PlayButton from "../playButton"
 
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
@@ -133,7 +132,7 @@ const LandingScreen = () => {
       <Earth>
         <EarthSvg />
       </Earth>
-      <PlayButton handleClick={startGame} label="Let's Play" />
+      <Button handleClick={startGame} label="Let's Play" />
       <ButtonContainer>
         {howToPlayModal && (
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>

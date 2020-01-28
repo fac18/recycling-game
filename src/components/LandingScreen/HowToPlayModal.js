@@ -3,63 +3,49 @@ import styled from "styled-components";
 import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
+import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
+import Button from "../Button";
+import {
+  MessageBox,
+  BoxMessage,
+  BadgeBox
+} from "../MasterCss";
 
-
-import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 const HowToPlayBox = styled.div`
-<<<<<<< HEAD
 background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);  padding: 3em;
-=======
-  background-image: linear-gradient(#21b2d3, #7abefd);
-  padding: 3em;
->>>>>>> master
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  opacity: 0.9;
-  top: 50%;
+  padding: 2em;
+  position: absolute;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1500;
+  top: -18.5em;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
 `;
 
 
-const Box = styled.div`
-  margin: 50px;
-  display: flex;
-  felx-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-  height: 20vh;
-  border-radius: 10px;
-  background-color: #08345c;
-  color: white;
-  padding: 20px;
-`;
-
-const howToBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-`;
 
 
 const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
-      <section className="modal-main">
-        <Cross onClick={handleClose} />
+      {/* <section className="modal-main"> */}
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>
-        <div className="howToBox"><RecycleBin width="30%"/><Box> Drag and drop all items that CAN BE RECYCLED into this bin.</Box></div>
-        <div className="howToBox"><BlackBin width="30%"/><Box>Drag and drop all the items that CANNOT BE RECYCLED into this bin</Box></div>
-        <div className="howToBox"><CompostBin width="30%"/><Box>Drag and drop all items that are FOOD WASTE into this bin</Box></div>
-        <div className="howToBox"><Box>This is your LIFE. If you put the item in the worng bin you lose a life</Box></div>
-        <div className="howToBox"><Box>If you put the item in the right bin you get POINTS</Box></div>
+        <MessageBox><BadgeBox><RecycleBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><BlackBin width="20%" height="20%"/><BoxMessage>Drag and drop all the items that CANNOT BE RECYCLED into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><CompostBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><Heart width="20%" height="20%"/><BoxMessage>This is your LIFE. If you put the item in the worng bin you lose a life</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><StarFish width="20%" height="20%" /><BoxMessage>If you put the item in the right bin you get POINTS</BoxMessage></BadgeBox></MessageBox>
         {/* {children} */}
-      </section>
+        <Button handleClick={handleClose} label="Close"></Button>
+      {/* </section> */}
     </HowToPlayBox>
   );
 };
