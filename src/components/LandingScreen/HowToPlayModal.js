@@ -2,21 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 const HowToPlayBox = styled.div`
-  background-color: rgba(23, 235, 16, 0.479);
+  background-image: linear-gradient(#21b2d3, #7abefd);
   padding: 3em;
   position: fixed;
   width: 80%;
-  height: 50%;
+  height: 80%;
+  opacity: 0.9;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: scroll;
 `;
 
+const Cross = styled.div`
+  background-color: #a10094;
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+`;
+
 const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       <section className="modal-main">
+        <Cross onClick={handleClose}>X</Cross>
         <h2>How to play?</h2>
         <h2>This is how to play the game</h2>
         <p>
@@ -65,7 +80,6 @@ const HowToPlayModal = ({ handleClose }) => {
           asperiores repellat."
         </p>
         {/* {children} */}
-        <button onClick={handleClose}>close</button>
       </section>
     </HowToPlayBox>
   );

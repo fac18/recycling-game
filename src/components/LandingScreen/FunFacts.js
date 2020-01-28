@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import Button from "../Button";
 
 const FunFactsBox = styled.div`
-  background-color: rgba(23, 235, 16, 0.479);
+  background-image: linear-gradient(#21b2d3, #7abefd);
   padding: 3em;
   position: fixed;
   width: 80%;
@@ -15,10 +15,25 @@ const FunFactsBox = styled.div`
   display: block;
 `;
 
+const Cross = styled.div`
+  background-color: #a10094;
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  width: fit-content;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+`;
+
 const FunFactsModal = ({ handleClose }) => {
   return (
     <FunFactsBox>
       <section className="modal-main">
+        <Cross onClick={handleClose}>X</Cross>
         <h2>About recycling?</h2>
         <h2>These are some facts about recycling</h2>
         <p>
@@ -67,7 +82,6 @@ const FunFactsModal = ({ handleClose }) => {
           asperiores repellat."
         </p>
         {/* {children} */}
-        <button onClick={handleClose}>close</button>
       </section>
     </FunFactsBox>
   );
