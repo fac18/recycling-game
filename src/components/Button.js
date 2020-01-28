@@ -22,6 +22,7 @@ const GenericButton = styled.button`
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  border-style: none;
 `;
 
 const Button = props => {
