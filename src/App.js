@@ -8,12 +8,22 @@ import LandingScreen from "./components/LandingScreen/LandingScreen";
 
 function App() {
   const [count, setCount] = React.useState(0);
+  const [funFactsModal, setFunFactsModal] = React.useState(false);
 
   return (
     <main className="App">
       <Switch>
         {/* setting game screen as home for code review */}
-        <Route path="/" render={() => <LandingScreen />} exact />
+        <Route
+          path="/"
+          render={() => (
+            <LandingScreen
+              funFactsModal={funFactsModal}
+              setFunFactsModal={setFunFactsModal}
+            />
+          )}
+          exact
+        />
         <Route
           path="/game"
           render={() => <GameScreen count={count} setCount={setCount} />}
@@ -21,7 +31,14 @@ function App() {
         {/* <Route path="/game" component={GameScreen} /> */}
         <Route
           path="/results"
-          render={() => <ResultScreen count={count} setCount={setCount} />}
+          render={() => (
+            <ResultScreen
+              count={count}
+              setCount={setCount}
+              funFactsModal={funFactsModal}
+              setFunFactsModal={setFunFactsModal}
+            />
+          )}
         />
         <Route component={Error} />
       </Switch>

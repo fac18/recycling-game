@@ -55,16 +55,6 @@ const ButtonContainer = styled.div`
   align-content: flex-start;
 `;
 
-// const Stars = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 100vh;
-//   width: 100vw;
-//   z-index: 1;
-// `;
-
 const Stars = styled.div`
   position: absolute;
   display: flex;
@@ -72,9 +62,8 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 `;
-const LandingScreen = () => {
+const LandingScreen = props => {
   const [howToPlayModal, setHowToPlayModal] = React.useState(false);
-  const [funFactsModal, setFunFactsModal] = React.useState(false);
 
   const showHowToPlayModal = () => {
     setHowToPlayModal(!howToPlayModal);
@@ -82,7 +71,7 @@ const LandingScreen = () => {
   };
 
   const showFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
+    props.setFunFactsModal(!props.funFactsModal);
     console.log("This is inside show modal function ");
   };
 
@@ -91,7 +80,7 @@ const LandingScreen = () => {
   };
 
   const hideFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
+    props.setFunFactsModal(!props.funFactsModal);
   };
 
   const history = useHistory();
@@ -119,7 +108,7 @@ const LandingScreen = () => {
         {howToPlayModal && (
           <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
         )}
-        {funFactsModal && (
+        {props.funFactsModal && (
           <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
         )}
         <Button
