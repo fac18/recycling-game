@@ -9,6 +9,13 @@ import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
+import UIfx from "uifx";
+import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
+
+const music = new UIfx(kahootMusic);
+music.play(0.5);
+
+
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
   display: flex;
@@ -33,7 +40,6 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-
 `;
 
 const TitleBig = styled.h1`
@@ -50,10 +56,6 @@ const TitleBig = styled.h1`
   background-clip: text;
   margin-block-start: 0em;
   margin-block-end: 0em;
-
-
-
-
 `;
 
 const Octopus = styled.div`
@@ -99,6 +101,7 @@ const LandingScreen = () => {
   const [howToPlayModal, setHowToPlayModal] = React.useState(false);
   const [funFactsModal, setFunFactsModal] = React.useState(false);
 
+
   const showHowToPlayModal = () => {
     setHowToPlayModal(!howToPlayModal);
     console.log("This is inside show modal function ");
@@ -122,6 +125,7 @@ const LandingScreen = () => {
   const startGame = () => {
     history.push("/game");
   };
+
 
   return (
     <Container>

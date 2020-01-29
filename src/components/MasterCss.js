@@ -13,13 +13,14 @@ const Container = styled.div`
 const MessageBox = styled.div`
   width: 50vw;
   height: 20vh;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #08345c;
   color: white;
   padding: 20px;
   margin: 1em;
   display:flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 const BadgeBox = styled.div`
