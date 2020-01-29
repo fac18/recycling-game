@@ -49,6 +49,7 @@ const SuccessModal = props => {
         
         <MessageBox>
         <MessageImage alt={props.item.name} src={props.item.src} />
+        <MessageImage bin alt="Image of the correct bin" src={props.item.binImg}/>
         <BoxMessage>{props.item.fact}</BoxMessage>
         </MessageBox>
       </BadgeBox>
