@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
 import Button from "../Button";
+import { useHistory } from "react-router-dom";
 import {
   MessageBox,
   BadgeBox,
@@ -35,8 +36,12 @@ const FailModal = props => {
     props.setItemVisibility(!props.itemVisibility);
   };
 
+  const history = useHistory();
   const handleModal = () => {
     hideModal();
+    if (props.badCount === 3) {
+      history.push("/results");
+    }
   };
 
   return (
@@ -48,10 +53,11 @@ const FailModal = props => {
       <BadgeBox>
         <MessageBox>
         <MessageImage alt={props.item.name} src={props.item.src} />
-          <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
+        <MessageImage bin alt="Image of the correct bin" src={props.item.binImg}/>
+        <BoxMessage>{props.item.fact}</BoxMessage>
         </MessageBox>
       </BadgeBox>
-      <Button primary handleClick={handleModal} label="Okay" />
+      <Button primary handleClick={handleModal} label="OK" />
     </FailBox>
   );
 };

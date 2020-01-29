@@ -201,7 +201,9 @@ const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
-    bin: "recycling"
+    bin: "recycling",
+    binImg: "images/recycle-bin.svg",
+    fact: "Families use around 330 glass bottles and jars every year"
   });
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
@@ -244,6 +246,7 @@ const GameScreen = props => {
           setItemVisibility={setItemVisibility}
           failModal={failModal}
           setFailModal={setFailModal}
+          badCount={props.badCount}
         />
       )}
       {optionsModal && (
@@ -264,14 +267,10 @@ const GameScreen = props => {
       )}
 
       {props.howToPlayModal && (
-        <HowToPlayModal
-          handleClose={props.hideHowToPlayModal}
-        ></HowToPlayModal>
+        <HowToPlayModal handleClose={props.hideHowToPlayModal}></HowToPlayModal>
       )}
       {props.funFactsModal && (
-        <FunFactsModal
-          handleClose={props.hideFunFactsModal}
-        ></FunFactsModal>
+        <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
       )}
 
       <Header>
@@ -279,7 +278,11 @@ const GameScreen = props => {
           <PauseIcon onClick={showOptionsModal} />
         </PauseBox>
         <LivesContainer>
-          <LivesScore badCount={props.badCount} />
+          <LivesScore
+            badCount={props.badCount}
+            successModal={successModal}
+            failModal={failModal}
+          />
         </LivesContainer>
         <ProgressScore gameScreen count={props.count} />
       </Header>
@@ -356,7 +359,7 @@ const GameScreen = props => {
         <DropTarget
           targetKey="bins"
           onHit={() => {
-            dropReaction("food composting");
+            dropReaction("food compost");
           }}
         >
           <CompostBin title="compostbin" />

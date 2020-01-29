@@ -1,5 +1,8 @@
 import styled, { css } from "styled-components";
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
 const Container = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -32,16 +35,23 @@ const MessageBox = styled.div`
   border-radius: 25px;
   background-color: #08345c;
   color: white;
-  padding: 20px;
+  padding: 35px;
   margin: 1em;
   display:flex;
   flex-direction: row;
   align-items: center;
 
   ${props =>
+<<<<<<< HEAD
     props.primary &&
     css`
       width: auto;
+=======
+    props.bin &&
+    css`
+      width: 55vw;
+      text-align: center;
+>>>>>>> master
     `}
 `;
 
@@ -49,6 +59,7 @@ const BadgeBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
 `;
 
 const BoxMessage = styled.p`
@@ -72,13 +83,20 @@ const ModalHeader = styled.h2`
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
-  width: 60vw;
+  width: 80vw;
   padding-top: 0.5em;
 `;
 
 const MessageImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+
+  ${props =>
+    props.bin &&
+    css`
+      width: 100px;
+      height: 100px;
+    `}
 `;
 
 const OrangeText = styled.p`
