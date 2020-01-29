@@ -45,8 +45,15 @@ const FactList = styled.ul`
   text-align: left;
 
   li {
-  color: blue;
+  line-height: 1.5em;
+  // padding-bottom: 1em;
   }
+`;
+
+const Flexy = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 `;
 
 const FunFactsModal = ({ handleClose }) => {
@@ -80,26 +87,25 @@ const FunFactsModal = ({ handleClose }) => {
 
         <MessageBox primary>
           <BoxMessage>
-            <Factlist>
+            <FactList>
           <p><OrangeText>REUSE</OrangeText></p>
           <li>Take a reusable bag for life or old carrier bag with you when heading to the shops</li>
-          <li><Shirt width="20%"/>When something is broken, see if you can mend it instead of throwing it away</li>
+          <Flexy><Shirt width="100px"/><li>When something is broken, see if you can mend it instead of throwing it away</li></Flexy>
           <li>If it can’t be mended, see if you can find a new use for it!</li>
           <li>Give unwanted items to charity</li>
-          <li><Paper width="20%"/>Reuse scrap paper – you can always use both sides of a sheet of paper to draw on!</li>
-          </Factlist>
+          <Flexy><Paper width="100px"/><li>Reuse scrap paper – you can always use both sides of a sheet of paper to draw on!</li></Flexy>
+          </FactList>
           </BoxMessage>
         </MessageBox>
 
         <MessageBox primary>
           <BoxMessage>
-            <Factlist>
+          <FactList>
           <p><OrangeText>RECYCLE</OrangeText></p>
-          And instead of throwing away your food, you can turn it into really useful compost!
           <li>Always see if you can buy things made from recycled materials</li>
           <li>Sort all your rubbish so that the glass, tin cans, plastic and paper can be recycled</li>
-          <li>about what other things can be recycled at your local recycling centre, like batteries, ink cartridges and clothes</li>
-          <li><Apple width="20%"/>Use kitchen waste to make compost for the garden</li>
+          <Apple width="100px"/><li>about what other things can be recycled at your local recycling centre, like batteries, ink cartridges and clothes</li>
+          <Flexy><li>Use kitchen waste to make compost for the garden</li></Flexy>
           </FactList>
           </BoxMessage>
         </MessageBox>

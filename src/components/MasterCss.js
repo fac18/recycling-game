@@ -1,8 +1,4 @@
 import styled, { css } from "styled-components";
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 
 const Container = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -42,16 +38,19 @@ const MessageBox = styled.div`
   align-items: center;
 
   ${props =>
-<<<<<<< HEAD
+
     props.primary &&
     css`
       width: auto;
-=======
+    `}
+
+  ${props =>
+
     props.bin &&
     css`
       width: 55vw;
       text-align: center;
->>>>>>> master
+
     `}
 `;
 
