@@ -1,0 +1,14 @@
+<svg height="464pt" viewBox="-104 0 464 464" width="464pt" xmlns="http://www.w3.org/2000/svg">
+  <path d="M256 464H80V144h176zm0 0" fill="#aee4f4"/>
+  <path d="M0 416l80 48V144L0 96zm0 0" fill="#309cb5"/>
+  <path d="M80 144h176l-48-96H48zm0 0" fill="#87cee9"/>
+  <path d="M80 144L48 48 0 96zm0 0" fill="#49abc9"/>
+  <path d="M208 48H48V0h160zm0 0" fill="#aee4f4"/>
+  <path d="M136 256h64v80h-64zm0 0" fill="#fff"/>
+  <path d="M104 256h32v32h-8c-13 0-24-11-24-24zm0 0M200 256h32v8c0 13-11 24-24 24h-8zm0 0M136 336h64v48h-64zm0 0" fill="#5a6470"/>
+  <path d="M136 256l16-48 16 48zm0 0M168 256l16-48 16 48zm0 0" fill="#aabece"/>
+  <path d="M144 280h16v16h-16zm0 0M176 280h16v16h-16zm0 0" fill="#5a6470"/>
+  <g fill="#fff">
+    <path d="M224 440h-48a8 8 0 010-16h40v-16a8 8 0 0116 0v24c0 4-4 8-8 8zm0 0M144 440h-16a8 8 0 010-16h16a8 8 0 010 16zm0 0M224 216c-4 0-8-4-8-8v-24h-16a8 8 0 010-16h24c4 0 8 4 8 8v32c0 4-4 8-8 8zm0 0M168 184h-16a8 8 0 010-16h16a8 8 0 010 16zm0 0"/>
+  </g>
+</svg>
