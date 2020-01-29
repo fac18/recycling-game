@@ -50,13 +50,13 @@ const ModalHeader = styled.h2`
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
-  width: 60vw;
+  width: 80vw;
   padding-top: 0.5em;
 `;
 
 const MessageImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 `;
 
 export {

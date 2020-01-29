@@ -4,6 +4,24 @@ import { useHistory } from "react-router-dom";
 
 import { ReactComponent as PlayIcon } from "../../assets/play-icon.svg";
 
+const OptionsBox = styled.div`
+  background-color: #08345c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  z-index: 2000;
+  margin: 0;
+  border-radius: 0px 0px 25px 0px;
+`;
+
 const OptionsList = styled.ul`
   list-style-type: none;
   margin: 25px;
@@ -21,24 +39,6 @@ const OptionsListItem = styled.li`
   text-decoration: underline;
   cursor: pointer;
   line-height: 2;
-`;
-
-const OptionsBox = styled.div`
-  background-color: #08345c;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 10px;
-  padding-left: 5px;
-  padding-right: 25px;
-  padding-bottom: 25px;
-  z-index: 2000;
-  margin: 0;
-  border-radius: 0px 0px 25px 0px;
 `;
 
 const OptionsModal = props => {

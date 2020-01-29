@@ -53,10 +53,10 @@ const FailModal = props => {
       <BadgeBox>
         <MessageBox>
           <MessageImage alt={props.item.name} src={props.item.src} />
-          <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
+          <BoxMessage>{props.item.fact}</BoxMessage>
         </MessageBox>
       </BadgeBox>
-      <Button primary handleClick={handleModal} label="Okay" />
+      <Button primary handleClick={handleModal} label="OK" />
     </FailBox>
   );
 };

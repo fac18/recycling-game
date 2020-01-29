@@ -11,7 +11,7 @@ import {
 } from "../MasterCss";
 
 const SuccessBox = styled.div`
-  background-color: rgba(23, 235, 16, 0.7);
+  background-color: rgba(36, 174, 95, 0.7);
   padding: 3em;
   width: 100vw;
   height: 100vh;
@@ -49,10 +49,10 @@ const SuccessModal = props => {
         
         <MessageBox>
         <MessageImage alt={props.item.name} src={props.item.src} />
-        <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
+        <BoxMessage>{props.item.fact}</BoxMessage>
         </MessageBox>
       </BadgeBox>
-      <Button primary handleClick={handleModal} label="Okay" />
+      <Button primary handleClick={handleModal} label="OK" />
     </SuccessBox>
   );
 };
