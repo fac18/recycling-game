@@ -44,9 +44,9 @@ const FactList = styled.ul`
   flex-direction: column;
   text-align: left;
 
-  // > * > li {
-  // color: blue;
-  // }
+  li {
+  color: blue;
+  }
 `;
 
 const FunFactsModal = ({ handleClose }) => {
