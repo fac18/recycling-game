@@ -12,8 +12,8 @@ import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 import UIfx from "uifx";
 import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
-const music = new UIfx(kahootMusic);
-music.play(0.5);
+
+
 
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
@@ -88,6 +88,11 @@ const Stars = styled.div`
 `;
 const LandingScreen = props => {
   const history = useHistory();
+
+  const music = new UIfx(kahootMusic);
+
+  music.play(0.5);
+
 
   const startGame = () => {
     history.push("/game");

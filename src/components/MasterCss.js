@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
 
 const Container = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -10,9 +11,24 @@ const Container = styled.div`
   width: 100vw;
 `;
 
+const PageHeader = styled.h1`
+  font-family: Freckle Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  text-align: center;
+  color: #ff8a00;
+  -webkit-text-stroke: 2px black;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-block-end: 0px;
+
+`;
+
 const MessageBox = styled.div`
   width: 50vw;
-  height: 20vh;
+  min-height: 20vh;
   border-radius: 25px;
   background-color: #08345c;
   color: white;
@@ -21,6 +37,12 @@ const MessageBox = styled.div`
   display:flex;
   flex-direction: row;
   align-items: center;
+
+  ${props =>
+    props.primary &&
+    css`
+      width: auto;
+    `}
 `;
 
 const BadgeBox = styled.div`
@@ -59,11 +81,18 @@ const MessageImage = styled.img`
   height: 100px;
 `;
 
+const OrangeText = styled.p`
+  color: #FF8A00;
+  display: inline;
+`;
+
 export {
   Container,
+  PageHeader,
   MessageBox,
   BadgeBox,
   BoxMessage,
   ModalHeader,
-  MessageImage
+  MessageImage,
+  OrangeText
 };
