@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../Button";
+
 
 import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
@@ -15,6 +17,7 @@ const FunFactsBox = styled.div`
   overflow: scroll;
   display: block;
   z-index: 3000;
+  border-radius: 25px;
 `;
 
 const FunFactsModal = ({ handleClose }) => {
@@ -70,6 +73,8 @@ const FunFactsModal = ({ handleClose }) => {
           asperiores repellat."
         </p>
         {/* {children} */}
+        <Button primary handleClick={handleClose} label="Close"></Button>
+
       </section>
     </FunFactsBox>
   );

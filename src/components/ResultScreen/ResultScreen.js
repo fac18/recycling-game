@@ -81,7 +81,7 @@ const ResultScreen = props => {
           {props.label}
         </Button>
 
-        <Button label="Play again" handleClick={restartGame}>
+        <Button primary label="Play again" handleClick={restartGame}>
           {props.label}
         </Button>
       </ButtonContainer>

@@ -6,7 +6,7 @@ import {
   MessageBox,
   BadgeBox,
   BoxMessage,
-  ResponseModalHeader,
+  ModalHeader,
   MessageImage
 } from "../MasterCss";
 
@@ -41,10 +41,10 @@ const SuccessModal = props => {
 
   return (
     <SuccessBox id="success" onClick={hideModal}>
-      <ResponseModalHeader>Well Done!</ResponseModalHeader>
-      <ResponseModalHeader>
+      <ModalHeader>Well Done!</ModalHeader>
+      <ModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
-      </ResponseModalHeader>
+      </ModalHeader>
       <BadgeBox>
         
         <MessageBox>
@@ -52,7 +52,7 @@ const SuccessModal = props => {
         <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
         </MessageBox>
       </BadgeBox>
-      <Button handleClick={handleModal} label="Okay" />
+      <Button primary handleClick={handleModal} label="Okay" />
     </SuccessBox>
   );
 };

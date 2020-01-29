@@ -5,6 +5,8 @@ import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
 import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
+import { ReactComponent as Cross } from "../../assets/x-button.svg";
+
 import Button from "../Button";
 import {
   MessageBox,
@@ -58,6 +60,7 @@ const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       {/* <section className="modal-main"> */}
+
         <PageHeader>How to play?</PageHeader>
         {/* <TextH2>This is how to play the game</TextH2> */}
         <MessageBox><BadgeBox><RecycleBin width="20%" height="70%"/><BoxMessage>Drag and drop items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
@@ -65,8 +68,10 @@ const HowToPlayModal = ({ handleClose }) => {
         <MessageBox><BadgeBox><CompostBin width="20%" height="70%"/><BoxMessage>Drag and drop items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><Heart width="20%" height="70%"/><BoxMessage>These are your LIVES. If you put the item in the wrong bin you lose a life</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><StarFish width="20%" height="70%" /><BoxMessage>If you put an item in the right bin you get starfish POINT</BoxMessage></BadgeBox></MessageBox>
+      <Cross onClick={handleClose} />
+
         {/* {children} */}
-        <Button handleClick={handleClose} label="Close"></Button>
+        <Button primary handleClick={handleClose} label="Close"></Button>
       {/* </section> */}
     </HowToPlayBox>
   );

@@ -40,7 +40,7 @@ const BoxMessage = styled.p`
   padding-left: 0.5em;
 `;
 
-const ResponseModalHeader = styled.h2`
+const ModalHeader = styled.h2`
   text-align: center;
   font-family: Bungee;
   font-style: normal;
@@ -64,6 +64,6 @@ export {
   MessageBox,
   BadgeBox,
   BoxMessage,
-  ResponseModalHeader,
+  ModalHeader,
   MessageImage
 };
