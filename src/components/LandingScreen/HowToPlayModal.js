@@ -5,6 +5,8 @@ import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
 import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
+import { ReactComponent as Cross } from "../../assets/x-button.svg";
+
 import Button from "../Button";
 import {
   MessageBox,
@@ -27,6 +29,7 @@ background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(1
   transform: translate(-50%, -50%);
   overflow: scroll;
   z-index: 3000;
+  border-radius: 25px;
 `;
 
 const TextH2 = styled.h2`
@@ -42,6 +45,8 @@ const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       {/* <section className="modal-main"> */}
+      <Cross onClick={handleClose} />
+
         <TextH2>How to play?</TextH2>
         <TextH2>This is how to play the game</TextH2>
         <MessageBox><BadgeBox><RecycleBin width="20%" height="20%"/><BoxMessage>Drag and drop all items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
@@ -50,7 +55,7 @@ const HowToPlayModal = ({ handleClose }) => {
         <MessageBox><BadgeBox><Heart width="20%" height="20%"/><BoxMessage>This is your LIFE. If you put the item in the worng bin you lose a life</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><StarFish width="20%" height="20%" /><BoxMessage>If you put the item in the right bin you get POINTS</BoxMessage></BadgeBox></MessageBox>
         {/* {children} */}
-        <Button handleClick={handleClose} label="Close"></Button>
+        <Button primary handleClick={handleClose} label="Close"></Button>
       {/* </section> */}
     </HowToPlayBox>
   );
