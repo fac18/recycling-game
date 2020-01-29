@@ -15,7 +15,6 @@ import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3"
 const music = new UIfx(kahootMusic);
 music.play(0.5);
 
-
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
   display: flex;
@@ -68,7 +67,7 @@ const Earth = styled.div`
   position: absolute;
   bottom: 0px;
   left: -150px;
-  overFlow: hidden;
+  overflow: hidden;
 `;
 
 const ButtonContainer = styled.div`
@@ -80,16 +79,6 @@ const ButtonContainer = styled.div`
   margin-bottom: 0.5em;
 `;
 
-// const Stars = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 100vh;
-//   width: 100vw;
-//   z-index: 1;
-// `;
-
 const Stars = styled.div`
   position: absolute;
   display: flex;
@@ -97,35 +86,12 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 `;
-const LandingScreen = () => {
-  const [howToPlayModal, setHowToPlayModal] = React.useState(false);
-  const [funFactsModal, setFunFactsModal] = React.useState(false);
-
-
-  const showHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-    console.log("This is inside show modal function ");
-  };
-
-  const showFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
-    console.log("This is inside show modal function ");
-  };
-
-  const hideHowToPlayModal = () => {
-    setHowToPlayModal(!howToPlayModal);
-  };
-
-  const hideFunFactsModal = () => {
-    setFunFactsModal(!funFactsModal);
-  };
-
+const LandingScreen = props => {
   const history = useHistory();
 
   const startGame = () => {
     history.push("/game");
   };
-
 
   return (
     <Container>
@@ -141,22 +107,29 @@ const LandingScreen = () => {
       <Earth>
         <EarthSvg />
       </Earth>
-      <Button primary type="button" handleClick={startGame} label="Let's Play!" />
+      <Button
+        primary
+        type="button"
+        handleClick={startGame}
+        label="Let's Play!"
+      />
       <ButtonContainer>
-        {howToPlayModal && (
-          <HowToPlayModal handleClose={hideHowToPlayModal}></HowToPlayModal>
+        {props.howToPlayModal && (
+          <HowToPlayModal
+            handleClose={props.hideHowToPlayModal}
+          ></HowToPlayModal>
         )}
-        {funFactsModal && (
-          <FunFactsModal handleClose={hideFunFactsModal}></FunFactsModal>
+        {props.funFactsModal && (
+          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
         )}
         <Button
           type="button"
-          handleClick={showHowToPlayModal}
+          handleClick={props.showHowToPlayModal}
           label="How To Play"
         ></Button>
         <Button
           type="button"
-          handleClick={showFunFactsModal}
+          handleClick={props.showFunFactsModal}
           label="Fun Facts"
         ></Button>
       </ButtonContainer>
