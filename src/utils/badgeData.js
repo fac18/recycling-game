@@ -1,19 +1,23 @@
 const badges = [
 {
     src: "images/turtle-badge.svg",
-    message: " points gets you a turtle badge!"
+    message: " points! You won a turtle badge!"
 },
 {
     src: "images/penguin-badge.svg",
-    message: " points gets you a penguin badge!"
+    message: " points! You won a penguin badge!"
 },
 {
     src: "images/fish-badge.svg",
-    message: " points gets you a fish badge!"
+    message: " points! You won a fish badge!"
 },
 {
     src: "images/dolphin-badge.svg",
-    message: " points gets you a dolphin badge!"
+    message: " points! You won a dolphin badge!"
+},
+{
+    src: "images/turtle-badge.svg",
+    message: " point! You won a turtle badge!"
 }
 ]
 
