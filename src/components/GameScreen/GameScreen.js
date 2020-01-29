@@ -245,6 +245,7 @@ const GameScreen = props => {
           setItemVisibility={setItemVisibility}
           failModal={failModal}
           setFailModal={setFailModal}
+          badCount={props.badCount}
         />
       )}
       {optionsModal && (
@@ -265,14 +266,10 @@ const GameScreen = props => {
       )}
 
       {props.howToPlayModal && (
-        <HowToPlayModal
-          handleClose={props.hideHowToPlayModal}
-        ></HowToPlayModal>
+        <HowToPlayModal handleClose={props.hideHowToPlayModal}></HowToPlayModal>
       )}
       {props.funFactsModal && (
-        <FunFactsModal
-          handleClose={props.hideFunFactsModal}
-        ></FunFactsModal>
+        <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
       )}
 
       <Header>
@@ -280,7 +277,11 @@ const GameScreen = props => {
           <PauseIcon onClick={showOptionsModal} />
         </PauseBox>
         <LivesContainer>
-          <LivesScore badCount={props.badCount} />
+          <LivesScore
+            badCount={props.badCount}
+            successModal={successModal}
+            failModal={failModal}
+          />
         </LivesContainer>
         <ProgressScore gameScreen count={props.count} />
       </Header>
