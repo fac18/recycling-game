@@ -11,7 +11,7 @@ const GenericButton = styled.button`
     inset 10px 10px 4px #cc6e00;
   border-radius: 25px;
   width: 375px;
-  height: 100px;
+  min-height: 100px;
   font-family: Bungee;
   font-style: normal;
   font-weight: normal;

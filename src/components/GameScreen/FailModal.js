@@ -11,7 +11,7 @@ import {
 } from "../MasterCss";
 
 const FailBox = styled.div`
-  background-color: rgba(235, 16, 16, 0.479);
+  background-color: rgba(235, 16, 16, 0.7);
   padding: 3em;
   width: 100vw;
   height: 100vh;
@@ -46,8 +46,8 @@ const FailModal = props => {
         {props.item.name} go in the {props.item.bin} bin.
       </ModalHeader>
       <BadgeBox>
-        <MessageImage alt={props.item.name} src={props.item.src} />
         <MessageBox>
+        <MessageImage alt={props.item.name} src={props.item.src} />
           <BoxMessage>Fun fact about {props.item.name}</BoxMessage>
         </MessageBox>
       </BadgeBox>

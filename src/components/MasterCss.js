@@ -13,11 +13,14 @@ const Container = styled.div`
 const MessageBox = styled.div`
   width: 50vw;
   height: 20vh;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #08345c;
   color: white;
   padding: 20px;
-  margin: 2em;
+  margin: 1em;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const BadgeBox = styled.div`
@@ -47,6 +50,8 @@ const ModalHeader = styled.h2`
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
+  width: 60vw;
+  padding-top: 0.5em;
 `;
 
 const MessageImage = styled.img`
