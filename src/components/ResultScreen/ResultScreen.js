@@ -71,7 +71,7 @@ const ResultScreen = props => {
           src={badges[badgeGiven].src}
           alt="An animal badge to say well done!"
         />
-        <MessageBox>
+        <MessageBox bin>
           <BoxMessage>{props.count}{badges[badgeGiven].message}</BoxMessage>
         </MessageBox>
       </BadgeBox>

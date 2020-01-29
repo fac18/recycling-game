@@ -202,6 +202,7 @@ const GameScreen = props => {
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
     bin: "recycling",
+    binImg: "images/recycle-bin.svg",
     fact: "Families use around 330 glass bottles and jars every year"
   });
   const [itemVisibility, setItemVisibility] = React.useState(true);

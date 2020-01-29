@@ -52,8 +52,9 @@ const FailModal = props => {
       </ModalHeader>
       <BadgeBox>
         <MessageBox>
-          <MessageImage alt={props.item.name} src={props.item.src} />
-          <BoxMessage>{props.item.fact}</BoxMessage>
+        <MessageImage alt={props.item.name} src={props.item.src} />
+        <MessageImage bin alt="Image of the correct bin" src={props.item.binImg}/>
+        <BoxMessage>{props.item.fact}</BoxMessage>
         </MessageBox>
       </BadgeBox>
       <Button primary handleClick={handleModal} label="OK" />
