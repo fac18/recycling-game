@@ -5,8 +5,8 @@ import items from "../../../src/utils/itemData";
 
 test("Test Item renders", () => {
     
-    const { getByTitle, debug } = render(<Item item={items[2]}/>);
-    const item = getByTitle("item");
+    const { getByAltText, debug } = render(<Item item={items[2]}/>);
+    const item = getByAltText("Drag me to the right bin!");
     debug(item);
     expect(item).toBeInTheDocument();
 });
