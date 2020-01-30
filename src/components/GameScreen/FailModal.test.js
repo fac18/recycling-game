@@ -1,13 +1,20 @@
 import React from "react";
 import Fail from "./FailModal";
+import { createMemoryHistory } from 'history'
+import{Router} from "react-router-dom"
 import { render, fireEvent } from "@testing-library/react";
 
 test("Testing FailModal renders", () => {
-  const { getByText } = render(<Fail item={{
+  const history = createMemoryHistory()
+  const { getByText,debug } = render(
+    <Router history={history}>
+  <Fail item={{
     name: "Glass Bottles",
     src: "images/glass-bottle.svg",
     bin: "recycling"
-}}/>);
-  const buttonNode = getByText("OK");
-  fireEvent.click(buttonNode);
+}}/>
+</Router>
+);
+  const button = getByText("OK");
+  debug(button)
 });
