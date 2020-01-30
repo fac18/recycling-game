@@ -17,4 +17,5 @@ test("Testing FailModal renders", () => {
 );
   const button = getByText("OK");
   debug(button)
+  expect(button).toBeInTheDocument()
 });
