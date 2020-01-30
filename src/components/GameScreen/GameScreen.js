@@ -28,8 +28,12 @@ import { ReactComponent as Crab } from "../../assets/crab.svg";
 import { ReactComponent as Seahorse } from "../../assets/seahorse.svg";
 import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
+import { ReactComponent as JellyfishSvg } from "../../assets/jellyfish-smile.svg";
+import { ReactComponent as OctopusSvg } from "../../assets/octopus-smile.svg";
+
 
 const Header = styled.div`
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
@@ -38,9 +42,9 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding-top: 5px;
-  padding-left: 5px;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-left: 20px;
 `;
 
 const LivesContainer = styled.div`
@@ -48,6 +52,7 @@ const LivesContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 20vw;
 `;
 
 const Wave5Div = styled.div`
@@ -173,6 +178,21 @@ const RedFishBox = styled.div`
   right: 21.87%;
   bottom: 0.79%;
   z-index: 900;
+`;
+
+const Octopus = styled(OctopusSvg)`
+  position: fixed;
+  right: 22.67%;
+  bottom: 10%;
+`;
+
+const Jellyfish = styled(JellyfishSvg)`
+  position: fixed;
+  width: 75.03px;
+  height: 95.34px;
+  left: 358.57px;
+  bottom: 25%;
+  transform: rotate(270deg);
 `;
 
 const ItemText = styled.h2`
@@ -314,6 +334,7 @@ const GameScreen = props => {
       <Wave3Div>
         <Wave3 />
       </Wave3Div>
+      <Jellyfish />
       <Wave4Div>
         <Wave4 />
       </Wave4Div>
@@ -362,7 +383,7 @@ const GameScreen = props => {
           <CompostBin title="compostbin" />
         </DropTarget>
       </CompostBinBox>
-
+          <Octopus />
       <Wave5Div>
         <Wave5 />
       </Wave5Div>

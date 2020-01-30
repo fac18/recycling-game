@@ -6,9 +6,10 @@ import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
 const ScoreContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 20vw;
+  width: 28vw;
+  padding-right: 20px;
 `;
 
 const Score = styled.p`
