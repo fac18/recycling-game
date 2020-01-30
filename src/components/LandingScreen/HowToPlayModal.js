@@ -67,11 +67,11 @@ const HowToPlayModal = ({ handleClose }) => {
         <CloseCross onClick={handleClose} />
         <PageHeader>How to play</PageHeader>
         <CenterChildren>
-        <MessageBox ><BadgeBox><RecycleBin width="20%" height="70%"/><BoxMessage>Drag and drop items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox ><BadgeBox><BlackBin width="20%" height="70%"/><BoxMessage>Drag and drop items that CANNOT BE RECYCLED into this bin</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox ><BadgeBox><CompostBin width="20%" height="70%"/><BoxMessage>Drag and drop items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox ><BadgeBox><Heart width="20%" /><BoxMessage>These are your LIVES. If you put the item in the wrong bin you lose a life</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox ><BadgeBox><StarFish width="20%" /><BoxMessage>If you put an item in the right bin you get starfish POINT</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox ><BadgeBox><RecycleBin width="20%" height="70%"/><BoxMessage>Drag and drop items that <OrangeText>CAN BE RECYCLED</OrangeText> into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox ><BadgeBox><BlackBin width="20%" height="70%"/><BoxMessage>Drag and drop items that <OrangeText>CANNOT BE RECYCLED</OrangeText> into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox ><BadgeBox><CompostBin width="20%" height="70%"/><BoxMessage>Drag and drop items that are <OrangeText>FOOD WASTE</OrangeText> into this bin</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox ><BadgeBox><Heart width="20%" /><BoxMessage>These are your <OrangeText>LIVES</OrangeText>. If you put the item in the wrong bin you lose a life</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox ><BadgeBox><StarFish width="20%" /><BoxMessage>If you put an item in the right bin you get a <OrangeText>STARFISH POINT</OrangeText>!</BoxMessage></BadgeBox></MessageBox>
         </CenterChildren>
 
         <Button primary handleClick={handleClose} label="Close"></Button>
