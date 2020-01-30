@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
 
+
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -95,16 +96,12 @@ const Stars = styled.div`
 const LandingScreen = props => {
   const history = useHistory();
 
-  const music = new UIfx(kahootMusic);
-
-  music.play(0.5);
-
-
   const startGame = () => {
-    history.push("/game");
+   history.push("/game")
   };
 
   return (
+    
     <Container>
       <Title>
         reduce, reuse,<TitleBig>recycle!</TitleBig>
@@ -121,9 +118,11 @@ const LandingScreen = props => {
       <Button
         primary
         type="button"
+        renderAs="button"
         handleClick={startGame}
         label="Let's Play!"
-      />
+      ></Button>
+     
       <ButtonContainer>
         {props.howToPlayModal && (
           <HowToPlayModal
@@ -145,6 +144,8 @@ const LandingScreen = props => {
         ></Button>
       </ButtonContainer>
     </Container>
+   
+    
   );
 };
 
