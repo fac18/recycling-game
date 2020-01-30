@@ -18,6 +18,8 @@ const FunFactsBox = styled.div`
   display: block;
   z-index: 3000;
   border-radius: 25px;
+  border: 2px solid #08345C;
+  filter: drop-shadow(4px 4px 4px #08345C);
 `;
 
 const FunFactsModal = ({ handleClose }) => {

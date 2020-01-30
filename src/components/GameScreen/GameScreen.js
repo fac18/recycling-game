@@ -112,8 +112,7 @@ const Algae1Box = styled.div`
   position: fixed;
   left: 81.66%;
   right: 15.33%;
-  top: 86.21%;
-  bottom: 0;
+  bottom: -1%;
   z-index: 900;
 `;
 
@@ -121,8 +120,7 @@ const Algae2Box = styled.div`
   position: fixed;
   left: 8.79%;
   right: 83.42%;
-  top: 85.37%;
-  bottom: -0.36%;
+  bottom: -1%;
   z-index: 900;
 `;
 
@@ -130,8 +128,7 @@ const Algae3Box = styled.div`
   position: fixed;
   left: 43.3%;
   right: 40.37%;
-  top: 91.13%;
-  bottom: -12.71%;
+  bottom: -1%;
   z-index: 900;
 `;
 
