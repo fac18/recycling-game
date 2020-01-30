@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Error from "./components/Error/Error";
 import GameScreen from "./components/GameScreen/GameScreen";
 import ResultScreen from "./components/ResultScreen/ResultScreen";

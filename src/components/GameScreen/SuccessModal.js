@@ -2,13 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import items from "../../utils/itemData";
 import Button from "../Button";
-import {
-  MessageBox,
-  BadgeBox,
-  BoxMessage,
-  ModalHeader,
-  MessageImage
-} from "../MasterCss";
+import * as SC from "../MasterCss";
 
 const SuccessBox = styled.div`
   background-color: rgba(36, 174, 95, 0.7);
@@ -41,18 +35,17 @@ const SuccessModal = props => {
 
   return (
     <SuccessBox id="success" onClick={hideModal}>
-      <ModalHeader>Well Done!</ModalHeader>
-      <ModalHeader>
+      <SC.ModalHeader>Well Done!</SC.ModalHeader>
+      <SC.ModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
-      </ModalHeader>
-      <BadgeBox>
+      </SC.ModalHeader>
+      <SC.BadgeBox>
         
-        <MessageBox>
-        <MessageImage alt={props.item.name} src={props.item.src} />
-        <MessageImage bin alt="Image of the correct bin" src={props.item.binImg}/>
-        <BoxMessage>{props.item.fact}</BoxMessage>
-        </MessageBox>
-      </BadgeBox>
+        <SC.MessageBox>
+        <SC.MessageImage alt={props.item.name} src={props.item.src} />
+        <SC.BoxMessage>{props.item.fact}</SC.BoxMessage>
+        </SC.MessageBox>
+      </SC.BadgeBox>
       <Button primary handleClick={handleModal} label="OK" />
     </SuccessBox>
   );

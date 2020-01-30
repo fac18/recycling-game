@@ -5,7 +5,6 @@ import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
 import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
-import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 import Button from "../Button";
 import {
