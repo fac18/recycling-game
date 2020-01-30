@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
 
+
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
@@ -12,8 +13,8 @@ import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 import UIfx from "uifx";
 import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
-const music = new UIfx(kahootMusic);
-music.play(0.5);
+
+
 
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
@@ -74,26 +75,33 @@ const ButtonContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 100vh;
-  justify-content: space-between;
+  width: 100vw;
+  justify-content: space-around;
   margin-bottom: 0.5em;
 `;
 
 const Stars = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  overflow: hidden;
 `;
 const LandingScreen = props => {
   const history = useHistory();
 
   const startGame = () => {
-    history.push("/game");
+   history.push("/game")
   };
 
   return (
+    
     <Container>
       <Title>
         reduce, reuse,<TitleBig>recycle!</TitleBig>
@@ -110,9 +118,11 @@ const LandingScreen = props => {
       <Button
         primary
         type="button"
+        renderAs="button"
         handleClick={startGame}
         label="Let's Play!"
-      />
+      ></Button>
+     
       <ButtonContainer>
         {props.howToPlayModal && (
           <HowToPlayModal
@@ -134,6 +144,8 @@ const LandingScreen = props => {
         ></Button>
       </ButtonContainer>
     </Container>
+   
+    
   );
 };
 

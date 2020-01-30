@@ -13,20 +13,9 @@ import {
   MessageBox,
   BadgeBox,
   BoxMessage,
-  MessageImage
+  MessageImage,
+  PageHeader
 } from "../MasterCss";
-
-const PageHeader = styled.h1`
-  font-family: Freckle Face;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 64px;
-  line-height: 79px;
-  text-align: center;
-  color: #ff8a00;
-  -webkit-text-stroke: 2px black;
-  text-transform: uppercase;
-`;
 
 const ButtonContainer = styled.div`
   display: flex;

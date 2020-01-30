@@ -10,7 +10,7 @@ test("recycle bin shows on page", () => {
   expect(recycleBin).toBeInTheDocument();
 });
 
-test('blackbin shows on page', () => {
+test("blackbin shows on page", () => {
   const { getByTitle, debug } = render(< GameScreen />);
   const starFish = getByTitle('blackbin');
   debug(starFish);
