@@ -74,8 +74,8 @@ const ButtonContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 100vh;
-  justify-content: space-between;
+  width: 100vw;
+  justify-content: space-around;
   margin-bottom: 0.5em;
 `;
 
