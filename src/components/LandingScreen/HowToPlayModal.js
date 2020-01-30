@@ -16,9 +16,9 @@ import {
 
 
 const HowToPlayBox = styled.div`
-  background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);   
-  padding: 2em;
-  position: absolute;
+background-image: linear-gradient(#21b2d3, #7abefd);
+padding: 2em;
+  position: fixed;
   width: 90vw;
   height: 85vh;
   display: flex;
@@ -30,16 +30,9 @@ const HowToPlayBox = styled.div`
   overflow: scroll;
   z-index: 3000;
   border-radius: 25px;
+  border: 2px solid #08345C;
+  filter: drop-shadow(4px 4px 4px #08345C);
 `;
-
-// const TextH2 = styled.h2`
-//   font-family: bungee;
-//   color: white;
-//   font-size: 64px;
-//   line-height: 77px;
-//   color: #ffffff;
-//   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-// `
 
 const PageHeader = styled.h1`
   font-family: Freckle Face;
