@@ -18,7 +18,7 @@ import {
 const HowToPlayBox = styled.div`
   background: linear-gradient(180deg, #21B2D3 0%, #7ABEFD 100%), linear-gradient(180deg, #68C2CD 0%, #7ABEFD 100%);   
   padding: 2em;
-  position: absolute;
+  position: fixed;
   width: 90vw;
   height: 85vh;
   display: flex;

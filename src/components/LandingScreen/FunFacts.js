@@ -8,7 +8,7 @@ import { ReactComponent as Cross } from "../../assets/x-button.svg";
 const FunFactsBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
   padding: 2em;
-  position: absolute;
+  position: fixed;
   width: 90vw;
   height: 85vh;
   top: 50%;
