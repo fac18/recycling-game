@@ -14,6 +14,8 @@ Please take a look around. We're currently working on refactoring our DOM-manipu
 
 ### Here's our [playable figma prototype](https://www.figma.com/proto/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=177%3A235&scaling=scale-down)
 
+### Our [Style Guide](https://www.figma.com/file/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=36%3A0)
+
 ### [Design Week presentation](https://hackmd.io/@XI0fc2MpTIuI1L-y-LwoxA/SJyRokLxL#/)
 
 ### [Usability Testing Notes](https://github.com/fac18/recycling-game/issues/2)
