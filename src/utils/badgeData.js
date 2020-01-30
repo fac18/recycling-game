@@ -1,24 +1,29 @@
+import TurtleBadge from "../images/turtle-badge.svg";
+import FishBadge from "../images/fish-badge.svg";
+import PenguinBadge from "../images/penguin-badge.svg";
+import DolphinBadge from "../images/dolphin-badge.svg";
+
 const badges = [
-{
-    src: "images/turtle-badge.svg",
+  {
+    src: TurtleBadge,
     message: " points! You won a turtle badge!"
-},
-{
-    src: "images/penguin-badge.svg",
+  },
+  {
+    src: PenguinBadge,
     message: " points! You won a penguin badge!"
-},
-{
-    src: "images/fish-badge.svg",
+  },
+  {
+    src: FishBadge,
     message: " points! You won a fish badge!"
-},
-{
-    src: "images/dolphin-badge.svg",
+  },
+  {
+    src: DolphinBadge,
     message: " points! You won a dolphin badge!"
-},
-{
-    src: "images/turtle-badge.svg",
+  },
+  {
+    src: TurtleBadge,
     message: " point! You won a turtle badge!"
-}
-]
+  }
+];
 
 export default badges;
