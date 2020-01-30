@@ -39,6 +39,7 @@ const MessageBox = styled.div`
   display:flex;
   flex-direction: row;
   align-items: center;
+  align-self: center;
 
   ${props =>
 
@@ -106,13 +107,11 @@ const OrangeText = styled.p`
   display: inline;
 `;
 
-const StickyCross = styled(Cross)`
-  position: absolute;
-  left: 1.42%;
-  right: 90.87%;
+const CloseCross = styled(Cross)`
+  left: 1%;
   top: 2.04%;
-  bottom: 86.95%;
-  position: sticky;
+  position: fixed;
+  cursor: pointer;
 `;
 
 export {
@@ -124,5 +123,5 @@ export {
   ModalHeader,
   MessageImage,
   OrangeText,
-  StickyCross
+  CloseCross
 };
