@@ -46,12 +46,8 @@ const Error = props => {
 
   return (
     <Container>
-      <ModalHeader>
-        404
-      </ModalHeader>
-      <ModalHeader>
-        You're out in space!
-      </ModalHeader>
+      <ModalHeader>error: 404</ModalHeader>
+      <ModalHeader>You're out in space!</ModalHeader>
       <Octopus />
       <Stars />
       <Button primary handleClick={goHome} label={"Back to Earth"} />
@@ -60,4 +56,3 @@ const Error = props => {
 };
 
 export default Error;
-
