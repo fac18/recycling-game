@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, getByTitle, getByAltText, act } from '@testing-library/react';
 import GameScreen from './GameScreen';
+import Item from "./Item";
+
 // import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 
 describe("The Game Screen", () => {
@@ -20,13 +22,12 @@ describe("The Game Screen", () => {
     const { getByTitle, container } = render(< GameScreen />);
     const bottle = container.getElementsByTagName('img');
     const blackbin = container.getByTitle('blackbin');
-    console.log(blackbin);
     await act(
       // () => bottle.trigger(new MouseEvent('click', {bubbles: true}))
-      () => blackbin.fireEvent(new DragEvent('ondragend', {bubbles: true}))
+      () => bottle.dispatchEvent(new DragEvent('drop', {bubbles: true}))
 
     );
-    expect(bottle).toExist();
+    // expect(bottle.bin).toExist();
   });
 });
 
