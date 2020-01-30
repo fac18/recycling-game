@@ -3,13 +3,7 @@ import styled from "styled-components";
 import items from "../../utils/itemData";
 import Button from "../Button";
 import { useHistory } from "react-router-dom";
-import {
-  MessageBox,
-  BadgeBox,
-  BoxMessage,
-  ModalHeader,
-  MessageImage
-} from "../MasterCss";
+import * as SC from "../MasterCss";
 
 const FailBox = styled.div`
   background-color: rgba(235, 16, 16, 0.7);
@@ -46,17 +40,16 @@ const FailModal = props => {
 
   return (
     <FailBox id="fail" onClick={hideModal}>
-      <ModalHeader>Uh Oh!</ModalHeader>
-      <ModalHeader>
+      <SC.ModalHeader>Uh Oh!</SC.ModalHeader>
+      <SC.ModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
-      </ModalHeader>
-      <BadgeBox>
-        <MessageBox>
-        <MessageImage alt={props.item.name} src={props.item.src} />
-        <MessageImage bin alt="Image of the correct bin" src={props.item.binImg}/>
-        <BoxMessage>{props.item.fact}</BoxMessage>
-        </MessageBox>
-      </BadgeBox>
+      </SC.ModalHeader>
+      <SC.BadgeBox>
+        <SC.MessageBox>
+        <SC.MessageImage alt={props.item.name} src={props.item.src} />
+        <SC.BoxMessage>{props.item.fact}</SC.BoxMessage>
+        </SC.MessageBox>
+      </SC.BadgeBox>
       <Button primary handleClick={handleModal} label="OK" />
     </FailBox>
   );

@@ -12,9 +12,6 @@ import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 import UIfx from "uifx";
 import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
-
-
-
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
   display: flex;
@@ -39,6 +36,10 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+  margin-bottom: 0;
+  position: relative;
+  top: 10%;
+  z-index: 5;
 `;
 
 const TitleBig = styled.h1`
@@ -55,6 +56,7 @@ const TitleBig = styled.h1`
   background-clip: text;
   margin-block-start: 0em;
   margin-block-end: 0em;
+  z-index: 5;
 `;
 
 const Octopus = styled.div`
@@ -92,6 +94,7 @@ const Stars = styled.div`
   justify-content: space-around;
   overflow: hidden;
 `;
+
 const LandingScreen = props => {
   const history = useHistory();
 
@@ -99,16 +102,15 @@ const LandingScreen = props => {
 
   music.play(0.5);
 
-
   const startGame = () => {
     history.push("/game");
   };
 
   return (
     <Container>
-      <Title>
-        reduce, reuse,<TitleBig>recycle!</TitleBig>
-      </Title>
+      <Title>reduce, reuse,</Title>
+      <TitleBig>recycle!</TitleBig>
+
       <Octopus>
         <SpaceOctopus />
       </Octopus>
