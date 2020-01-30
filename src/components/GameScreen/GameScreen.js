@@ -30,7 +30,7 @@ import { ReactComponent as RedFish } from "../../assets/red-fish.svg";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 import { ReactComponent as JellyfishSvg } from "../../assets/jellyfish-smile.svg";
 import { ReactComponent as OctopusSvg } from "../../assets/octopus-smile.svg";
-
+import Wine from "../../images/wine-bottle.svg";
 
 const Header = styled.div`
   box-sizing: border-box;
@@ -217,7 +217,7 @@ const PauseBox = styled.div`
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
-    src: "images/wine-bottle.svg",
+    src: Wine,
     bin: "recycling",
     binImg: "images/recycle-bin.svg",
     fact: "Families use around 330 glass bottles and jars every year"
@@ -383,7 +383,7 @@ const GameScreen = props => {
           <CompostBin title="compostbin" />
         </DropTarget>
       </CompostBinBox>
-          <Octopus />
+      <Octopus />
       <Wave5Div>
         <Wave5 />
       </Wave5Div>
