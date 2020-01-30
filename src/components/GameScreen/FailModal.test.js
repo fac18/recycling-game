@@ -12,8 +12,8 @@ import { render, fireEvent } from "@testing-library/react";
 //   fireEvent.click(buttonNode);
 // });
 
-test('1 + 1 is 2', () => {
-  const actual = 1 + 1;
-  const expected = 2;
+test('1 + 2 is 3', () => {
+  const actual = 2 + 1;
+  const expected = 3;
   expect(actual).toBe(expected);
 });
