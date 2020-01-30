@@ -31,6 +31,7 @@ function App() {
 
   return (
     <main className="App">
+    
       <Switch>
         {/* setting game screen as home for code review */}
         <Route
@@ -85,6 +86,7 @@ function App() {
         />
         <Route component={Error} />
       </Switch>
+      
     </main>
   );
 }

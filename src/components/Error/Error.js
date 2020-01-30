@@ -35,6 +35,7 @@ const Stars = styled(StarsSvg)`
   align-items: flex-start;
   justify-content: space-around;
   overflow: hidden;
+  z-index: 0;
 `;
 
 const Error = props => {

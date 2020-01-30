@@ -39,6 +39,7 @@ const MessageBox = styled.div`
   display:flex;
   flex-direction: row;
   align-items: center;
+  align-self: center;
 
   ${props =>
 
@@ -49,11 +50,9 @@ const MessageBox = styled.div`
 
   ${props =>
 
-    props.bin &&
+    props.results &&
     css`
-      width: 55vw;
-      text-align: center;
-
+    justify-content: center;
     `}
 `;
 
@@ -73,6 +72,7 @@ const BoxMessage = styled.p`
   align-items: center;
   color: #ffffff;
   padding-left: 0.5em;
+  margin: 0;
 `;
 
 const ModalHeader = styled.h2`
@@ -80,13 +80,14 @@ const ModalHeader = styled.h2`
   font-family: Bungee;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
+  font-size: 50px;
   line-height: 77px;
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
   width: 80vw;
   padding-top: 0.5em;
+  z-index: 5;
 `;
 
 const MessageImage = styled.img`
@@ -106,13 +107,11 @@ const OrangeText = styled.p`
   display: inline;
 `;
 
-const StickyCross = styled(Cross)`
-  position: absolute;
-  left: 1.42%;
-  right: 90.87%;
+const CloseCross = styled(Cross)`
+  left: 1%;
   top: 2.04%;
-  bottom: 86.95%;
-  position: sticky;
+  position: fixed;
+  cursor: pointer;
 `;
 
 export {
@@ -124,5 +123,5 @@ export {
   ModalHeader,
   MessageImage,
   OrangeText,
-  StickyCross
+  CloseCross
 };

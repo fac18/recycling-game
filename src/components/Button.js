@@ -24,6 +24,7 @@ const GenericButton = styled.button`
   cursor: pointer;
   border-style: none;
   z-index: 5;
+  margin-bottom: 25px;
 
   ${props =>
     props.primary &&

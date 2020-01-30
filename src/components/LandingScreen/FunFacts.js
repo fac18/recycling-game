@@ -6,7 +6,7 @@ import {
   MessageBox,
   BoxMessage,
   OrangeText,
-  StickyCross
+  CloseCross
 } from "../MasterCss";
 
 import { ReactComponent as Paper } from "../../assets/paper.svg";
@@ -63,8 +63,7 @@ const ExtLink = styled.a`
 const FunFactsModal = ({ handleClose }) => {
   return (
     <FunFactsBox>
-      <section className="modal-main">
-        <StickyCross onClick={handleClose} />
+        <CloseCross onClick={handleClose} />
         <PageHeader>About Recycling</PageHeader>
         <MessageBox primary><BoxMessage>
 
@@ -152,7 +151,6 @@ const FunFactsModal = ({ handleClose }) => {
 
         <Button primary handleClick={handleClose} label="Close"></Button>
 
-      </section>
     </FunFactsBox>
   );
 };

@@ -53,14 +53,14 @@ const ResultScreen = props => {
   return (
     <Container>
       <PageHeader>nice one!</PageHeader>
-      <ProgressScore count={props.count} />
+      <ProgressScore results count={props.count} />
       <BadgeBox>
         {" "}
         <MessageImage
           src={badges[badgeGiven].src}
           alt="An animal badge to say well done!"
         />
-        <MessageBox bin>
+        <MessageBox results>
           <BoxMessage>{props.count}{badges[badgeGiven].message}</BoxMessage>
         </MessageBox>
       </BadgeBox>
