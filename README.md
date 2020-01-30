@@ -2,7 +2,9 @@
 
 We're building a recycling game for children aged 4-6yrs old
 
-![](https://media.giphy.com/media/KhlVSyjsbx18A/giphy.gif)
+![](https://media.giphy.com/media/KhlVSyjsbx18A/giphy.gif) 
+
+![](https://i.imgur.com/z6I93K6.gif)
 
 Please take a look around. We're currently working on refactoring our DOM-manipulation to using States and being more Reacty!
 
