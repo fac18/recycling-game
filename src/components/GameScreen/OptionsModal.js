@@ -13,8 +13,8 @@ const OptionsBox = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 10px;
-  padding-left: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
   padding-right: 25px;
   padding-bottom: 25px;
   z-index: 2000;
