@@ -19,6 +19,7 @@ test("Testing SuccessModal renders", () => {
     );
     const button = getByText("OK");
     debug(button)
+    expect(button).toBeInTheDocument()
 });
 
 // test('1 + 1 is 2', () => {
