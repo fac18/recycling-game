@@ -10,8 +10,8 @@ import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
-import UIfx from "uifx";
-import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
+// import UIfx from "uifx";
+// import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
