@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "start-sw": "http-server ./build",
     "report-coverage": "npm test -- --coverage --watchAll=false && codecov"
   },
   "eslintConfig": {
@@ -37,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "codecov": "^3.6.1"
+    "codecov": "^3.6.1",
+    "http-server": "^0.12.1"
   }
 }
