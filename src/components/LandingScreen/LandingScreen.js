@@ -81,10 +81,16 @@ const ButtonContainer = styled.div`
 
 const Stars = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  overflow: hidden;
 `;
 const LandingScreen = props => {
   const history = useHistory();

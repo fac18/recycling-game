@@ -26,7 +26,7 @@ import { ReactComponent as TeaBag } from "../../assets/tea-bag.svg";
 const FunFactsBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
   padding: 2em;
-  position: absolute;
+  position: fixed;
   width: 90vw;
   height: 85vh;
   top: 50%;
@@ -36,6 +36,8 @@ const FunFactsBox = styled.div`
   display: block;
   z-index: 3000;
   border-radius: 25px;
+  border: 2px solid #08345C;
+  filter: drop-shadow(4px 4px 4px #08345C);
   text-align: center;
 `;
 
