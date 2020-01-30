@@ -8,7 +8,7 @@ We're building a recycling game for children aged 4-6yrs old
 
 
 
-Please take a look around. We're currently working on refactoring our DOM-manipulation to using States and being more Reacty!
+Please take a look around. We're currently working on creating a PWA!
 
 ### continuous integration 
 [![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
