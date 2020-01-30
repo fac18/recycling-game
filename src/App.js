@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import Error from "./components/Error/Error";
 import GameScreen from "./components/GameScreen/GameScreen";
 import ResultScreen from "./components/ResultScreen/ResultScreen";
@@ -31,6 +31,7 @@ function App() {
 
   return (
     <main className="App">
+    
       <Switch>
         {/* setting game screen as home for code review */}
         <Route
@@ -85,6 +86,7 @@ function App() {
         />
         <Route component={Error} />
       </Switch>
+      
     </main>
   );
 }
