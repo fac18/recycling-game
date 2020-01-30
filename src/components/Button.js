@@ -40,7 +40,7 @@ const Button = props => {
       primary={props.primary}
       className="btn"
       onClick={() => {
-        // props.handleClick();
+        props.handleClick();
         click.play();
       }}
     >

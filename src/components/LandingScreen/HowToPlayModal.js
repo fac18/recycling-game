@@ -9,9 +9,11 @@ import { ReactComponent as Cross } from "../../assets/x-button.svg";
 
 import Button from "../Button";
 import {
+  PageHeader,
   MessageBox,
   BoxMessage,
-  BadgeBox
+  BadgeBox,
+  OrangeText
 } from "../MasterCss";
 
 
@@ -34,33 +36,18 @@ padding: 2em;
   filter: drop-shadow(4px 4px 4px #08345C);
 `;
 
-const PageHeader = styled.h1`
-  font-family: Freckle Face;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 64px;
-  line-height: 79px;
-  text-align: center;
-  color: #ff8a00;
-  -webkit-text-stroke: 2px black;
-  text-transform: uppercase;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-
-`;
-
-
 const HowToPlayModal = ({ handleClose }) => {
   return (
     <HowToPlayBox>
       {/* <section className="modal-main"> */}
 
-        <PageHeader>How to play?</PageHeader>
+        <PageHeader>How to play</PageHeader>
         {/* <TextH2>This is how to play the game</TextH2> */}
         <MessageBox><BadgeBox><RecycleBin width="20%" height="70%"/><BoxMessage>Drag and drop items that CAN BE RECYCLED into this bin.</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><BlackBin width="20%" height="70%"/><BoxMessage>Drag and drop items that CANNOT BE RECYCLED into this bin</BoxMessage></BadgeBox></MessageBox>
         <MessageBox><BadgeBox><CompostBin width="20%" height="70%"/><BoxMessage>Drag and drop items that are FOOD WASTE into this bin</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox><BadgeBox><Heart width="20%" height="70%"/><BoxMessage>These are your LIVES. If you put the item in the wrong bin you lose a life</BoxMessage></BadgeBox></MessageBox>
-        <MessageBox><BadgeBox><StarFish width="20%" height="70%" /><BoxMessage>If you put an item in the right bin you get starfish POINT</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><Heart width="20%" /><BoxMessage>These are your LIVES. If you put the item in the wrong bin you lose a life</BoxMessage></BadgeBox></MessageBox>
+        <MessageBox><BadgeBox><StarFish width="20%" /><BoxMessage>If you put an item in the right bin you get starfish POINT</BoxMessage></BadgeBox></MessageBox>
       <Cross onClick={handleClose} />
 
         {/* {children} */}

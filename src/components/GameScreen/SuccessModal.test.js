@@ -5,6 +5,7 @@ import { render, fireEvent, GetByText, findByText } from "@testing-library/react
 
 test("Testing SuccessModal renders", () => {
     const { getByText } = render(<Success item={{
+
         name: "Glass Bottles",
         src: "images/glass-bottle.svg",
         bin: "recycling"
