@@ -201,7 +201,9 @@ const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
     src: "images/wine-bottle.svg",
-    bin: "recycling"
+    bin: "recycling",
+    binImg: "images/recycle-bin.svg",
+    fact: "Families use around 330 glass bottles and jars every year"
   });
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
@@ -357,7 +359,7 @@ const GameScreen = props => {
         <DropTarget
           targetKey="bins"
           onHit={() => {
-            dropReaction("food composting");
+            dropReaction("food compost");
           }}
         >
           <CompostBin title="compostbin" />

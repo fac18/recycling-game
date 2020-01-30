@@ -42,7 +42,9 @@ const ResultScreen = props => {
   const [badgeGiven, setBadgeGiven] = React.useState(0);
 
   React.useEffect(() => {
-    if (props.count >= 5 && props.count < 11) {
+    if (props.count === 1) {
+      setBadgeGiven(4)
+    } else if (props.count >= 5 && props.count < 11) {
       setBadgeGiven(1);
     } else if (props.count >= 10 && props.count < 16) {
       setBadgeGiven(2);
@@ -69,8 +71,8 @@ const ResultScreen = props => {
           src={badges[badgeGiven].src}
           alt="An animal badge to say well done!"
         />
-        <MessageBox>
-          <BoxMessage>{badges[badgeGiven].message}</BoxMessage>
+        <MessageBox bin>
+          <BoxMessage>{props.count}{badges[badgeGiven].message}</BoxMessage>
         </MessageBox>
       </BadgeBox>
       <ButtonContainer>
