@@ -12,8 +12,8 @@ const LivesScore = props => {
     // eslint-disable-next-line
   }, [props.badCount]);
 
-  return livesArr.map(() => {
-    return [<Heart />];
+  return livesArr.map((item) => {
+    return <Heart key={item}/>;
   });
 };
 
