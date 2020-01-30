@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
@@ -93,13 +94,14 @@ const Stars = styled.div`
   overflow: hidden;
 `;
 const LandingScreen = props => {
-  const history = useHistory();
+  // const history = useHistory();
 
-  const startGame = () => {
-    history.push("/game");
-  };
+  // const startGame = () => {
+  //  return <Link to="/game" />
+  // };
 
   return (
+    <Router>
     <Container>
       <Title>
         reduce, reuse,<TitleBig>recycle!</TitleBig>
@@ -113,12 +115,15 @@ const LandingScreen = props => {
       <Earth>
         <EarthSvg />
       </Earth>
+      <Link to="/game">
       <Button
         primary
         type="button"
-        handleClick={startGame}
+        renderAs="button"
+        // handleClick={<Link to="/game" />}
         label="Let's Play!"
-      />
+      ></Button>
+      </Link>
       <ButtonContainer>
         {props.howToPlayModal && (
           <HowToPlayModal
@@ -140,6 +145,8 @@ const LandingScreen = props => {
         ></Button>
       </ButtonContainer>
     </Container>
+    </Router>
+    
   );
 };
 
