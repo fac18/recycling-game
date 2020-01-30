@@ -3,22 +3,13 @@
   "name": "reduce-reuse-recycle",
   "icons": [
     {
-      "src": "../src/assets/octopus-smile.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "../src/assets/wine-bottle.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
+      "src": "/images/earth-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://reduce-reuse-recycle.netlify.com/",
+  "start_url": ".",
+  "orientation": "landscape",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#21b2d3"
