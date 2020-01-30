@@ -17,8 +17,8 @@ test("Testing SuccessModal renders", () => {
     }}/>
     </Router>
     );
-    const buttonNode = getByText("OK");
-    debug(buttonNode)
+    const button = getByText("OK");
+    debug(button)
 });
 
 // test('1 + 1 is 2', () => {
