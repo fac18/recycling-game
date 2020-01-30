@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { ReactComponent as Cross } from "../assets/x-button.svg";
+
 
 const Container = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -22,6 +24,7 @@ const PageHeader = styled.h1`
   text-transform: uppercase;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin-block-end: 0px;
+  display: inline;
 
 `;
 
@@ -103,6 +106,15 @@ const OrangeText = styled.p`
   display: inline;
 `;
 
+const StickyCross = styled(Cross)`
+  position: absolute;
+  left: 1.42%;
+  right: 90.87%;
+  top: 2.04%;
+  bottom: 86.95%;
+  position: sticky;
+`;
+
 export {
   Container,
   PageHeader,
@@ -111,5 +123,6 @@ export {
   BoxMessage,
   ModalHeader,
   MessageImage,
-  OrangeText
+  OrangeText,
+  StickyCross
 };
