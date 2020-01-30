@@ -21,7 +21,7 @@ import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
-    src: "images/wine-bottle.svg",
+    src: Wine,
     bin: "recycling",
     binImg: "images/recycle-bin.svg",
     fact: "Families use around 330 glass bottles and jars every year"
