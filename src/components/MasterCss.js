@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { ReactComponent as Cross } from "../assets/x-button.svg";
+
 
 const Container = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
@@ -10,9 +12,25 @@ const Container = styled.div`
   width: 100vw;
 `;
 
+const PageHeader = styled.h1`
+  font-family: Freckle Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  text-align: center;
+  color: #ff8a00;
+  -webkit-text-stroke: 2px black;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-block-end: 0px;
+  display: inline;
+
+`;
+
 const MessageBox = styled.div`
-  width: 70vw;
-  height: 20vh;
+  width: 50vw;
+  min-height: 20vh;
   border-radius: 25px;
   background-color: #08345c;
   color: white;
@@ -23,10 +41,19 @@ const MessageBox = styled.div`
   align-items: center;
 
   ${props =>
+
+    props.primary &&
+    css`
+      width: auto;
+    `}
+
+  ${props =>
+
     props.bin &&
     css`
       width: 55vw;
       text-align: center;
+
     `}
 `;
 
@@ -74,11 +101,28 @@ const MessageImage = styled.img`
     `}
 `;
 
+const OrangeText = styled.p`
+  color: #FF8A00;
+  display: inline;
+`;
+
+const StickyCross = styled(Cross)`
+  position: absolute;
+  left: 1.42%;
+  right: 90.87%;
+  top: 2.04%;
+  bottom: 86.95%;
+  position: sticky;
+`;
+
 export {
   Container,
+  PageHeader,
   MessageBox,
   BadgeBox,
   BoxMessage,
   ModalHeader,
-  MessageImage
+  MessageImage,
+  OrangeText,
+  StickyCross
 };
