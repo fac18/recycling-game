@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
-
+import { spinscale } from "../Keyframes";
 
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
@@ -94,6 +94,7 @@ const Stars = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   overflow: hidden;
+  animation: ${ spinscale } 4s linear infinite alternate;
 `;
 
 const LandingScreen = props => {
