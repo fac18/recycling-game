@@ -96,7 +96,7 @@ const GameScreen = props => {
       )}
 
       <SC.Header>
-        <PauseIcon onClick={showOptionsModal} />
+        <PauseIcon onClick={showOptionsModal} cursor="pointer"/>
         <SC.LivesContainer>
           <LivesScore
             badCount={props.badCount}
