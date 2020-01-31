@@ -4,6 +4,8 @@ import items from "../../utils/itemData";
 import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import * as SC from "../MasterCss";
+import UIfx from "uifx";
+import errorSound from "../../assets/sounds/alert_error-01.mp3";
 
 const FailBox = styled.div`
   background-color: rgba(235, 16, 16, 0.7);
@@ -20,6 +22,8 @@ const FailBox = styled.div`
 `;
 
 const FailModal = props => {
+  const errorUIFX = new UIfx(errorSound)
+  errorUIFX.play()
   const hideModal = () => {
     props.setFailModal(!props.failModal);
 
@@ -38,8 +42,11 @@ const FailModal = props => {
     }
   };
 
+  
+
   return (
     <FailBox id="fail" onClick={hideModal}>
+      
       <SC.ModalHeader>Uh Oh!</SC.ModalHeader>
       <SC.ModalHeader>
         {props.item.name} go in the {props.item.bin} bin.
