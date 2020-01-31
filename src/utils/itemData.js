@@ -7,7 +7,7 @@ import MilkCarton from "../images/milk-carton.svg";
 import Newspaper from "../images/newspaper.svg";
 import Papers from "../images/paper.svg";
 import PlasticBag from "../images/plastic-bag.svg";
-import PlasticBottle from "../images/plastic-bag.svg";
+import PlasticBottle from "../images/plastic-bottle.svg";
 import Shirt from "../images/shirt.svg";
 import SweetWrapper from "../images/sweet-wrapper.svg";
 import TeaBag from "../images/tea-bag.svg";

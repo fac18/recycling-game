@@ -1,17 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 import Button from "../Button";
 import { useHistory } from "react-router-dom";
 import HowToPlayModal from "./HowToPlayModal";
 import FunFactsModal from "./FunFacts";
+import { spinscale } from "../Keyframes";
+
 
 
 import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
+import { ReactComponent as StarsGroup } from "../../assets/stars-group.svg";
+
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
-// import UIfx from "uifx";
-// import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
+import UIfx from "uifx";
+import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
@@ -82,22 +86,42 @@ const ButtonContainer = styled.div`
   margin-bottom: 0.5em;
 `;
 
-const Stars = styled.div`
+const Stars = styled(StarsSvg)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   overflow: hidden;
-`;
+  animation: ${spinscale} 5s linear infinite alternate;
+`
+
+// const Twinkle = styled(StarsGroup) `
+//     width: 2000em;
+//     height: 200px;
+//     animation: ${rotatey} 20s linear infinite;
+//     display: flex;
+//     overflow: hidden;
+
+
+//   & .star: {
+//     animation: ${rotatey} 1s linear infinite;
+
+//   }
+
+// `;
 
 const LandingScreen = props => {
   const history = useHistory();
+
+  const music = new UIfx(kahootMusic);
+
+  music.play(0.5); 
 
   const startGame = () => {
    history.push("/game")
@@ -112,9 +136,7 @@ const LandingScreen = props => {
       <Octopus>
         <SpaceOctopus />
       </Octopus>
-      <Stars>
-        <StarsSvg />
-      </Stars>
+      <Stars />
       <Earth>
         <EarthSvg />
       </Earth>
