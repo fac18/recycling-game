@@ -17,6 +17,7 @@ import { ReactComponent as PauseIcon } from "../../assets/pause-icon.svg";
 import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+import WineBottle from "../../images/wine-bottle.svg";
 
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
@@ -24,7 +25,7 @@ const GameScreen = props => {
     src: "../../src/assets/wine-bottle.png",
     bin: "recycling",
     binImg: "images/recycle-bin.svg",
-    fact: "Families use around 330 glass bottles and jars every year"
+    fact: "Families use around 330 glass bottles and jars every yewar"
   });
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);

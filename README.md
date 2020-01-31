@@ -8,7 +8,9 @@ We're building a recycling game for children aged 4-6yrs old
 
 
 
-Please take a look around. We're currently working on creating a PWA!
+Please take a look around. We're currently working on creating a PWA! 
+
+We've really struggled with writing meaningful tests as it turns that simulating a custom drop event is really difficult and confusing, but it's been interesting exploring how we might.. 
 
 ### continuous integration 
 [![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
