@@ -174,8 +174,8 @@ const Jellyfish = styled(JellyfishSvg)`
   width: 75.03px;
   height: 95.34px;
   left: 25%;
-  bottom: 10%;
-  transform: rotate(270deg);
+  bottom: 12%;
+  transform: rotate(-10deg);
 `;
 
 const ItemText = styled.h2`

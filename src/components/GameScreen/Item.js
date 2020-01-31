@@ -4,11 +4,8 @@ import styled from "styled-components";
 const GameItem = styled.img`
   width: 100px;
   height: 100px;
-
-  :hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-  }
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 
   @keyframes shake {
     0% {

@@ -56,11 +56,11 @@ const OptionsModal = props => {
 
   return (
     <OptionsBox>
-      <PlayIcon onClick={hideOptionsModal} />
+      <PlayIcon onClick={hideOptionsModal} cursor="pointer"/>
       <OptionsList>
-        <OptionsListItem onClick={props.showHowToPlayModal}>How to play</OptionsListItem>
-        <OptionsListItem onClick={props.showFunFactsModal}>Recycling Information</OptionsListItem>
-        <OptionsListItem onClick={quitGame}>Quit</OptionsListItem>
+        <OptionsListItem onClick={props.showHowToPlayModal} cursor="pointer">How to play</OptionsListItem>
+        <OptionsListItem onClick={props.showFunFactsModal}  cursor="pointer">Recycling Information</OptionsListItem>
+        <OptionsListItem onClick={quitGame}  cursor="pointer">Quit</OptionsListItem>
       </OptionsList>
     </OptionsBox>
   );
