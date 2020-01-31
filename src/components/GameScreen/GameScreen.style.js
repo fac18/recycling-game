@@ -191,6 +191,7 @@ const ItemText = styled.h2`
   position: fixed;
   bottom: 2%;
   margin: 0;
+  width: 100vw;
 `;
 
 export {
