@@ -25,7 +25,7 @@ const GameScreen = props => {
     src: WineBottle,
     bin: "recycling",
     binImg: "images/recycle-bin.svg",
-    fact: "Families use around 330 glass bottles and jars every yewar"
+    fact: "Families use around 330 glass bottles and jars every year"
   });
   const [itemVisibility, setItemVisibility] = React.useState(true);
   const [successModal, setSuccessModal] = React.useState(false);
