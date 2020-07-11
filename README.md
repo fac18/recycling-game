@@ -8,9 +8,7 @@ We're building a recycling game for children aged 4-6yrs old
 
 
 
-Please take a look around. We're currently working on creating a PWA! 
-
-We've really struggled with writing meaningful tests as it turns that simulating a custom drop event is really difficult and confusing, but it's been interesting exploring how we might.. 
+Please take a look around. 
 
 ### continuous integration 
 [![Build Status](https://travis-ci.org/fac18/recycling-game.svg?branch=master)](https://travis-ci.org/fac18/recycling-game)
@@ -18,7 +16,7 @@ We've really struggled with writing meaningful tests as it turns that simulating
 ### codecov
 [![codecov](https://codecov.io/gh/fac18/recycling-game/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/recycling-game)
 
-### Here's our [playable figma prototype](https://www.figma.com/proto/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=177%3A235&scaling=scale-down)
+### Here's our [playable figma prototype](https://www.figma.com/proto/YRfO6HPI4RGhseQOdLReq7/Reduce-Reuse-Recycle?node-id=96%3A847&scaling=min-zoom)
 
 ### Our [Style Guide](https://www.figma.com/file/0JWLkTWl4IFKRodfEZkkky/Recycling-Game?node-id=36%3A0)
 
