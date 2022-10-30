@@ -27,14 +27,12 @@ const GenericButton = styled.button`
   border-style: none;
   z-index: 5;
   @media (max-width: 480px) {
-    // flex-direction: column;
     min-height: 6vh;
     font-size: 2.1vh;
     line-height: 3vh;
     min-width: 30vw;
   }
   
-  // margin-bottom: 2vh;
   ${props => {
     if(props.primary) {
     return`

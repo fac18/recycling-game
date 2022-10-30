@@ -10,9 +10,6 @@ import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
-// import UIfx from "uifx";
-// import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
-
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
   display: flex;
@@ -54,23 +51,6 @@ const Title = styled.h1`
   }
 `;
 
-// const TitleBig = styled.h1`
-//   background-color: #ff8a00;
-//   font-family: "Freckle Face", cursive;
-//   text-align: center;
-//   font-size: 10vh;
-//   font-weight: bold;
-//   // -webkit-text-stroke: 1px black;
-//   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-//   color: transparent;
-//   -webkit-background-clip: text;
-//   -moz-background-clip: text;
-//   background-clip: text;
-//   margin-block-start: 0em;
-//   margin-block-end: 0em;
-//   z-index: 5;
-// `;
-
 const Octopus = styled.div`
   position: absolute;
   top: 25px;
@@ -110,9 +90,6 @@ const Stars = styled.div`
 
 const LandingScreen = props => {
   const history = useHistory();
-
-  // const music = new UIfx(kahootMusic);
-  // music.play(0.5); 
   const isMobileScreen = window.matchMedia('screen and (max-width: 768px)').matches;
   const startGame = () => {
    history.push("/game")

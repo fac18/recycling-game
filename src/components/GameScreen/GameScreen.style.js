@@ -36,7 +36,6 @@ const LivesContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-top: 1.6%;
-  // margin-left: 20vw;
 `;
 
 const Wave5 = styled(Wave5Svg)`
@@ -120,7 +119,6 @@ const GameItem = styled.div`
   position: fixed;
   top: 10%;
   left: 0%;
-  // margin-left: -7.5vh;
 `;
 
 const Algae1 = styled(Algae1Svg)`
@@ -141,7 +139,6 @@ const Algae2 = styled(Algae2Svg)`
   bottom: -1%;
   z-index: 900;
   @media (max-width: 480px) {
-    // bottom: 18vh;
   }
 `;
 

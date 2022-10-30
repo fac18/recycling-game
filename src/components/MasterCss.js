@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-// import { ReactComponent as Cross } from "../assets/x-button.svg";
 
 const Paragraph = styled.p`
   font-size: 0.95em;
@@ -99,10 +98,8 @@ const BoxMessage = styled.div`
   font-weight: 600;
   font-size: 1.5rem;
   width: 100%;
-  // line-height: 4vh;
   align-items: center;
   color: #ffffff;
-  // padding-left: 0.5em;
   margin: 0;
   @media (max-width: 480px) {
     font-size: 0.96em;
@@ -135,8 +132,6 @@ const MessageImage = styled.img`
   ${props =>
     props.bin &&
     css`
-      // width: 100px;
-      // height: 100px;
       width: 5.2em;
       height: 4.3em;
     `}
@@ -153,13 +148,6 @@ const OrangeText = styled.span`
   display: inline;
 `;
 
-// const CloseCross = styled(Cross)`
-//   left: 1%;
-//   top: 2.04%;
-//   position: fixed;
-//   cursor: pointer;
-// `;
-
 const IconBin = styled.img`
   @media (max-width: 480px) {
     height: 22vh;
@@ -173,9 +161,6 @@ const IconImage = styled.img`
   top: 3.8%;
   
   @media (max-width: 768px) {
-    // flex-direction: column;
-    // height: 2.3em;
-    // top: 3.2%;
     margin-top: 0;
     margin-left: 0.1rem;
     ${props =>
@@ -205,7 +190,6 @@ const CloseCross = styled.img`
   padding-bottom: -11px;
   top: 3.2%;
   @media (max-width: 768px) {
-    // flex-direction: column;
     height: 2.3em;
     top: 3.2%;
 
@@ -222,7 +206,6 @@ const PlayIcon = styled.img`
   cursor: pointer;
   top: 4.2%;
   @media (max-width: 768px) {
-    // flex-direction: column;
     height: 2.3em;
     left: 1%;
 

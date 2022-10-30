@@ -15,7 +15,6 @@ const FailBox = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  // justify-content: space-around;
   align-items: center;
   justify-content: center;
   z-index: 1500;

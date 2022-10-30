@@ -8,15 +8,10 @@ import LivesScore from "./LivesScore";
 import { Container, IconImage, IconBin } from "../MasterCss";
 import HowToPlayModal from "../LandingScreen/HowToPlayModal";
 import FunFactsModal from "../LandingScreen/FunFacts";
-
 import * as SC from "./GameScreen.style";
-
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
-
-
 import RecycleBin from "../../assets/recycle-bin.svg";
 import BlackBin  from "../../assets/waste-bin-tidyman.svg";
-// import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 import CompostBin from "../../assets/compostable-bin.svg";
 import WineBottle from "../../images/wine-bottle.svg";
 import PauseIcon  from "../../assets/pause-icon.svg";

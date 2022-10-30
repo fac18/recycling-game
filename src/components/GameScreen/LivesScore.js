@@ -1,6 +1,5 @@
 import React from "react";
 import heart from "../../assets/heart-lives.svg";
-// import { withRouter } from "react-router-dom";
 import { IconImage } from "../MasterCss";
 const LivesScore = props => {
   const [livesArr, setLivesArr] = React.useState([1, 2, 3, 4]);

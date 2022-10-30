@@ -4,7 +4,6 @@ import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
 import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
 import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
 import heart from "../../assets/heart-lives.svg";
-// import { ReactComponent as StarFish } from "../../assets/starfish-smile.svg";
 import  starFish  from "../../assets/starfish-smile.svg";
 import crossButton from "../../assets/x-button.svg";
 import Button from "../Button";
@@ -21,26 +20,7 @@ import {
 
 
 const HowToPlayBox = styled.div`
-// background-image: linear-gradient(#21b2d3, #7abefd);
-// padding: 2em;
-//   position: fixed;
-//   width: 90vw;
-//   height: 85vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   overflow: scroll;
-//   z-index: 3000;
-//   border-radius: 25px;
-//   border: 2px solid #08345C;
-//   filter: drop-shadow(4px 4px 4px #08345C);
-
-
   background-image: linear-gradient(#21b2d3, #7abefd);
-  // padding: 2em;
   position: fixed;
   width: 90vw;
   height: 85vh;
