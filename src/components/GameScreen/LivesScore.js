@@ -1,7 +1,7 @@
 import React from "react";
-import { ReactComponent as Heart } from "../../assets/heart-lives.svg";
+import heart from "../../assets/heart-lives.svg";
 // import { withRouter } from "react-router-dom";
-
+import { IconImage } from "../MasterCss";
 const LivesScore = props => {
   const [livesArr, setLivesArr] = React.useState([1, 2, 3, 4]);
 
@@ -13,7 +13,7 @@ const LivesScore = props => {
   }, [props.badCount]);
 
   return livesArr.map((item) => {
-    return <Heart key={item}/>;
+    return <IconImage game src={heart} key={item}/>;
   });
 };
 

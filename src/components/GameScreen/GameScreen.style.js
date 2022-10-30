@@ -26,8 +26,8 @@ const Header = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding-top: 1.5vh;
+  padding-left: 1.5vh;
 `;
 
 const LivesContainer = styled.div`
@@ -35,7 +35,8 @@ const LivesContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 20vw;
+  padding-top: 1.6%;
+  // margin-left: 20vw;
 `;
 
 const Wave5 = styled(Wave5Svg)`
@@ -44,56 +45,82 @@ const Wave5 = styled(Wave5Svg)`
   bottom: 0px;
   left: 0;
   height: 20vh;
+  @media (max-width: 480px) {
+    height: 12.3vh;
+    bottom: 16vh;
+  }
 `;
 
 const Wave4 = styled(Wave4Svg)`
   width: 100vw;
   height: 20vh;
   position: fixed;
-  bottom: 20px;
+  bottom: 8vh;
   left: 0;
+  @media (max-width: 480px) {
+    height: 12.3vh;
+    bottom: 16vh;
+  }
 `;
 
 const Wave3 = styled(Wave3Svg)`
   width: 100vw;
   height: 20vh;
   position: fixed;
-  bottom: 40px;
+  bottom: 8vh;
   left: 0;
+  @media (max-width: 480px) {
+    height: 25vh;
+    bottom: 0vh;
+  }
 `;
 
 const Wave2 = styled(Wave2Svg)`
   width: 100vw;
   height: 20vh;
   position: fixed;
-  bottom: 60px;
+  bottom: 7.6vh;
   left: 0;
+  @media (max-width: 480px) {
+    height: 1vh;
+    bottom: 16vh;
+  }
 `;
 
 const BlackBinBox = styled.div`
   position: fixed;
-  bottom: 50px;
+  bottom: 7.5vh;
   left: 8%;
+  @media (max-width: 480px) {
+    bottom: 27vh;
+  }
 `;
 
 const RecycleBinBox = styled.div`
   position: fixed;
-  bottom: 50px;
+  bottom: 7.5vh;
   left: 50%;
-  margin-left: -107px;
+  margin-left: -14vw;
+  @media (max-width: 480px) {
+    bottom: 27vh;
+  }
 `;
 
 const CompostBinBox = styled.div`
   position: fixed;
-  bottom: 50px;
+  bottom: 7.5vh;
   right: 8%;
+  @media (max-width: 480px) {
+    bottom: 27vh;
+  }
+  
 `;
 
 const GameItem = styled.div`
   position: fixed;
-  top: 20%;
-  left: 20%;
-  margin-left: -50px;
+  top: 10%;
+  left: 0%;
+  // margin-left: -7.5vh;
 `;
 
 const Algae1 = styled(Algae1Svg)`
@@ -102,6 +129,9 @@ const Algae1 = styled(Algae1Svg)`
   right: 15.33%;
   bottom: -1%;
   z-index: 900;
+  @media (max-width: 480px) {
+    bottom: 8vh;
+  }
 `;
 
 const Algae2 = styled(Algae2Svg)`
@@ -110,6 +140,9 @@ const Algae2 = styled(Algae2Svg)`
   right: 83.42%;
   bottom: -1%;
   z-index: 900;
+  @media (max-width: 480px) {
+    // bottom: 18vh;
+  }
 `;
 
 const Algae3 = styled(Algae3Svg)`
@@ -122,20 +155,28 @@ const Algae3 = styled(Algae3Svg)`
 
 const Scallop = styled(ScallopSvg)`
   position: fixed;
-  width: 83.6px;
-  height: 70.56px;
-  right: 20px;
-  bottom: 40px;
+  width: 8.1vw;
+  height: 10.9vh;
+  right: 1.3vw;
+  bottom: 1.4vw;
   z-index: 900;
+  @media (max-width: 480px) {
+    height: 8.3vh;
+    right: 2.3vw;
+    width: 10.1vw;
+  }
 `;
 
 const Crab = styled(CrabSvg)`
   position: fixed;
-  width: 98.54px;
-  height: 87.07px;
-  left: 22px;
-  bottom: 30px;
+  width: 9.4vw;
+  height: 12.3vh;
+  left: 1.3vw;
+  bottom: 1.8vw;
   z-index: 900;
+  @media (max-width: 480px) {
+    height: 6.3vh;
+  }
 `;
 
 const Seahorse = styled(SeahorseSvg)`
@@ -148,11 +189,14 @@ const Seahorse = styled(SeahorseSvg)`
 
 const Bubbles = styled(BubblesSvg)`
   position: fixed;
-  width: 51.27px;
-  height: 75.69px;
+  width: 5.2vw;
+  height: 12.1vh;
   right: 15%;
-  bottom: 40px;
+  bottom: 6.5vw;
   z-index: 901;
+  @media (max-width: 480px) {
+    height: 6.3vh;
+  }
 `;
 
 const RedFish = styled(RedFishSvg)`
@@ -171,11 +215,14 @@ const Octopus = styled(OctopusSvg)`
 
 const Jellyfish = styled(JellyfishSvg)`
   position: fixed;
-  width: 75.03px;
-  height: 95.34px;
+  width: 6.8vw;
+  height: 8.3vh;
   left: 25%;
   bottom: 12%;
   transform: rotate(-10deg);
+  @media (max-width: 480px) {
+    height: 6.3vh;
+  }
 `;
 
 const ItemText = styled.h2`
@@ -183,8 +230,8 @@ const ItemText = styled.h2`
   font-family: Bungee;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
-  line-height: 77px;
+  font-size: 6vh;
+  line-height: 8vh;
   color: #ffffff;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1000;
@@ -192,6 +239,11 @@ const ItemText = styled.h2`
   bottom: 2%;
   margin: 0;
   width: 100vw;
+  @media (max-width: 480px) {
+    font-size: 4vh;
+    line-height: 10vh;
+    bottom: 20vh;
+  }
 `;
 
 export {

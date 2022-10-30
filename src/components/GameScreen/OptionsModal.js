@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
-import { ReactComponent as PlayIcon } from "../../assets/play-icon.svg";
-
+import playIcon from "../../assets/play-icon.svg";
+import {
+  PlayIcon
+} from "../MasterCss";
 const OptionsBox = styled.div`
   background-color: #08345c;
   display: flex;
@@ -24,21 +25,28 @@ const OptionsBox = styled.div`
 
 const OptionsList = styled.ul`
   list-style-type: none;
-  margin: 25px;
+  margin-left: 7vh;
   padding: 0;
+  @media (max-width: 480px) {
+    margin-top: 0;
+    margin-left: 3vh;
+  }
 `;
 
 const OptionsListItem = styled.li`
   font-family: Signika;
   font-style: normal;
   font-weight: 600;
-  font-size: 36px;
-  line-height: 50px;
+  font-size: 1.5rem;
   align-items: center;
   color: #ffffff;
   text-decoration: underline;
   cursor: pointer;
-  line-height: 2;
+  line-height: 2.2rem;
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
 `;
 
 const OptionsModal = props => {
@@ -56,7 +64,7 @@ const OptionsModal = props => {
 
   return (
     <OptionsBox>
-      <PlayIcon onClick={hideOptionsModal} cursor="pointer"/>
+      <PlayIcon src={playIcon} onClick={hideOptionsModal} cursor="pointer"/>
       <OptionsList>
         <OptionsListItem onClick={props.showHowToPlayModal} cursor="pointer">How to play</OptionsListItem>
         <OptionsListItem onClick={props.showFunFactsModal}  cursor="pointer">Recycling Information</OptionsListItem>

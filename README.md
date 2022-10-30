@@ -6,7 +6,16 @@ We're building a recycling game for children aged 4-6yrs old
 
 ![](https://i.imgur.com/bM8eitE.gif)
 
-
+### Screenshots
+<img alt="landing" src="./snapshots/landing.png" width="25%">
+<img alt="error" src="./snapshots/game_play.png" width="25%">
+<img alt="how_to_play" src="./snapshots/how_to_play.png" width="25%">
+<img alt="facts" src="./snapshots/facts.png" width="25%">
+<img alt="game_play" src="./snapshots/game_play.png" width="25%">
+<img alt="right_answer" src="./snapshots/right_answer.png" width="25%">
+<img alt="wrong_answer" src="./snapshots/wrong_answer.png" width="25%">
+<img alt="results" src="./snapshots/results.png" width="25%">
+<img alt="error" src="./snapshots/error.png" width="25%">
 
 Please take a look around. 
 

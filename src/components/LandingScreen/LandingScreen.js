@@ -10,8 +10,8 @@ import { ReactComponent as EarthSvg } from "../../assets/earth.svg";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
-import UIfx from "uifx";
-import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
+// import UIfx from "uifx";
+// import kahootMusic from "../../../src/assets/sounds/Kahoot Lobby Music (HD).mp3";
 
 const Container = styled.div`
   background-image: linear-gradient(#060606, #08345c);
@@ -23,15 +23,22 @@ const Container = styled.div`
   width: 100vw;
   z-index: -10;
 `;
+const ButtonWrapper = styled.div`
+  text-align: center;
+`
 
+const Spacer = styled.div`
+width: 2.5vw;
+padding-bottom:5.5vh;
+`
 const Title = styled.h1`
   background-color: #ff8a00;
   font-family: "Freckle Face", cursive;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px;
+  font-size: 9vh;
   text-align: center;
-  line-height: 130px;
+  line-height: 9vh;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   color: transparent;
   -webkit-background-clip: text;
@@ -41,24 +48,28 @@ const Title = styled.h1`
   position: relative;
   top: 10%;
   z-index: 5;
+  @media (max-width: 480px) {
+    font-size: 5vh;
+    line-height: 7vh;;
+  }
 `;
 
-const TitleBig = styled.h1`
-  background-color: #ff8a00;
-  font-family: "Freckle Face", cursive;
-  text-align: center;
-  font-size: 110px;
-  font-weight: bold;
-  // -webkit-text-stroke: 1px black;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  color: transparent;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  z-index: 5;
-`;
+// const TitleBig = styled.h1`
+//   background-color: #ff8a00;
+//   font-family: "Freckle Face", cursive;
+//   text-align: center;
+//   font-size: 10vh;
+//   font-weight: bold;
+//   // -webkit-text-stroke: 1px black;
+//   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+//   color: transparent;
+//   -webkit-background-clip: text;
+//   -moz-background-clip: text;
+//   background-clip: text;
+//   margin-block-start: 0em;
+//   margin-block-end: 0em;
+//   z-index: 5;
+// `;
 
 const Octopus = styled.div`
   position: absolute;
@@ -78,7 +89,7 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100vw;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 0.5em;
 `;
 
@@ -100,9 +111,9 @@ const Stars = styled.div`
 const LandingScreen = props => {
   const history = useHistory();
 
-  const music = new UIfx(kahootMusic);
-  music.play(0.5); 
-
+  // const music = new UIfx(kahootMusic);
+  // music.play(0.5); 
+  const isMobileScreen = window.matchMedia('screen and (max-width: 768px)').matches;
   const startGame = () => {
    history.push("/game")
   };
@@ -110,8 +121,8 @@ const LandingScreen = props => {
   return (
     
     <Container>
-      <Title>reduce, reuse,</Title>
-      <TitleBig>recycle!</TitleBig>
+      <Title>reduce, reuse, recycle!</Title>
+
 
       <Octopus>
         <SpaceOctopus />
@@ -122,34 +133,41 @@ const LandingScreen = props => {
       <Earth>
         <EarthSvg />
       </Earth>
-      <Button
-        primary
-        type="button"
-        renderAs="button"
-        handleClick={startGame}
-        label="Let's Play!"
-      ></Button>
-     
-      <ButtonContainer>
-        {props.howToPlayModal && (
-          <HowToPlayModal
-            handleClose={props.hideHowToPlayModal}
-          ></HowToPlayModal>
-        )}
-        {props.funFactsModal && (
-          <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
-        )}
+      {!isMobileScreen && <Spacer/> }
+      <ButtonWrapper>
         <Button
+          primaryR
           type="button"
-          handleClick={props.showHowToPlayModal}
-          label="How To Play"
+          renderAs="button"
+          handleClick={startGame}
+          label="Let's Play!"
         ></Button>
-        <Button
-          type="button"
-          handleClick={props.showFunFactsModal}
-          label="Fun Facts"
-        ></Button>
-      </ButtonContainer>
+        <Spacer/>
+        {!isMobileScreen && <Spacer/> }
+        <ButtonContainer>
+          {props.howToPlayModal && (
+            <HowToPlayModal
+              handleClose={props.hideHowToPlayModal}
+            ></HowToPlayModal>
+          )}
+          {props.funFactsModal && (
+            <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
+          )}
+          
+          <Button
+            type="button"
+            handleClick={props.showHowToPlayModal}
+            label="How To Play"
+          ></Button>
+          <Spacer/>
+          <Button
+            type="button"
+            handleClick={props.showFunFactsModal}
+            label="Fun Facts"
+          ></Button>
+        </ButtonContainer>
+      </ButtonWrapper>
+      <Spacer/>
     </Container>
    
     

@@ -10,7 +10,7 @@
     "react-dom": "^16.12.0",
     "react-drag-drop-container": "^6.1.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.4.1",
     "styled-components": "^5.0.0",
     "uifx": "^2.0.7"
   },

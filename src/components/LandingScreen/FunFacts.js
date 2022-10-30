@@ -6,7 +6,8 @@ import {
   MessageBox,
   BoxMessage,
   OrangeText,
-  CloseCross
+  CloseCross,
+  Spacer
 } from "../MasterCss";
 
 import { ReactComponent as Paper } from "../../assets/paper.svg";
@@ -18,25 +19,32 @@ import { ReactComponent as PlasticBag } from "../../assets/plastic-bag.svg";
 import { ReactComponent as PlasticBottle } from "../../assets/plastic-bottle.svg";
 import { ReactComponent as TV } from "../../assets/tv.svg";
 import { ReactComponent as Tap } from "../../assets/tap.svg";
-
+import crossButton from "../../assets/x-button.svg";
 
 const FunFactsBox = styled.div`
   background-image: linear-gradient(#21b2d3, #7abefd);
-  padding: 2em;
+  // padding: 2em;
   position: fixed;
   width: 90vw;
   height: 85vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: block;
   z-index: 3000;
-  border-radius: 25px;
+  border-radius: 1em;
   border: 2px solid #08345C;
   filter: drop-shadow(4px 4px 4px #08345C);
   text-align: center;
+  @media (max-width: 480px) {
+    padding-bottom: 13.4vh;
+  }
+  
 `;
+
+
 
 const FactList = styled.ul`
   display: flex;
@@ -56,15 +64,25 @@ const Flexy = styled.div`
   height: 100%;
 `;
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+ `;
+
 const ExtLink = styled.a`
   color: #FF8A00;
 `;
 
 const FunFactsModal = ({ handleClose }) => {
+  const svgSize = window.matchMedia('screen and (max-width: 768px)').matches ? '60px' : '150px';
   return (
     <FunFactsBox>
-        <CloseCross onClick={handleClose} />
-        <PageHeader>About Recycling</PageHeader>
+        <HeaderWrapper>
+          <CloseCross onClick={handleClose} src={crossButton} />
+          <PageHeader>About Recycling</PageHeader>
+        </HeaderWrapper>
         <MessageBox primary><BoxMessage>
 
         <p>All the natural resources we use and rubbish we create is hurting the planet and the animals who share it with us.</p>
@@ -89,9 +107,9 @@ const FunFactsModal = ({ handleClose }) => {
           </FactList>
 
           <Flexy>
-            <Walk width="150px"  height="150px"/>
-            <Tap width="150px"  height="150px"/>
-            <TV width="150px"  height="150px"/>
+            <Walk width={svgSize}  height={svgSize}/>
+            <Tap width={svgSize}  height={svgSize}/>
+            <TV width={svgSize}  height={svgSize}/>
           </Flexy>
           
 
@@ -112,9 +130,9 @@ const FunFactsModal = ({ handleClose }) => {
           </FactList>
 
           <Flexy>
-            <PlasticBag width="150px"  height="150px"/>
-            <Shirt width="150px"  height="150px"/>
-            <Paper width="150px"  height="150px"/>
+            <PlasticBag width={svgSize}  height={svgSize}/>
+            <Shirt width={svgSize}  height={svgSize}/>
+            <Paper width={svgSize}  height={svgSize}/>
           </Flexy>
 
           </BoxMessage>
@@ -133,9 +151,9 @@ const FunFactsModal = ({ handleClose }) => {
             </FactList>
 
           <Flexy>
-            <PlasticBottle width="150px" height="150px"/>
-            <DrinksCan width="150px" height="150px"/>
-            <Apple width="150px" height="150px"/>
+            <PlasticBottle width={svgSize} height={svgSize}/>
+            <DrinksCan width={svgSize} height={svgSize}/>
+            <Apple width={svgSize} height={svgSize}/>
           </Flexy>
 
           </BoxMessage>
@@ -150,7 +168,7 @@ const FunFactsModal = ({ handleClose }) => {
       </MessageBox>
 
         <Button primary handleClick={handleClose} label="Close"></Button>
-
+        <Spacer/>
     </FunFactsBox>
   );
 };

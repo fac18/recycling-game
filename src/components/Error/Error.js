@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
 import { useHistory } from "react-router-dom";
-import { ModalHeader } from "../MasterCss";
+import { ModalHeader, Spacer } from "../MasterCss";
 import { ReactComponent as StarsSvg } from "../../assets/stars.svg";
 import { ReactComponent as SpaceOctopus } from "../../assets/space-octopus.svg";
 
@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: start;
   height: 100vh;
   width: 100vw;
   z-index: -10;
@@ -19,8 +19,8 @@ const Container = styled.div`
 
 const Octopus = styled(SpaceOctopus)`
   position: absolute;
-  top: 25px;
-  right: 20px;
+  top: 12vh;
+  right: 10vw;
 `;
 
 const Stars = styled(StarsSvg)`
@@ -47,8 +47,17 @@ const Error = props => {
 
   return (
     <Container>
+      <Spacer/>
+      <Spacer/>
+      <Spacer/>
+      <Spacer/>
+      <Spacer/>
+      <Spacer/>
+      <Spacer/>
       <ModalHeader>error: 404</ModalHeader>
+    
       <ModalHeader>You're out in space!</ModalHeader>
+      <Spacer/>
       <Octopus />
       <Stars />
       <Button primary handleClick={goHome} label={"Back to Earth"} />

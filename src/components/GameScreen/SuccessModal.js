@@ -14,8 +14,9 @@ const SuccessBox = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  // justify-content: space-around;
   align-items: center;
+  justify-content: center;
   z-index: 1500;
   padding: 0px;
 `;
@@ -41,11 +42,11 @@ const SuccessModal = props => {
     <SuccessBox id="success" onClick={hideModal}>
       <SC.ModalHeader>Well Done!</SC.ModalHeader>
       <SC.ModalHeader>
-        {props.item.name} go in the {props.item.bin} bin.
+        <SC.OrangeText>{props.item.name} </SC.OrangeText> go in the <SC.OrangeText> {props.item.bin}</SC.OrangeText> bin.
       </SC.ModalHeader>
       <SC.BadgeBox>
         
-        <SC.MessageBox>
+        <SC.MessageBox expandd>
         <SC.MessageImage alt={props.item.name} src={props.item.src} />
         <SC.BoxMessage>{props.item.fact}</SC.BoxMessage>
         </SC.MessageBox>

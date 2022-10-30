@@ -5,7 +5,7 @@ import FailModal from "./FailModal";
 import OptionsModal from "./OptionsModal";
 import Item from "./Item";
 import LivesScore from "./LivesScore";
-import { Container } from "../MasterCss";
+import { Container, IconImage, IconBin } from "../MasterCss";
 import HowToPlayModal from "../LandingScreen/HowToPlayModal";
 import FunFactsModal from "../LandingScreen/FunFacts";
 
@@ -13,12 +13,13 @@ import * as SC from "./GameScreen.style";
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
-import { ReactComponent as PauseIcon } from "../../assets/pause-icon.svg";
-import { ReactComponent as RecycleBin } from "../../assets/recycle-bin.svg";
-import { ReactComponent as BlackBin } from "../../assets/waste-bin-tidyman.svg";
-import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
-import WineBottle from "../../images/wine-bottle.svg";
 
+import RecycleBin from "../../assets/recycle-bin.svg";
+import BlackBin  from "../../assets/waste-bin-tidyman.svg";
+// import { ReactComponent as CompostBin } from "../../assets/compostable-bin.svg";
+import CompostBin from "../../assets/compostable-bin.svg";
+import WineBottle from "../../images/wine-bottle.svg";
+import PauseIcon  from "../../assets/pause-icon.svg";
 const GameScreen = props => {
   const [currentItem, setCurrentItem] = React.useState({
     name: "Glass Bottles",
@@ -31,7 +32,7 @@ const GameScreen = props => {
   const [successModal, setSuccessModal] = React.useState(false);
   const [failModal, setFailModal] = React.useState(false);
   const [optionsModal, setOptionsModal] = React.useState(false);
-
+  const isMobileScreen = window.matchMedia('screen and (max-width: 768px)').matches;
   const dropReaction = currentBin => {
     setItemVisibility(!itemVisibility);
 
@@ -96,7 +97,7 @@ const GameScreen = props => {
       )}
 
       <SC.Header>
-        <PauseIcon onClick={showOptionsModal} cursor="pointer"/>
+        <IconImage game  onClick={showOptionsModal} src={PauseIcon} cursor="pointer"/>
         <SC.LivesContainer>
           <LivesScore
             badCount={props.badCount}
@@ -108,16 +109,16 @@ const GameScreen = props => {
       </SC.Header>
 
       <SC.Scallop />
-      <SC.Algae1 />
+      {!isMobileScreen && <SC.Algae1 />}
       <SC.Algae2 />
       <SC.Algae3 />
-      <SC.Crab />
-      <SC.Seahorse />
-      <SC.RedFish />
+      {!isMobileScreen && <SC.Crab /> }
+      {!isMobileScreen && <SC.Seahorse /> }
+      {!isMobileScreen && <SC.RedFish />} 
       <SC.Bubbles />
       <SC.Wave2 />
       <SC.Wave3 />
-      <SC.Jellyfish />
+      {!isMobileScreen && <SC.Jellyfish /> }
       <SC.Wave4 />
 
       <SC.GameItem>
@@ -139,7 +140,7 @@ const GameScreen = props => {
             dropReaction("general waste");
           }}
         >
-          <BlackBin title="blackbin" />
+          <IconBin dustbin src={BlackBin}  title="blackbin" />
         </DropTarget>
       </SC.BlackBinBox>
 
@@ -150,7 +151,7 @@ const GameScreen = props => {
             dropReaction("recycling");
           }}
         >
-          <RecycleBin title="recyclebin" />
+          <IconBin dustbin src={RecycleBin}  title="recyclebin" />
         </DropTarget>
       </SC.RecycleBinBox>
 
@@ -161,11 +162,11 @@ const GameScreen = props => {
             dropReaction("food compost");
           }}
         >
-          <CompostBin title="compostbin" />
+        <IconBin dustbin src={CompostBin} title="compostbin" />
         </DropTarget>
       </SC.CompostBinBox>
 
-      <SC.Octopus />
+      {!isMobileScreen && <SC.Octopus /> }
       <SC.Wave5 />
 
       <SC.ItemText>{currentItem.name}</SC.ItemText>

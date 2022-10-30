@@ -9,12 +9,13 @@ import Button from "../Button";
 import FunFactsModal from "../LandingScreen/FunFacts";
 
 import {
-  Container,
   MessageBox,
   BadgeBox,
   BoxMessage,
   MessageImage,
-  PageHeader
+  PageHeader,
+  Wrapper,
+  Spacer
 } from "../MasterCss";
 
 const ButtonContainer = styled.div`
@@ -51,9 +52,14 @@ const ResultScreen = props => {
   };
 
   return (
-    <Container>
-      <PageHeader>nice one!</PageHeader>
+    <Wrapper>
+      <Spacer/>
+      <Spacer/>
+      <PageHeader nomargin>nice one!</PageHeader>
+      <Spacer/>
+      <Spacer/>
       <ProgressScore results count={props.count} />
+      <Spacer/>
       <BadgeBox>
         {" "}
         <MessageImage
@@ -64,6 +70,8 @@ const ResultScreen = props => {
           <BoxMessage>{props.count}{badges[badgeGiven].message}</BoxMessage>
         </MessageBox>
       </BadgeBox>
+      <Spacer/>
+      <Spacer/>
       <ButtonContainer>
         {props.funFactsModal && (
           <FunFactsModal handleClose={props.hideFunFactsModal}></FunFactsModal>
@@ -76,7 +84,7 @@ const ResultScreen = props => {
           {props.label}
         </Button>
       </ButtonContainer>
-    </Container>
+    </Wrapper>
   );
 };
 
