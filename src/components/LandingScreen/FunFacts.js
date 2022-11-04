@@ -99,7 +99,7 @@ const FunFactsModal = ({ handleClose }) => {
           <FactList>
             <li>When you’re shopping, only buy what you need.</li>
             <li>Can you shop at a zero-waste grocery store?</li>
-            <li>Try to walk more instead of using the car. Your parents will use less petrol!</li>
+            <li>Try to walk more instead of using the car/motorbikes. Your parents will use less petrol!</li>
             <li> Turn off the tap when brushing your teeth and you'll waste less water</li>
             <li>Switch off the TV, games console, and electrical items to reduce your energy use</li>
           </FactList>
@@ -160,7 +160,8 @@ const FunFactsModal = ({ handleClose }) => {
       <MessageBox primary>
         <BoxMessage>
           
-          Discover more about how to recycle in your local area and reduce waste by visiting <ExtLink href='https://www.recyclenow.com/' target="blank">Recycle Now</ExtLink>.
+          Discover more about how to recycle in your local area and reduce waste by visiting <ExtLink href='https://www.recyclenow.com/' target="blank">Recycle Now (UK)</ExtLink>. In Nepal,
+          organizations like <ExtLink href='https://www.khaalisisi.com/' target="blank"> khaalisisi</ExtLink> and <ExtLink href='https://momsstorenepal.com/' target="blank"> Moms Store Nepal (MSN)</ExtLink> are recycling wastes. 
 
         </BoxMessage>
       </MessageBox>
